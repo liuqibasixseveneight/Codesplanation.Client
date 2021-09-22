@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# 🔥 liuqibasixseveneight - codesplanation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Component folder structure
 
-## Available Scripts
+The _components_ folder structure is based on [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/) approaches and principles conceptualised by Brad Frost. Please see our adapted structure demonstrated below:
 
-In the project directory, you can run:
+```
+components/
+├─ pages/
+├─ templates/
+├─ ui/
+│  ├─ atoms/
+│  ├─ molecules/
+│  ├─ organisms/
+```
 
-### `npm start`
+The below highlights our definitions for each component-type, ordered by severity.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Please also note that the below definitions are taken and/or adapted from the article _How to Implement Atomic Design System in React_ posted by logicwind [here](https://blog.logicwind.com/implement-atomic-design-component-in-react/).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Atoms
 
-### `npm test`
+Atoms are like HTML tags, labels, inputs or buttons
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Molecules
 
-### `npm run build`
+Molecules consist of grouped atoms, such as a combined label and input
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Organisms
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Organisms are made up of molecules, used to form relatively more complex components, such as a Header
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Templates
 
-### `npm run eject`
+Templates consist mostly of grouped organisms used to create final structures, such as a complete form
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Pages
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Pages are instances of templates, resulting in a finalised view visible to a user

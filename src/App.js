@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import styled, { ThemeProvider } from "styled-components";
+import { useSelector } from "react-redux";
+import { Switch, Route } from "react-router-dom";
 
-function App() {
+import { darkTheme, lightTheme } from "./themes";
+import { Header, SideMenu } from "./components/ui";
+import { Home, SignIn, SignUp } from "./components/pages";
+
+export default function App() {
+  const isGlobalThemeDark = useSelector((state) => {
+    if (state.globalTheme) {
+      return state.globalTheme.isGlobalThemeDark;
+    }
+  });
+
+  useEffect(() => {
+    localStorage.setItem("dark", JSON.stringify(isGlobalThemeDark));
+  }, [isGlobalThemeDark]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ThemeProvider theme={isGlobalThemeDark ? darkTheme : lightTheme}>
+        <Background>
+          <Header />
+          <SideMenu />
+
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/sign-in" component={SignIn} />
+            <Route exact path="/sign-up" component={SignUp} />
+          </Switch>
+        </Background>
+      </ThemeProvider>
+    </>
   );
 }
 
-export default App;
+const Background = styled.div`
+  background: ${(props) => props.theme.colors.global.backgroundPrimary};
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  min-width: 100%;
+`;
