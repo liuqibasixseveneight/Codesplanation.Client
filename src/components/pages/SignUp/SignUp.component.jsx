@@ -2,25 +2,21 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import gql from "graphql-tag";
 
+import { useForm } from "../../../hooks";
 import { Wrapper } from "./SignUp.styles";
 
 export default function SignUp({ history }) {
   const [errors, setErrors] = useState({});
-  console.log("ERRORS: ", errors);
-  const [values, setValues] = useState({
+
+  const { onChange, onSubmit, values } = useForm(registerUser, {
     username: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
 
-  const onChange = (event) => {
-    setValues({ ...values, [event.target.name]: event.target.value });
-  };
-
   const [addUser, { loading }] = useMutation(REGISTER_USER, {
     update(_, result) {
-      console.log("RESULT: ", result);
       history.push("/");
     },
     onError(err) {
@@ -29,10 +25,9 @@ export default function SignUp({ history }) {
     variables: values,
   });
 
-  const onSubmit = (event) => {
-    event.preventDefault();
+  function registerUser() {
     addUser();
-  };
+  }
 
   return (
     <>
