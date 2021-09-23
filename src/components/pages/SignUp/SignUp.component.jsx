@@ -4,8 +4,9 @@ import gql from "graphql-tag";
 
 import { Wrapper } from "./SignUp.styles";
 
-export default function SignUp() {
+export default function SignUp({ history }) {
   const [errors, setErrors] = useState({});
+  console.log("ERRORS: ", errors);
   const [values, setValues] = useState({
     username: "",
     email: "",
@@ -20,6 +21,7 @@ export default function SignUp() {
   const [addUser, { loading }] = useMutation(REGISTER_USER, {
     update(_, result) {
       console.log("RESULT: ", result);
+      history.push("/");
     },
     onError(err) {
       setErrors(err.graphQLErrors[0].extensions.errors);
@@ -56,6 +58,7 @@ export default function SignUp() {
                 name="username"
                 value={values.username}
                 onChange={onChange}
+                style={errors.username ? { borderColor: "tomato" } : {}}
               />
 
               <input
@@ -64,6 +67,7 @@ export default function SignUp() {
                 name="email"
                 value={values.email}
                 onChange={onChange}
+                style={errors.email ? { borderColor: "tomato" } : {}}
               />
 
               <input
@@ -72,6 +76,7 @@ export default function SignUp() {
                 name="password"
                 value={values.password}
                 onChange={onChange}
+                style={errors.password ? { borderColor: "tomato" } : {}}
               />
 
               <input
@@ -80,6 +85,7 @@ export default function SignUp() {
                 name="confirmPassword"
                 value={values.confirmPassword}
                 onChange={onChange}
+                style={errors.confirmPassword ? { borderColor: "tomato" } : {}}
               />
 
               <button type="submit" onSubmit={onSubmit}>
