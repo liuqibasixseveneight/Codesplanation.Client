@@ -6,17 +6,20 @@ import { BrowserRouter as Router } from "react-router-dom";
 import store from "./redux/store";
 import "./index.css";
 import ApolloProvider from "./ApolloProvider";
+import { AuthProvider } from "./context/auth"; // TODO: Rework into redux toolkit
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider>
-      <ReduxProvider store={store}>
-        <Router>
-          <App />
-        </Router>
-      </ReduxProvider>
+      <AuthProvider>
+        <ReduxProvider store={store}>
+          <Router>
+            <App />
+          </Router>
+        </ReduxProvider>
+      </AuthProvider>
     </ApolloProvider>
   </React.StrictMode>,
   document.getElementById("root")

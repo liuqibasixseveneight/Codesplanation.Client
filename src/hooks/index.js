@@ -1,3 +1,4 @@
-import useWindowSize from "./useWindowSize";
+import { useForm } from "./useForm";
+import { useWindowSize } from "./useWindowSize";
 
-export { useWindowSize };
+export { useForm, useWindowSize };

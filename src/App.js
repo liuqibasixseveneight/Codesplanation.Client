@@ -3,9 +3,10 @@ import styled, { ThemeProvider } from "styled-components";
 import { useSelector } from "react-redux";
 import { Switch, Route } from "react-router-dom";
 
+import { AuthRoute } from "./utils";
 import { darkTheme, lightTheme } from "./themes";
 import { Header, SideMenu } from "./components/ui";
-import { Home, SignIn, SignUp } from "./components/pages";
+import { Home, Posts, SignIn, SignUp } from "./components/pages";
 
 export default function App() {
   const isGlobalThemeDark = useSelector((state) => {
@@ -27,8 +28,9 @@ export default function App() {
 
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/sign-in" component={SignIn} />
-            <Route exact path="/sign-up" component={SignUp} />
+            <Route exact path="/posts" component={Posts} />
+            <AuthRoute exact path="/sign-in" component={SignIn} />
+            <AuthRoute exact path="/sign-up" component={SignUp} />
           </Switch>
         </Background>
       </ThemeProvider>
