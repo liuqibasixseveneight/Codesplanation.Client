@@ -25,6 +25,11 @@ If, by chance, a reader doesn't understand some of the written and/or annotated 
 - [**Codesplanation.Server**](https://github.com/liuqibasixseveneight/Codesplanation.Server)
   - This is used to connect and query the backend
 
+Repository Webhooks
+
+- GitHub/Codesplanation.Client
+- GitHub/Codesplanation.Server
+
 ## Component folder structure
 
 The _components_ folder structure is based on [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/) approaches and principles conceptualised by Brad Frost. Please see our adapted structure demonstrated below:
