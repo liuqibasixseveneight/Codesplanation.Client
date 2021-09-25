@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
+  background: ${(props) => props.theme.colors.global.backgroundPrimary};
   border-bottom: 1px solid
     ${(props) => props.theme.colors.global.highlightPrimary};
   height: 100px;
@@ -15,9 +16,7 @@ export const WidthWrapper = styled.div`
   display: flex;
   height: 100%;
   justify-content: space-between;
-  margin: 0 auto;
-  width: 95%;
-  max-width: 1400px;
+  width: 100%;
 `;
 
 export const LogoWrapper = styled.div`

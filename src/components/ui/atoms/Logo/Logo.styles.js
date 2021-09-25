@@ -17,6 +17,7 @@ export const Wrapper = styled.div`
   display: flex;
   height: 100%;
   justify-content: center;
+  margin: ${({ margin }) => margin && margin};
 `;
 
 export const LogoText = styled.span`
@@ -33,6 +34,7 @@ export const LogoText = styled.span`
   cursor: pointer;
   font-family: "RalewayBlack";
   font-size: 2rem;
+  font-weight: 900;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-transform: lowercase;

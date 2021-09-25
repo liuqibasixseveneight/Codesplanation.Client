@@ -1,14 +1,16 @@
 import { Anchor, Button, Logo, NavigationItem, ThemeToggle } from "./atoms";
-import { Navigation } from "./molecules";
+import { Dropdown, Navigation, UserIndicator } from "./molecules";
 import { Header, SideMenu } from "./organisms";
 
 export {
   Anchor,
   Button,
+  Dropdown,
   Header,
   Logo,
   Navigation,
   NavigationItem,
   SideMenu,
   ThemeToggle,
+  UserIndicator,
 };

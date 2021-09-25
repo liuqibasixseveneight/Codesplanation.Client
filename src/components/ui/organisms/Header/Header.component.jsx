@@ -10,7 +10,7 @@ import {
   WidthWrapper,
   Wrapper,
 } from "./Header.styles";
-import { Logo, Navigation, ThemeToggle } from "../../index";
+import { Logo, Navigation, ThemeToggle, UserIndicator } from "../../index";
 import { useWindowSize } from "../../../../hooks";
 import { setIsNavigationOpen } from "../../../../redux/slices/navigationSlice";
 
@@ -21,7 +21,7 @@ export default function Header() {
 
   const menuBar = user ? (
     <Navigation margin="0 0.8rem">
-      <p>{user.username}</p>
+      <UserIndicator to={`user/${user.id}`} user={user} />
 
       <Navigation.Item to="/" onClick={logout}>
         Sign Out
@@ -42,7 +42,7 @@ export default function Header() {
         <WidthWrapper>
           <LogoWrapper>
             <NavLink to="/">
-              <Logo />
+              <Logo margin="0 0 0 0.8rem" />
             </NavLink>
 
             <ThemeToggle />
