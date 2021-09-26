@@ -1,7 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { LeftIcon, RightIcon, Text, Wrapper } from "./DropdownItem.styles";
+import {
+  LeftIcon,
+  ListItem,
+  RightIcon,
+  Text,
+  Wrapper,
+} from "./DropdownItem.styles";
 
 export default function DropdownItem({
   children,
@@ -13,17 +19,12 @@ export default function DropdownItem({
 }) {
   return (
     <>
-      <Wrapper
-        onClick={onClick}
-        leftIcon={leftIcon}
-        rightIcon={rightIcon}
-        to={to}
-      >
-        <li>
+      <Wrapper onClick={onClick} to={to}>
+        <ListItem leftIcon={leftIcon} rightIcon={rightIcon}>
           <LeftIcon>{leftIcon && leftIcon}</LeftIcon>
           <Text>{children}</Text>
           <RightIcon>{rightIcon && rightIcon}</RightIcon>
-        </li>
+        </ListItem>
       </Wrapper>
     </>
   );

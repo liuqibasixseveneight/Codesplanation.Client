@@ -9,23 +9,23 @@ export const Wrapper = styled(NavLink).attrs({ activeClassName })`
   transition: all 100ms linear;
   width: 100%;
   min-width: 100%;
+`;
 
-  & li {
-    align-items: center;
-    background: ${(props) => props.theme.colors.global.backgroundPrimary};
-    border-radius: 8px;
-    display: flex;
-    height: 50px;
-    justify-content: ${({ leftIcon, rightIcon }) =>
-      leftIcon && rightIcon ? "space-between" : "flex-start"};
-    padding: 0.5rem;
-    transition: all 100ms linear;
-    width: 100%;
-    min-width: 100%;
+export const ListItem = styled.li`
+  align-items: center;
+  background: ${(props) => props.theme.colors.global.backgroundPrimary};
+  border-radius: 8px;
+  display: flex;
+  height: 50px;
+  justify-content: ${({ leftIcon, rightIcon }) =>
+    leftIcon && rightIcon ? "space-between" : "flex-start"};
+  padding: 0.5rem;
+  transition: all 100ms linear;
+  width: 100%;
+  min-width: 100%;
 
-    &:hover {
-      background: ${(props) => props.theme.colors.global.highlightPrimary};
-    }
+  &:hover {
+    background: ${(props) => props.theme.colors.global.highlightPrimary};
   }
 `;
 

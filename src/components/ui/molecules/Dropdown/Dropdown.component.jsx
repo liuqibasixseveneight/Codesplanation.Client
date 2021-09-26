@@ -31,7 +31,6 @@ function Break() {
 }
 
 export default function Dropdown({ children, user, ...props }) {
-  const [activeMenu, setActiveMenu] = useState("main");
   const [menuHeight, setMenuHeight] = useState(null);
   const dropdownRef = useRef(null);
 
@@ -39,14 +38,11 @@ export default function Dropdown({ children, user, ...props }) {
     setMenuHeight(dropdownRef.current?.firstChild.offsetHeight);
   }, []);
 
-  function calcHeight(el) {
-    const height = el.offsetHeight;
-    setMenuHeight(height);
-  }
-
   return (
     <DropdownGroupContext.Provider value={props}>
-      <Wrapper height={menuHeight}>{children}</Wrapper>
+      <Wrapper height={menuHeight} ref={dropdownRef}>
+        {children}
+      </Wrapper>
     </DropdownGroupContext.Provider>
   );
 }

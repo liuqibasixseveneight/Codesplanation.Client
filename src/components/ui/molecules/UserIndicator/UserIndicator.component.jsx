@@ -1,30 +1,28 @@
-import React, { useContext, useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useContext } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import { CgProfile as ViewProfileIcon } from "react-icons/cg";
-import {
-  IoLogOutOutline as SignOutIcon,
-  IoChevronForward as ForwardChevronIcon,
-} from "react-icons/io5";
+import { IoLogOutOutline as SignOutIcon } from "react-icons/io5";
 import { MdInvertColors as ThemeIcon } from "react-icons/md";
 
+import { setIsDropdownOpen } from "../../../../redux/slices/dropdownSlice";
 import { AuthContext } from "../../../../context/auth";
-import { Dropdown } from "../index";
+import { Dropdown, ThemeToggle } from "../../index";
 import { UserAvatar, UserText, Wrapper } from "./UserIndicator.styles";
 
 export default function UserIndicator({ user }) {
   const { logout } = useContext(AuthContext); // TODO: Rework into redux toolkit
-  const isGlobalThemeDark = useSelector((state) => {
-    if (state.globalTheme) {
-      return state.globalTheme.isGlobalThemeDark;
+  const isDropdownOpen = useSelector((state) => {
+    if (state.dropdown) {
+      return state.dropdown.isDropdownOpen;
     }
   });
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dispatch = useDispatch();
 
   return (
     <>
       <Wrapper
-        onClick={() => setIsDropdownOpen((isDropdownOpen) => !isDropdownOpen)}
+        onClick={() => dispatch(setIsDropdownOpen())}
         isDropdownOpen={isDropdownOpen}
       >
         <UserAvatar />
@@ -44,11 +42,8 @@ export default function UserIndicator({ user }) {
 
             <Dropdown.Break />
 
-            <Dropdown.Item
-              leftIcon={<ThemeIcon />}
-              rightIcon={<ForwardChevronIcon />}
-            >
-              Theme: {isGlobalThemeDark ? `Dark` : `Light`}
+            <Dropdown.Item leftIcon={<ThemeIcon />}>
+              Theme: <ThemeToggle />
             </Dropdown.Item>
           </Dropdown>
         )}
