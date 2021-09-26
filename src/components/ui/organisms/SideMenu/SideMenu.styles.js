@@ -22,9 +22,8 @@ export const Wrapper = styled.div`
 export const WidthWrapper = styled.div`
   align-items: center;
   display: flex;
+  flex-direction: column;
   height: 100%;
   justify-content: space-between;
-  margin: 0 auto;
-  width: 95%;
-  max-width: 1400px;
+  width: 100%;
 `;

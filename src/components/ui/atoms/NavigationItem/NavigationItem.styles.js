@@ -25,10 +25,12 @@ export const Border = styled.div`
   cursor: pointer;
   display: flex;
   font-family: "RalewaySemiBold";
+  font-size: ${({ isVertical }) => isVertical && "clamp(1rem, 5vw, 2rem)"};
   font-weight: 600;
   height: 100%;
   justify-content: center;
-  padding: 0.8rem 1.4rem;
+  padding: ${({ isVertical }) =>
+    isVertical ? "1.6rem 2.8rem" : "0.8rem 1.4rem"};
   margin: 0 0.4rem;
   text-transform: capitalize;
   transition: all 100ms linear;
@@ -39,8 +41,34 @@ export const Border = styled.div`
   }
 
   &:hover {
-    background: ${(props) => props.theme.colors.global.highlightPrimary};
-    color: ${(props) => props.theme.colors.global.highlightSecondary};
+    color: ${(props) => props.theme.colors.global.highlightPrimary};
+
+    ${({ border, isVertical }) => {
+      switch (true) {
+        case border:
+          return css`
+            background: ${(props) =>
+              props.theme.colors.global.highlightPrimary};
+            color: ${(props) => props.theme.colors.global.highlightSecondary};
+          `;
+        case isVertical && border:
+          return css`
+            background: ${(props) =>
+              props.theme.colors.global.highlightPrimary};
+            color: ${(props) => props.theme.colors.global.highlightPrimary};
+          `;
+        case isVertical && !border:
+          return css`
+            color: ${(props) => props.theme.colors.global.highlightPrimary};
+          `;
+        default:
+          return css`
+            background: ${(props) =>
+              props.theme.colors.global.highlightPrimary};
+            color: ${(props) => props.theme.colors.global.highlightSecondary};
+          `;
+      }
+    }}
   }
 `;
 

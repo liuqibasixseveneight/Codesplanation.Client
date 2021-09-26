@@ -32,7 +32,7 @@ function Break() {
   );
 }
 
-export default function Dropdown({ children, user, ...props }) {
+export default function Dropdown({ children, left, user, ...props }) {
   const [menuHeight, setMenuHeight] = useState(null);
   const dropdownRef = useRef(null);
   const dispatch = useDispatch();
@@ -67,7 +67,7 @@ export default function Dropdown({ children, user, ...props }) {
 
   return (
     <DropdownGroupContext.Provider value={props}>
-      <Wrapper height={menuHeight} ref={dropdownRef}>
+      <Wrapper height={menuHeight} left={left} ref={dropdownRef}>
         {children}
       </Wrapper>
     </DropdownGroupContext.Provider>
@@ -77,12 +77,15 @@ export default function Dropdown({ children, user, ...props }) {
 Dropdown.propTypes = {
   // What represents the children?
   children: PropTypes.node.isRequired,
+  // Does it need to render on the left?
+  left: PropTypes.bool,
   // What represents the user?
   user: PropTypes.object.isRequired,
 };
 
 Dropdown.defaultProps = {
   children: null,
+  left: false,
   user: {},
 };
 
