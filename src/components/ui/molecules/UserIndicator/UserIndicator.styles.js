@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const UserAvatar = styled.div`
-  background: pink;
+  background: #c1c1c1;
   border-radius: 50%;
   content: "";
   height: 45px;
@@ -24,6 +24,10 @@ export const UserText = styled.span`
 
 export const Wrapper = styled.div`
   align-items: center;
+  background: ${({ isDropdownOpen }) =>
+    isDropdownOpen
+      ? (props) => props.theme.colors.global.highlightPrimary
+      : (props) => props.theme.colors.global.backgroundPrimary};
   border-radius: 4px;
   color: ${(props) => props.theme.colors.global.textPrimary};
   cursor: pointer;
@@ -37,10 +41,7 @@ export const Wrapper = styled.div`
   width: auto;
 
   &:hover {
-    background: ${({ isDropdownOpen }) =>
-      isDropdownOpen
-        ? {}
-        : (props) => props.theme.colors.global.highlightPrimary};
+    background: ${(props) => props.theme.colors.global.highlightPrimary};
 
     & ${UserText} {
       color: ${(props) => props.theme.colors.global.highlightSecondary};
