@@ -32,9 +32,17 @@ export default function SideMenuHeader() {
               </Navigation.Item>
             </>
           ) : (
-            <Navigation.Item to="/" onClick={logout} border>
-              Sign Out
-            </Navigation.Item>
+            <>
+              <Navigation.Item
+                to={`/user/${user.id}`}
+                onClick={() => dispatch(setIsNavigationOpen())}
+              >
+                View Profile
+              </Navigation.Item>
+              <Navigation.Item to="/" onClick={logout} border>
+                Sign Out
+              </Navigation.Item>
+            </>
           )}
         </Navigation>
 

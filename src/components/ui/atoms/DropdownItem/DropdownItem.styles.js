@@ -29,7 +29,7 @@ export const ListItem = styled.li`
   height: 50px;
   justify-content: ${({ leftIcon, rightIcon }) =>
     leftIcon && rightIcon ? "space-between" : "flex-start"};
-  padding: 0.5rem;
+  padding: 0.4rem;
   transition: all 100ms linear;
   width: 100%;
   min-width: 100%;

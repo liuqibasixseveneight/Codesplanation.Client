@@ -10,6 +10,7 @@ import {
 import {
   Dropdown,
   Navigation,
+  SideMenuBody,
   SideMenuHeader,
   UserIndicator,
 } from "./molecules";
@@ -26,6 +27,7 @@ export {
   NavigationItem,
   NavigationMenu,
   SideMenu,
+  SideMenuBody,
   SideMenuHeader,
   ThemeToggle,
   UserIndicator,
