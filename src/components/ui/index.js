@@ -7,7 +7,12 @@ import {
   NavigationMenu,
   ThemeToggle,
 } from "./atoms";
-import { Dropdown, Navigation, UserIndicator } from "./molecules";
+import {
+  Dropdown,
+  Navigation,
+  SideMenuHeader,
+  UserIndicator,
+} from "./molecules";
 import { Header, SideMenu } from "./organisms";
 
 export {
@@ -21,6 +26,7 @@ export {
   NavigationItem,
   NavigationMenu,
   SideMenu,
+  SideMenuHeader,
   ThemeToggle,
   UserIndicator,
 };

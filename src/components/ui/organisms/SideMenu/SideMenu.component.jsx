@@ -1,16 +1,9 @@
 import React, { useContext } from "react"; // TODO: Rework into redux toolkit
-import { useDispatch, useSelector } from "react-redux";
-import { MdClose as CloseIcon } from "react-icons/md";
+import { useSelector } from "react-redux";
 
 import { AuthContext } from "../../../../context/auth"; // TODO: Rework into redux toolkit
-import { setIsNavigationOpen } from "../../../../redux/slices/navigationSlice";
-import {
-  IconWrapper,
-  SideHeader,
-  WidthWrapper,
-  Wrapper,
-} from "./SideMenu.styles";
-import { Navigation, UserIndicator } from "../../index";
+import { SideMenuHeader } from "../../index";
+import { WidthWrapper, Wrapper } from "./SideMenu.styles";
 
 export default function SideMenu() {
   const { user } = useContext(AuthContext); // TODO: Rework into redux toolkit
@@ -19,21 +12,18 @@ export default function SideMenu() {
       return state.navigation.isNavigationOpen;
     }
   });
-  const dispatch = useDispatch();
 
   return (
     <>
       <Wrapper isNavigationOpen={isNavigationOpen}>
         <WidthWrapper>
-          <SideHeader>
-            <Navigation margin="0 0.4rem">
-              <UserIndicator left user={user} />
-            </Navigation>
+          <SideMenuHeader />
 
-            <IconWrapper onClick={() => dispatch(setIsNavigationOpen())}>
-              <CloseIcon />
-            </IconWrapper>
-          </SideHeader>
+          <h2>
+            {user
+              ? `Hi, ${user.username}! where are we going?`
+              : "Hi there! Where are we going?"}
+          </h2>
         </WidthWrapper>
       </Wrapper>
     </>
