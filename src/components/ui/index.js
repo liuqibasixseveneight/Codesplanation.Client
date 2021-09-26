@@ -4,6 +4,7 @@ import {
   DropdownItem,
   Logo,
   NavigationItem,
+  NavigationMenu,
   ThemeToggle,
 } from "./atoms";
 import { Dropdown, Navigation, UserIndicator } from "./molecules";
@@ -18,6 +19,7 @@ export {
   Logo,
   Navigation,
   NavigationItem,
+  NavigationMenu,
   SideMenu,
   ThemeToggle,
   UserIndicator,
