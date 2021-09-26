@@ -10,22 +10,18 @@ import {
   WidthWrapper,
   Wrapper,
 } from "./Header.styles";
-import { Logo, Navigation, ThemeToggle } from "../../index";
+import { Logo, Navigation, UserIndicator } from "../../index";
 import { useWindowSize } from "../../../../hooks";
 import { setIsNavigationOpen } from "../../../../redux/slices/navigationSlice";
 
 export default function Header() {
-  const { user, logout } = useContext(AuthContext); // TODO: Rework into redux toolkit
+  const { user } = useContext(AuthContext); // TODO: Rework into redux toolkit
   const size = useWindowSize();
   const dispatch = useDispatch();
 
   const menuBar = user ? (
     <Navigation margin="0 0.8rem">
-      <p>{user.username}</p>
-
-      <Navigation.Item to="/" onClick={logout}>
-        Sign Out
-      </Navigation.Item>
+      <UserIndicator user={user} />
     </Navigation>
   ) : (
     <Navigation margin="0 0.8rem">
@@ -42,10 +38,8 @@ export default function Header() {
         <WidthWrapper>
           <LogoWrapper>
             <NavLink to="/">
-              <Logo />
+              <Logo margin="0 0 0 0.8rem" />
             </NavLink>
-
-            <ThemeToggle />
           </LogoWrapper>
 
           {size.width <= 1024 ? (
