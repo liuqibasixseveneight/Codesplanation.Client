@@ -1,7 +1,5 @@
 import React, { useContext } from "react"; // TODO: Rework into redux toolkit
 import { NavLink } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { BiMenuAltRight as MenuIcon } from "react-icons/bi";
 
 import { AuthContext } from "../../../../context/auth"; // TODO: Rework into redux toolkit
 import {
@@ -12,12 +10,10 @@ import {
 } from "./Header.styles";
 import { Logo, Navigation, NavigationMenu, UserIndicator } from "../../index";
 import { useWindowSize } from "../../../../hooks";
-import { setIsNavigationOpen } from "../../../../redux/slices/navigationSlice";
 
 export default function Header() {
   const { user } = useContext(AuthContext); // TODO: Rework into redux toolkit
   const size = useWindowSize();
-  const dispatch = useDispatch();
 
   const menuBar = user ? (
     <Navigation margin="0 0.8rem">
