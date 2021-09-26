@@ -10,7 +10,7 @@ import {
   WidthWrapper,
   Wrapper,
 } from "./Header.styles";
-import { Logo, Navigation, ThemeToggle, UserIndicator } from "../../index";
+import { Logo, Navigation, UserIndicator } from "../../index";
 import { useWindowSize } from "../../../../hooks";
 import { setIsNavigationOpen } from "../../../../redux/slices/navigationSlice";
 
@@ -40,8 +40,6 @@ export default function Header() {
             <NavLink to="/">
               <Logo margin="0 0 0 0.8rem" />
             </NavLink>
-
-            <ThemeToggle />
           </LogoWrapper>
 
           {size.width <= 1024 ? (

@@ -17,6 +17,11 @@ export default function UserIndicator({ user }) {
       return state.dropdown.isDropdownOpen;
     }
   });
+  const isGlobalThemeDark = useSelector((state) => {
+    if (state.globalTheme) {
+      return state.globalTheme.isGlobalThemeDark;
+    }
+  });
   const dispatch = useDispatch();
 
   return (
@@ -27,27 +32,33 @@ export default function UserIndicator({ user }) {
       >
         <UserAvatar />
         <UserText>{user.username}</UserText>
-
-        {isDropdownOpen && (
-          <Dropdown user={user}>
-            <Dropdown.Item
-              to={`/user/${user.id}`}
-              leftIcon={<ViewProfileIcon />}
-            >
-              View Profile
-            </Dropdown.Item>
-            <Dropdown.Item onClick={logout} leftIcon={<SignOutIcon />}>
-              Sign Out
-            </Dropdown.Item>
-
-            <Dropdown.Break />
-
-            <Dropdown.Item leftIcon={<ThemeIcon />}>
-              Theme: <ThemeToggle />
-            </Dropdown.Item>
-          </Dropdown>
-        )}
       </Wrapper>
+
+      {isDropdownOpen && (
+        <Dropdown user={user}>
+          <Dropdown.Item
+            to={`/user/${user.id}`}
+            navlink
+            leftIcon={<ViewProfileIcon />}
+          >
+            View Profile
+          </Dropdown.Item>
+          <Dropdown.Item onClick={logout} navlink leftIcon={<SignOutIcon />}>
+            Sign Out
+          </Dropdown.Item>
+
+          <Dropdown.Break />
+
+          <Dropdown.Item
+            leftIcon={<ThemeIcon />}
+            rightIcon={
+              <ThemeToggle id="theme-toggle" isOn={isGlobalThemeDark} />
+            }
+          >
+            Theme:
+          </Dropdown.Item>
+        </Dropdown>
+      )}
     </>
   );
 }

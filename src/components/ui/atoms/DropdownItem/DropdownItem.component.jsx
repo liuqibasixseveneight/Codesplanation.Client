@@ -5,18 +5,31 @@ import {
   LeftIcon,
   ListItem,
   RightIcon,
+  StyledSpan,
   Text,
   Wrapper,
 } from "./DropdownItem.styles";
 
 export default function DropdownItem({
   children,
-  goToMenu,
   leftIcon,
+  navlink,
   onClick,
   rightIcon,
   to,
 }) {
+  if (!navlink) {
+    return (
+      <StyledSpan onClick={onClick} to={to}>
+        <ListItem leftIcon={leftIcon} rightIcon={rightIcon}>
+          <LeftIcon>{leftIcon && leftIcon}</LeftIcon>
+          <Text>{children}</Text>
+          <RightIcon>{rightIcon && rightIcon}</RightIcon>
+        </ListItem>
+      </StyledSpan>
+    );
+  }
+
   return (
     <>
       <Wrapper onClick={onClick} to={to}>
@@ -32,11 +45,11 @@ export default function DropdownItem({
 
 DropdownItem.propTypes = {
   // What represents the children?
-  children: PropTypes.string.isRequired,
-  // Does the item need to redirect to a menu?
-  goToMenu: PropTypes.string,
+  children: PropTypes.node.isRequired,
   // Does the item need a left icon?
   leftIcon: PropTypes.node,
+  // Does the item need to redirect?
+  navlink: PropTypes.bool,
   // Set an optional click handler?
   onClick: PropTypes.func,
   // Does the item need a right icon?
@@ -47,8 +60,8 @@ DropdownItem.propTypes = {
 
 DropdownItem.defaultProps = {
   children: null,
-  goToMenu: null,
   leftIcon: null,
+  navlink: false,
   onClick: null,
   rightIcon: null,
   to: "/",

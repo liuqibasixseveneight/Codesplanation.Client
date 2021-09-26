@@ -6,13 +6,13 @@ import { DropdownItem } from "../../index";
 
 const DropdownGroupContext = createContext();
 
-function Item({ children, goToMenu, leftIcon, onClick, rightIcon, to }) {
+function Item({ children, leftIcon, navlink, onClick, rightIcon, to }) {
   return (
     <>
       <DropdownItem
         onClick={onClick}
-        goToMenu={goToMenu}
         leftIcon={leftIcon}
+        navlink={navlink}
         rightIcon={rightIcon}
         to={to}
       >
@@ -48,21 +48,24 @@ export default function Dropdown({ children, user, ...props }) {
 }
 
 Dropdown.propTypes = {
+  // What represents the children?
+  children: PropTypes.node.isRequired,
   // What represents the user?
   user: PropTypes.object.isRequired,
 };
 
 Dropdown.defaultProps = {
+  children: null,
   user: {},
 };
 
 Item.propTypes = {
   // What represents the children?
-  children: PropTypes.string.isRequired,
-  // Does the item need to redirect to a menu?
-  goToMenu: PropTypes.string,
+  children: PropTypes.node.isRequired,
   // Does the item need a left icon?
   leftIcon: PropTypes.node,
+  // Does the item need to redirect?
+  navlink: PropTypes.bool,
   // Set an optional click handler?
   onClick: PropTypes.func,
   // Does the item need a right icon?
@@ -73,8 +76,8 @@ Item.propTypes = {
 
 Item.defaultProps = {
   children: null,
-  goToMenu: null,
   leftIcon: null,
+  navlink: false,
   onClick: null,
   rightIcon: null,
   to: "/",

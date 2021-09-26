@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Button, Checkbox, Label, ScaleSwitch } from "./ThemeToggle.styles";
 import { setIsGlobalThemeDark } from "../../../../redux/slices/globalThemeSlice";
 
-export default function ThemeToggle({ isOn, onColor }) {
+export default function ThemeToggle({ id, isOn, onColor }) {
   const isGlobalThemeDark = useSelector((state) => {
     if (state.globalTheme) {
       return state.globalTheme.isGlobalThemeDark;
@@ -18,12 +18,12 @@ export default function ThemeToggle({ isOn, onColor }) {
       <ScaleSwitch>
         <Checkbox
           checked={isOn}
-          id={`theme-toggle`}
+          id={id}
           onChange={() => dispatch(setIsGlobalThemeDark())}
           type="checkbox"
         />
         <Label
-          htmlFor={`theme-toggle`}
+          htmlFor={id}
           isGlobalThemeDark={isGlobalThemeDark}
           style={{ background: isOn && onColor }}
         >
@@ -35,6 +35,8 @@ export default function ThemeToggle({ isOn, onColor }) {
 }
 
 ThemeToggle.propTypes = {
+  // What is the unique id?
+  id: PropTypes.string,
   // When is the toggle status true?
   isOn: PropTypes.bool,
   // What colour should it be when the status is true?
@@ -42,6 +44,7 @@ ThemeToggle.propTypes = {
 };
 
 ThemeToggle.defaultProps = {
+  id: null,
   isOn: null,
   onColor: null,
 };

@@ -11,6 +11,15 @@ export const Wrapper = styled(NavLink).attrs({ activeClassName })`
   min-width: 100%;
 `;
 
+export const StyledSpan = styled.span`
+  color: ${(props) => props.theme.colors.global.textPrimary};
+  fill: ${(props) => props.theme.colors.global.textPrimary};
+  stroke: ${(props) => props.theme.colors.global.textPrimary};
+  transition: all 100ms linear;
+  width: 100%;
+  min-width: 100%;
+`;
+
 export const ListItem = styled.li`
   align-items: center;
   background: ${(props) => props.theme.colors.global.backgroundPrimary};
