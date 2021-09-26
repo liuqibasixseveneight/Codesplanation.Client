@@ -21,7 +21,7 @@ export const Heading = styled.h2`
   font-family: "RalewayBold";
   font-size: 2rem;
   font-weight: 700;
-  padding: 1.6rem;
+  padding: 8vh 0 4vh 0;
   transition: all 100ms linear;
 `;
 
