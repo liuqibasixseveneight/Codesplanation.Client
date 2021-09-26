@@ -1,9 +1,14 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { IoMdCloseCircleOutline as CloseIcon } from "react-icons/io";
+import { MdClose as CloseIcon } from "react-icons/md";
 
 import { setIsNavigationOpen } from "../../../../redux/slices/navigationSlice";
-import { WidthWrapper, Wrapper } from "./SideMenu.styles";
+import {
+  IconWrapper,
+  SideHeader,
+  WidthWrapper,
+  Wrapper,
+} from "./SideMenu.styles";
 
 export default function Navigation() {
   const isNavigationOpen = useSelector((state) => {
@@ -17,9 +22,11 @@ export default function Navigation() {
     <>
       <Wrapper isNavigationOpen={isNavigationOpen}>
         <WidthWrapper>
-          <button onClick={() => dispatch(setIsNavigationOpen())}>
-            Close SideMenu
-          </button>
+          <SideHeader>
+            <IconWrapper onClick={() => dispatch(setIsNavigationOpen())}>
+              <CloseIcon />
+            </IconWrapper>
+          </SideHeader>
         </WidthWrapper>
       </Wrapper>
     </>
