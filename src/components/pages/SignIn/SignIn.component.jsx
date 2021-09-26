@@ -4,6 +4,7 @@ import gql from "graphql-tag";
 
 import { AuthContext } from "../../../context/auth"; // TODO: Rework into redux toolkit
 import { useForm } from "../../../hooks";
+import { Form } from "../../ui";
 import { Wrapper } from "./SignIn.styles";
 
 export default function SignIn({ history }) {

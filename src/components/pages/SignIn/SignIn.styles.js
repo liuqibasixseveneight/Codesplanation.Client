@@ -6,4 +6,5 @@ export const Wrapper = styled.div`
   min-height: calc(100vh - 100px);
   position: relative;
   transition: all 100ms linear;
+  width: 100%;
 `;

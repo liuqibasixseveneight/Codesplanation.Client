@@ -5,10 +5,12 @@ import {
   Logo,
   NavigationItem,
   NavigationMenu,
+  Text,
   ThemeToggle,
 } from "./atoms";
 import {
   Dropdown,
+  Form,
   Navigation,
   SideMenuBody,
   SideMenuHeader,
@@ -21,6 +23,7 @@ export {
   Button,
   Dropdown,
   DropdownItem,
+  Form,
   Header,
   Logo,
   Navigation,
@@ -29,6 +32,7 @@ export {
   SideMenu,
   SideMenuBody,
   SideMenuHeader,
+  Text,
   ThemeToggle,
   UserIndicator,
 };
