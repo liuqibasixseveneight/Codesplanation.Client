@@ -50,11 +50,11 @@ export const LeftIcon = styled.span`
     max-height: 25px;
     min-height: 25px;
     margin-right: 0.8rem;
+    stroke: ${(props) => props.theme.colors.global.textPrimary};
+    transition: all 100ms linear;
     width: 25px;
     max-width: 25px;
     min-width: 25px;
-    stroke: ${(props) => props.theme.colors.global.textPrimary};
-    transition: all 100ms linear;
   }
 `;
 
@@ -81,10 +81,10 @@ export const RightIcon = styled.span`
     max-height: 25px;
     min-height: 25px;
     margin-right: 0.8rem;
+    stroke: ${(props) => props.theme.colors.global.textPrimary};
+    transition: all 100ms linear;
     width: 25px;
     max-width: 25px;
     min-width: 25px;
-    stroke: ${(props) => props.theme.colors.global.textPrimary};
-    transition: all 100ms linear;
   }
 `;

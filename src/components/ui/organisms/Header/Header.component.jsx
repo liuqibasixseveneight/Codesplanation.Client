@@ -10,7 +10,7 @@ import {
   WidthWrapper,
   Wrapper,
 } from "./Header.styles";
-import { Logo, Navigation, UserIndicator } from "../../index";
+import { Logo, Navigation, NavigationMenu, UserIndicator } from "../../index";
 import { useWindowSize } from "../../../../hooks";
 import { setIsNavigationOpen } from "../../../../redux/slices/navigationSlice";
 
@@ -43,11 +43,7 @@ export default function Header() {
           </LogoWrapper>
 
           {size.width <= 1024 ? (
-            <div onClick={() => dispatch(setIsNavigationOpen())}>
-              <MenuIcon
-                style={{ height: "80px", width: "80px", fill: "red" }}
-              />
-            </div>
+            <NavigationMenu />
           ) : (
             <NavigationSpacer>
               <Navigation margin="0 0.8rem">
