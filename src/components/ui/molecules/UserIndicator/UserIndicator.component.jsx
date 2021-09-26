@@ -10,7 +10,7 @@ import { AuthContext } from "../../../../context/auth";
 import { Dropdown, ThemeToggle } from "../../index";
 import { UserAvatar, UserText, Wrapper } from "./UserIndicator.styles";
 
-export default function UserIndicator({ user }) {
+export default function UserIndicator({ left, user }) {
   const { logout } = useContext(AuthContext); // TODO: Rework into redux toolkit
   const isDropdownOpen = useSelector((state) => {
     if (state.dropdown) {
@@ -35,7 +35,7 @@ export default function UserIndicator({ user }) {
       </Wrapper>
 
       {isDropdownOpen && (
-        <Dropdown user={user}>
+        <Dropdown left={left} user={user}>
           <Dropdown.Item
             onClick={() => dispatch(setIsDropdownOpen())}
             to={`/user/${user.id}`}
@@ -72,10 +72,13 @@ export default function UserIndicator({ user }) {
 }
 
 UserIndicator.propTypes = {
+  // Does it need to render on the left?
+  left: PropTypes.bool,
   // What represents the user?
   user: PropTypes.object.isRequired,
 };
 
 UserIndicator.defaultProps = {
+  left: false,
   user: {},
 };

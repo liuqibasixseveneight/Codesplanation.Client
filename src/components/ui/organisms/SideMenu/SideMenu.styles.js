@@ -3,7 +3,7 @@ import styled from "styled-components";
 // const activeClassName = "nav-item-active"; // NavLink: activeClassName
 
 export const Wrapper = styled.div`
-  background: ${(props) => props.theme.colors.global.backgroundSecondary};
+  background: ${(props) => props.theme.colors.global.backgroundPrimary};
   height: 100vh;
   max-height: 100vh;
   min-height: 100vh;
@@ -35,14 +35,14 @@ export const SideHeader = styled.div`
   height: 100px;
   max-height: 100px;
   min-height: 100px;
-  justify-content: flex-end;
+  justify-content: space-between;
   transition: all 100ms linear;
   width: 100%;
 `;
 
 export const IconWrapper = styled.div`
   align-items: center;
-  background: ${(props) => props.theme.colors.global.backgroundSecondary};
+  background: ${(props) => props.theme.colors.global.backgroundPrimary};
   border-radius: 8px;
   cursor: pointer;
   display: flex;
