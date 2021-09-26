@@ -21,7 +21,7 @@ export const Heading = styled.h2`
   font-family: "RalewayBold";
   font-size: 2rem;
   font-weight: 700;
-  padding: 8vh 0 4vh 0;
+  padding: 8vh 0;
   transition: all 100ms linear;
 `;
 
@@ -30,5 +30,12 @@ export const StyledLink = styled(Link)`
   font-family: "RalewayExtraBold";
   font-size: 2rem;
   font-weight: 800;
+  transition: all 100ms linear;
+`;
+
+export const NavigationWrapper = styled.div`
+  border: 2px solid ${(props) => props.theme.colors.global.highlightPrimary};
+  border-radius: 8px;
+  padding: 0.8rem;
   transition: all 100ms linear;
 `;
