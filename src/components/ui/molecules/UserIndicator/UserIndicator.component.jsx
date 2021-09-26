@@ -1,31 +1,67 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
-import { FiLogOut as SignOutIcon } from "react-icons/fi";
+import { CgProfile as ViewProfileIcon } from "react-icons/cg";
+import {
+  IoLogOutOutline as SignOutIcon,
+  IoChevronForward as ForwardChevronIcon,
+} from "react-icons/io5";
+import { MdInvertColors as ThemeIcon } from "react-icons/md";
 
+import { AuthContext } from "../../../../context/auth";
+import { Dropdown } from "../index";
 import { UserAvatar, UserText, Wrapper } from "./UserIndicator.styles";
 
-export default function UserIndicator({ onClick, to, user: { username } }) {
+export default function UserIndicator({ user }) {
+  const { logout } = useContext(AuthContext); // TODO: Rework into redux toolkit
+  const isGlobalThemeDark = useSelector((state) => {
+    if (state.globalTheme) {
+      return state.globalTheme.isGlobalThemeDark;
+    }
+  });
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   return (
     <>
-      <Wrapper onClick={onClick} to={to}>
+      <Wrapper
+        onClick={() => setIsDropdownOpen((isDropdownOpen) => !isDropdownOpen)}
+        isDropdownOpen={isDropdownOpen}
+      >
         <UserAvatar />
-        <UserText>{username}</UserText>
+        <UserText>{user.username}</UserText>
+
+        {isDropdownOpen && (
+          <Dropdown user={user}>
+            <Dropdown.Item
+              to={`/user/${user.id}`}
+              leftIcon={<ViewProfileIcon />}
+            >
+              View Profile
+            </Dropdown.Item>
+            <Dropdown.Item onClick={logout} leftIcon={<SignOutIcon />}>
+              Sign Out
+            </Dropdown.Item>
+
+            <Dropdown.Break />
+
+            <Dropdown.Item
+              leftIcon={<ThemeIcon />}
+              rightIcon={<ForwardChevronIcon />}
+            >
+              Theme: {isGlobalThemeDark ? `Dark` : `Light`}
+            </Dropdown.Item>
+          </Dropdown>
+        )}
       </Wrapper>
     </>
   );
 }
 
 UserIndicator.propTypes = {
-  // What function should be triggered when clicked?
-  onClick: PropTypes.func,
-  // Where should the NavLink path to?
-  to: PropTypes.string.isRequired,
-  // What should represent the user?
+  // What represents the user?
   user: PropTypes.object.isRequired,
 };
 
 UserIndicator.defaultProps = {
-  onClick: null,
-  to: "/",
   user: {},
 };

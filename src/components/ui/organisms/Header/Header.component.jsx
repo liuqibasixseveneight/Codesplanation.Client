@@ -15,17 +15,13 @@ import { useWindowSize } from "../../../../hooks";
 import { setIsNavigationOpen } from "../../../../redux/slices/navigationSlice";
 
 export default function Header() {
-  const { user, logout } = useContext(AuthContext); // TODO: Rework into redux toolkit
+  const { user } = useContext(AuthContext); // TODO: Rework into redux toolkit
   const size = useWindowSize();
   const dispatch = useDispatch();
 
   const menuBar = user ? (
     <Navigation margin="0 0.8rem">
-      <UserIndicator to={`user/${user.id}`} user={user} />
-
-      <Navigation.Item to="/" onClick={logout}>
-        Sign Out
-      </Navigation.Item>
+      <UserIndicator user={user} />
     </Navigation>
   ) : (
     <Navigation margin="0 0.8rem">

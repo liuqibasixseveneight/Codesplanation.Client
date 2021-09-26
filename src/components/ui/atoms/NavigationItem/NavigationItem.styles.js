@@ -25,6 +25,7 @@ export const Border = styled.div`
   cursor: pointer;
   display: flex;
   font-family: "RalewaySemiBold";
+  font-weight: 600;
   height: 100%;
   justify-content: center;
   padding: 0.8rem 1.4rem;

@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
-const activeClassName = "nav-items-active"; // NavLink: activeClassName
 
 export const UserAvatar = styled.div`
   background: pink;
@@ -24,7 +22,7 @@ export const UserText = styled.span`
   transition: all 100ms linear;
 `;
 
-export const Wrapper = styled(NavLink).attrs({ activeClassName })`
+export const Wrapper = styled.div`
   align-items: center;
   border-radius: 4px;
   color: ${(props) => props.theme.colors.global.textPrimary};
@@ -33,12 +31,16 @@ export const Wrapper = styled(NavLink).attrs({ activeClassName })`
   height: 100%;
   justify-content: center;
   padding: 0.8rem 1.4rem;
+  position: relative;
   margin: 0 0.4rem;
   transition: all 100ms linear;
   width: auto;
 
   &:hover {
-    background: ${(props) => props.theme.colors.global.highlightPrimary};
+    background: ${({ isDropdownOpen }) =>
+      isDropdownOpen
+        ? {}
+        : (props) => props.theme.colors.global.highlightPrimary};
 
     & ${UserText} {
       color: ${(props) => props.theme.colors.global.highlightSecondary};
