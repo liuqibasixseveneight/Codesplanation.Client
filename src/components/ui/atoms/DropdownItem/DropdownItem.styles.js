@@ -13,6 +13,7 @@ export const Wrapper = styled(NavLink).attrs({ activeClassName })`
 
 export const StyledSpan = styled.span`
   color: ${(props) => props.theme.colors.global.textPrimary};
+  cursor: default;
   fill: ${(props) => props.theme.colors.global.textPrimary};
   stroke: ${(props) => props.theme.colors.global.textPrimary};
   transition: all 100ms linear;

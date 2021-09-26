@@ -37,13 +37,21 @@ export default function UserIndicator({ user }) {
       {isDropdownOpen && (
         <Dropdown user={user}>
           <Dropdown.Item
+            onClick={() => dispatch(setIsDropdownOpen())}
             to={`/user/${user.id}`}
             navlink
             leftIcon={<ViewProfileIcon />}
           >
             View Profile
           </Dropdown.Item>
-          <Dropdown.Item onClick={logout} navlink leftIcon={<SignOutIcon />}>
+          <Dropdown.Item
+            onClick={() => {
+              logout();
+              dispatch(setIsDropdownOpen());
+            }}
+            navlink
+            leftIcon={<SignOutIcon />}
+          >
             Sign Out
           </Dropdown.Item>
 
