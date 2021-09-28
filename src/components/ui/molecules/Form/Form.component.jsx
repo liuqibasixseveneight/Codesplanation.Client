@@ -6,13 +6,25 @@ import { FormInput } from "../../index";
 
 const FormGroupContext = createContext();
 
-function Input({ name, label, onChange, placeholder, type, value, width }) {
+function Input({
+  error,
+  name,
+  label,
+  onChange,
+  onSubmit,
+  placeholder,
+  type,
+  value,
+  width,
+}) {
   return (
     <>
       <FormInput
+        error={error}
         name={name}
         label={label}
         onChange={onChange}
+        onSubmit={onSubmit}
         placeholder={placeholder}
         type={type}
         value={value}
@@ -61,12 +73,16 @@ Form.defaultProps = {
 };
 
 FormInput.propTypes = {
+  // What results in an error?
+  error: PropTypes.func,
   // What is the unique id, name and label identifier?
   name: PropTypes.string,
   // What function should be triggered when changed?
   onChange: PropTypes.func,
   // What function should be triggered when clicked?
   onClick: PropTypes.func,
+  // What function should be triggered when submitted?
+  onSubmit: PropTypes.func,
   // Should there be placeholder text?
   placeholder: PropTypes.string,
   // What kind of input should be rendered?
@@ -78,9 +94,11 @@ FormInput.propTypes = {
 };
 
 FormInput.defaultProps = {
+  error: null,
   name: null,
   onChange: null,
   onClick: null,
+  onSubmit: null,
   placeholder: null,
   type: "text",
   value: null,

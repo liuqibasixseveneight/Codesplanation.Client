@@ -17,6 +17,8 @@ export const StyledInput = styled.input`
   appearance: none;
   background: ${(props) => props.theme.colors.global.backgroundPrimary};
   border: 2px solid ${(props) => props.theme.colors.global.highlightPrimary};
+  border-color: ${({ error, ...props }) =>
+    error ? "tomato" : props.theme.colors.global.highlightPrimary};
   border-radius: 8px;
   color: ${(props) => props.theme.colors.global.textPrimary};
   height: 2.2rem;
@@ -173,6 +175,8 @@ export const StyledInput = styled.input`
 
   &:focus {
     border: 2px solid ${(props) => props.theme.colors.global.highlightPrimary};
+    border-color: ${({ error, ...props }) =>
+      error ? "tomato" : props.theme.colors.global.highlightPrimary};
     box-shadow: 0 0 5px ${(props) => props.theme.colors.global.highlightPrimary};
     outline: none !important;
     transition: all 100ms linear;

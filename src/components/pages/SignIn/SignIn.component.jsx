@@ -50,7 +50,7 @@ export default function SignIn({ history }) {
                 name="username"
                 value={values.username}
                 onChange={onChange}
-                style={errors.username ? { borderColor: "tomato" } : {}}
+                error={errors.username}
               />
 
               <Form.Input
@@ -59,7 +59,7 @@ export default function SignIn({ history }) {
                 name="password"
                 value={values.password}
                 onChange={onChange}
-                style={errors.password ? { borderColor: "tomato" } : {}}
+                error={errors.password}
               />
 
               <Form.Input type="submit" onSubmit={onSubmit} value="Sign In" />

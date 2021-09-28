@@ -4,9 +4,11 @@ import PropTypes from "prop-types";
 import { StyledInput, StyledLabel, Wrapper } from "./FormInput.styles";
 
 export default function FormInput({
+  error,
   name,
   label,
   onChange,
+  onSubmit,
   placeholder,
   type,
   value,
@@ -16,9 +18,11 @@ export default function FormInput({
     <Wrapper>
       <StyledLabel htmlFor={name}>{label}</StyledLabel>
       <StyledInput
+        error={error}
         id={name}
         name={name}
         onChange={onChange}
+        onSubmit={onSubmit}
         placeholder={placeholder}
         type={type}
         value={value}
@@ -29,12 +33,16 @@ export default function FormInput({
 }
 
 FormInput.propTypes = {
+  // What results in an error?
+  error: PropTypes.func,
   // What is the unique id, name and label identifier?
   name: PropTypes.string,
   // What function should be triggered when changed?
   onChange: PropTypes.func,
   // What function should be triggered when clicked?
   onClick: PropTypes.func,
+  // What function should be triggered when submitted?
+  onSubmit: PropTypes.func,
   // Should there be placeholder text?
   placeholder: PropTypes.string,
   // What kind of input should be rendered?
@@ -46,9 +54,11 @@ FormInput.propTypes = {
 };
 
 FormInput.defaultProps = {
+  error: null,
   name: null,
   onChange: null,
   onClick: null,
+  onSubmit: null,
   placeholder: null,
   type: "text",
   value: null,
