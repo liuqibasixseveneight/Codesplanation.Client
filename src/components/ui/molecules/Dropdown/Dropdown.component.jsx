@@ -89,7 +89,7 @@ Dropdown.defaultProps = {
   user: {},
 };
 
-Item.propTypes = {
+DropdownItem.propTypes = {
   // What represents the children?
   children: PropTypes.node.isRequired,
   // Does the item need a left icon?
@@ -104,7 +104,7 @@ Item.propTypes = {
   to: PropTypes.string,
 };
 
-Item.defaultProps = {
+DropdownItem.defaultProps = {
   children: null,
   leftIcon: null,
   navlink: false,

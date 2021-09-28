@@ -4,7 +4,8 @@ import gql from "graphql-tag";
 
 import { AuthContext } from "../../../context/auth"; // TODO: Rework into redux toolkit
 import { useForm } from "../../../hooks";
-import { Form } from "../../ui";
+import { ContentWrapper } from "../../templates";
+import { Form, Text } from "../../ui";
 import { Wrapper } from "./SignIn.styles";
 
 export default function SignIn({ history }) {
@@ -34,22 +35,16 @@ export default function SignIn({ history }) {
   return (
     <>
       <Wrapper>
-        <h1>Sign In</h1>
+        <ContentWrapper>
+          <Text as="h1" heading>
+            Sign In
+          </Text>
 
-        <div style={{ display: "flex", flexDirection: "column" }}>
           {loading ? (
             <span>Loading..</span>
           ) : (
-            <form
-              onSubmit={onSubmit}
-              noValidate
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                maxWidth: "70%",
-              }}
-            >
-              <input
+            <Form onSubmit={onSubmit} noValidate>
+              <Form.Input
                 type="text"
                 placeholder="Username"
                 name="username"
@@ -58,7 +53,7 @@ export default function SignIn({ history }) {
                 style={errors.username ? { borderColor: "tomato" } : {}}
               />
 
-              <input
+              <Form.Input
                 type="password"
                 placeholder="Password"
                 name="password"
@@ -67,10 +62,8 @@ export default function SignIn({ history }) {
                 style={errors.password ? { borderColor: "tomato" } : {}}
               />
 
-              <button type="submit" onSubmit={onSubmit}>
-                Sign In
-              </button>
-            </form>
+              <Form.Input type="submit" onSubmit={onSubmit} value="Sign In" />
+            </Form>
           )}
 
           {Object.keys(errors).length > 0 && (
@@ -82,7 +75,7 @@ export default function SignIn({ history }) {
               </ul>
             </div>
           )}
-        </div>
+        </ContentWrapper>
       </Wrapper>
     </>
   );

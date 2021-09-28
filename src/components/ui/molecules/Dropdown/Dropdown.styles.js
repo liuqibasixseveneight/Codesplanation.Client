@@ -24,7 +24,6 @@ export const Wrapper = styled.ul`
   overflow: hidden;
   padding: 0.8rem;
   position: absolute;
-  /* right: ${({ left }) => (left ? null : "0.8rem")}; */
   right: 0.8rem;
   top: calc(100px + 0.8rem);
   transition: all 100ms linear, height 500ms ease;
