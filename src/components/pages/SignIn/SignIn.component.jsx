@@ -4,6 +4,8 @@ import gql from "graphql-tag";
 
 import { AuthContext } from "../../../context/auth"; // TODO: Rework into redux toolkit
 import { useForm } from "../../../hooks";
+import { ContentWrapper } from "../../templates";
+import { ErrorList, Form, Text } from "../../ui";
 import { Wrapper } from "./SignIn.styles";
 
 export default function SignIn({ history }) {
@@ -33,55 +35,43 @@ export default function SignIn({ history }) {
   return (
     <>
       <Wrapper>
-        <h1>Sign In</h1>
+        <ContentWrapper>
+          <Text as="h1" heading>
+            Sign In
+          </Text>
 
-        <div style={{ display: "flex", flexDirection: "column" }}>
+          <Text as="p">Continue to Codesplanation</Text>
+
           {loading ? (
             <span>Loading..</span>
           ) : (
-            <form
-              onSubmit={onSubmit}
-              noValidate
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                maxWidth: "70%",
-              }}
-            >
-              <input
+            <Form onSubmit={onSubmit} noValidate>
+              <Form.Input
                 type="text"
                 placeholder="Username"
+                label="Username"
                 name="username"
                 value={values.username}
                 onChange={onChange}
-                style={errors.username ? { borderColor: "tomato" } : {}}
+                error={errors.username}
               />
 
-              <input
+              <Form.Input
                 type="password"
                 placeholder="Password"
+                label="Password"
                 name="password"
                 value={values.password}
                 onChange={onChange}
-                style={errors.password ? { borderColor: "tomato" } : {}}
+                error={errors.password}
               />
 
-              <button type="submit" onSubmit={onSubmit}>
-                Sign In
-              </button>
-            </form>
+              <Form.Input type="submit" onSubmit={onSubmit} value="Sign In" />
+            </Form>
           )}
 
-          {Object.keys(errors).length > 0 && (
-            <div style={{ background: "red" }}>
-              <ul>
-                {Object.values(errors).map((value) => (
-                  <li key={value}>{value}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
+          {loading ? null : errors && <ErrorList errors={errors} />}
+        </ContentWrapper>
       </Wrapper>
     </>
   );

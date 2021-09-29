@@ -4,6 +4,8 @@ import gql from "graphql-tag";
 
 import { AuthContext } from "../../../context/auth"; // TODO: Rework into redux toolkit
 import { useForm } from "../../../hooks";
+import { ContentWrapper } from "../../templates";
+import { ErrorList, Form, Text } from "../../ui";
 import { Wrapper } from "./SignUp.styles";
 
 export default function SignUp({ history }) {
@@ -35,73 +37,63 @@ export default function SignUp({ history }) {
   return (
     <>
       <Wrapper>
-        <h1>Sign Up</h1>
+        <ContentWrapper>
+          <Text as="h1" heading>
+            Create your Codesplanation account
+          </Text>
 
-        <div style={{ display: "flex", flexDirection: "column" }}>
+          <Text as="p">Sign Up and continue to Codesplanation</Text>
+
           {loading ? (
             <span>Loading..</span>
           ) : (
-            <form
-              onSubmit={onSubmit}
-              noValidate
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                maxWidth: "70%",
-              }}
-            >
-              <input
+            <Form onSubmit={onSubmit} noValidate>
+              <Form.Input
                 type="text"
                 placeholder="Username"
+                label="Username"
                 name="username"
                 value={values.username}
                 onChange={onChange}
-                style={errors.username ? { borderColor: "tomato" } : {}}
+                error={errors.username}
               />
 
-              <input
+              <Form.Input
                 type="text"
                 placeholder="Email"
+                label="Email"
                 name="email"
                 value={values.email}
                 onChange={onChange}
-                style={errors.email ? { borderColor: "tomato" } : {}}
+                error={errors.email}
               />
 
-              <input
+              <Form.Input
                 type="password"
                 placeholder="Password"
+                label="Password"
                 name="password"
                 value={values.password}
                 onChange={onChange}
-                style={errors.password ? { borderColor: "tomato" } : {}}
+                error={errors.password}
               />
 
-              <input
+              <Form.Input
                 type="password"
                 placeholder="Confirm Password"
+                label="Confirm Password"
                 name="confirmPassword"
                 value={values.confirmPassword}
                 onChange={onChange}
-                style={errors.confirmPassword ? { borderColor: "tomato" } : {}}
+                error={errors.confirmPassword}
               />
 
-              <button type="submit" onSubmit={onSubmit}>
-                Sign Up
-              </button>
-            </form>
+              <Form.Input type="submit" onSubmit={onSubmit} value="Sign Up" />
+            </Form>
           )}
 
-          {Object.keys(errors).length > 0 && (
-            <div style={{ background: "red" }}>
-              <ul>
-                {Object.values(errors).map((value) => (
-                  <li key={value}>{value}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
+          {loading ? null : errors && <ErrorList errors={errors} />}
+        </ContentWrapper>
       </Wrapper>
     </>
   );

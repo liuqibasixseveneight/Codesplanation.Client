@@ -1,4 +1,5 @@
 import React, { useContext } from "react"; // TODO: Rework into redux toolkit
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 import { AuthContext } from "../../../../context/auth"; // TODO: Rework into redux toolkit
@@ -8,12 +9,23 @@ import {
   WidthWrapper,
   Wrapper,
 } from "./Header.styles";
-import { Logo, Navigation, NavigationMenu, UserIndicator } from "../../index";
+import {
+  Logo,
+  Navigation,
+  NavigationMenu,
+  ThemeToggle,
+  UserIndicator,
+} from "../../index";
 import { useWindowSize } from "../../../../hooks";
 
 export default function Header() {
   const { user } = useContext(AuthContext); // TODO: Rework into redux toolkit
   const size = useWindowSize();
+  const isGlobalThemeDark = useSelector((state) => {
+    if (state.globalTheme) {
+      return state.globalTheme.isGlobalThemeDark;
+    }
+  });
 
   const menuBar = user ? (
     <Navigation margin="0 0.8rem">
@@ -36,6 +48,10 @@ export default function Header() {
             <NavLink to="/">
               <Logo margin="0 0 0 0.8rem" />
             </NavLink>
+
+            {!user && (
+              <ThemeToggle id="header-theme-toggle" isOn={isGlobalThemeDark} />
+            )}
           </LogoWrapper>
 
           {size.width <= 1024 ? (
