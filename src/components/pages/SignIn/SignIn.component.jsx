@@ -40,6 +40,8 @@ export default function SignIn({ history }) {
             Sign In
           </Text>
 
+          <Text as="p">Continue to Codesplanation</Text>
+
           {loading ? (
             <span>Loading..</span>
           ) : (
@@ -47,6 +49,7 @@ export default function SignIn({ history }) {
               <Form.Input
                 type="text"
                 placeholder="Username"
+                label="Username"
                 name="username"
                 value={values.username}
                 onChange={onChange}
@@ -56,6 +59,7 @@ export default function SignIn({ history }) {
               <Form.Input
                 type="password"
                 placeholder="Password"
+                label="Password"
                 name="password"
                 value={values.password}
                 onChange={onChange}
@@ -66,7 +70,7 @@ export default function SignIn({ history }) {
             </Form>
           )}
 
-          {errors && <ErrorList errors={errors} />}
+          {loading ? null : errors && <ErrorList errors={errors} />}
         </ContentWrapper>
       </Wrapper>
     </>

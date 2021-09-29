@@ -8,8 +8,8 @@ const FormGroupContext = createContext();
 
 function Input({
   error,
-  name,
   label,
+  name,
   onChange,
   onSubmit,
   placeholder,
@@ -75,12 +75,12 @@ Form.defaultProps = {
 FormInput.propTypes = {
   // What results in an error?
   error: PropTypes.func,
+  // What label text should be rendered?
+  label: PropTypes.string,
   // What is the unique id, name and label identifier?
   name: PropTypes.string,
   // What function should be triggered when changed?
   onChange: PropTypes.func,
-  // What function should be triggered when clicked?
-  onClick: PropTypes.func,
   // What function should be triggered when submitted?
   onSubmit: PropTypes.func,
   // Should there be placeholder text?
@@ -95,9 +95,9 @@ FormInput.propTypes = {
 
 FormInput.defaultProps = {
   error: null,
+  label: null,
   name: null,
   onChange: null,
-  onClick: null,
   onSubmit: null,
   placeholder: null,
   type: "text",

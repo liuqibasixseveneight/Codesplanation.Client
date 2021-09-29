@@ -3,13 +3,17 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin: 0 0 0.4rem 0;
+  margin: 0 0 0.8rem 0;
 `;
 
 export const StyledLabel = styled.label`
   color: ${(props) => props.theme.colors.global.textPrimary};
+  margin: 0 0 0.4rem 0;
+  text-align: start;
   transition: all 100ms linear;
+  width: 100%;
 `;
 
 export const StyledInput = styled.input`
