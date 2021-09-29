@@ -5,7 +5,7 @@ import gql from "graphql-tag";
 import { AuthContext } from "../../../context/auth"; // TODO: Rework into redux toolkit
 import { useForm } from "../../../hooks";
 import { ContentWrapper } from "../../templates";
-import { Form, Text } from "../../ui";
+import { ErrorList, Form, Text } from "../../ui";
 import { Wrapper } from "./SignIn.styles";
 
 export default function SignIn({ history }) {
@@ -66,15 +66,7 @@ export default function SignIn({ history }) {
             </Form>
           )}
 
-          {Object.keys(errors).length > 0 && (
-            <div style={{ background: "red" }}>
-              <ul>
-                {Object.values(errors).map((value) => (
-                  <li key={value}>{value}</li>
-                ))}
-              </ul>
-            </div>
-          )}
+          {errors && <ErrorList errors={errors} />}
         </ContentWrapper>
       </Wrapper>
     </>

@@ -1,6 +1,7 @@
 export { default as Anchor } from "./Anchor/Anchor.component";
 export { default as Button } from "./Button/Button.component";
 export { default as DropdownItem } from "./DropdownItem/DropdownItem.component";
+export { default as ErrorMessage } from "./ErrorMessage/ErrorMessage.component";
 export { default as FormInput } from "./FormInput/FormInput.component";
 export { default as Logo } from "./Logo/Logo.component";
 export { default as NavigationItem } from "./NavigationItem/NavigationItem.component";

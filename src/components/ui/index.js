@@ -2,6 +2,7 @@ import {
   Anchor,
   Button,
   DropdownItem,
+  ErrorMessage,
   FormInput,
   Logo,
   NavigationItem,
@@ -11,6 +12,7 @@ import {
 } from "./atoms";
 import {
   Dropdown,
+  ErrorList,
   Form,
   Navigation,
   SideMenuBody,
@@ -24,6 +26,8 @@ export {
   Button,
   Dropdown,
   DropdownItem,
+  ErrorList,
+  ErrorMessage,
   Form,
   FormInput,
   Header,

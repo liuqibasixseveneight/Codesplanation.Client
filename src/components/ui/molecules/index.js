@@ -1,4 +1,5 @@
 export { default as Dropdown } from "./Dropdown/Dropdown.component";
+export { default as ErrorList } from "./ErrorList/ErrorList.component";
 export { default as Form } from "./Form/Form.component";
 export { default as Navigation } from "./Navigation/Navigation.component";
 export { default as SideMenuBody } from "./SideMenuBody/SideMenuBody.component";
