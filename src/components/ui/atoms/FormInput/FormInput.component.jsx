@@ -34,7 +34,7 @@ export default function FormInput({
 
 FormInput.propTypes = {
   // What results in an error?
-  error: PropTypes.func,
+  error: PropTypes.string,
   // What label text should be rendered?
   label: PropTypes.string,
   // What is the unique id, name and label identifier?
