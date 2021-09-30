@@ -22,7 +22,7 @@ export default function SideMenuBody() {
           Hi{" "}
           {user ? (
             <StyledLink
-              to={`user/${user.id}`}
+              to={`/user&id=${user.id}`}
               onClick={() => dispatch(setIsNavigationOpen())}
             >
               {user.username}
