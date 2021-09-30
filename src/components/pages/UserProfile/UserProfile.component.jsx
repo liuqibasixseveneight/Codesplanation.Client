@@ -1,8 +1,7 @@
 import React from "react";
-import { useQuery } from "@apollo/client";
-import gql from "graphql-tag";
 
 import { ContentWrapper } from "../../templates";
+import { useGetUser } from "../../../hooks";
 import { Wrapper } from "./UserProfile.styles";
 
 export default function UserProfile({ match }) {
@@ -10,17 +9,19 @@ export default function UserProfile({ match }) {
     params: { userId },
   } = match;
 
-  const { loading, data: { getUser: user } = {}, error } = useQuery(
-    GET_USER_QUERY,
-    {
-      variables: {
-        userId,
-      },
-    }
-  );
+  const { loading, data: { getUser: user } = {}, error } = useGetUser(userId);
 
   if (error) {
-    return <span>Error!: {error}</span>;
+    return (
+      <>
+        <Wrapper>
+          <ContentWrapper>
+            <h1>User Profile</h1>
+            <h2>Error!: {error}</h2>
+          </ContentWrapper>
+        </Wrapper>
+      </>
+    );
   }
 
   return (
@@ -51,14 +52,3 @@ export default function UserProfile({ match }) {
     </>
   );
 }
-
-const GET_USER_QUERY = gql`
-  query($userId: ID!) {
-    getUser(userId: $userId) {
-      createdAt
-      email
-      id
-      username
-    }
-  }
-`;

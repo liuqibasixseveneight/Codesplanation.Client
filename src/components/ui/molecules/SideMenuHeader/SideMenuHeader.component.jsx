@@ -34,7 +34,7 @@ export default function SideMenuHeader() {
           ) : (
             <>
               <Navigation.Item
-                to={`/user/${user.id}`}
+                to={`/user&id=${user.id}`}
                 onClick={() => dispatch(setIsNavigationOpen())}
               >
                 View Profile
