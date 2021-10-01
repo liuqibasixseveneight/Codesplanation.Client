@@ -15,11 +15,12 @@ import {
   ErrorList,
   Form,
   Navigation,
+  Post,
   SideMenuBody,
   SideMenuHeader,
   UserIndicator,
 } from "./molecules";
-import { Header, SideMenu } from "./organisms";
+import { Header, PostList, SideMenu } from "./organisms";
 
 export {
   Anchor,
@@ -35,6 +36,8 @@ export {
   Navigation,
   NavigationItem,
   NavigationMenu,
+  Post,
+  PostList,
   SideMenu,
   SideMenuBody,
   SideMenuHeader,
