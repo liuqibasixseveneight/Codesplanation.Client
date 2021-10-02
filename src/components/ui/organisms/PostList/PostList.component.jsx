@@ -22,19 +22,21 @@ export default function PostList() {
             ({
               id,
               body,
-              username,
+              commentCount,
               createdAt,
               likeCount,
-              commentCount,
+              title,
+              username,
               ...props
             }) => (
               <Post
                 key={id}
                 body={body}
-                username={username}
+                commentCount={commentCount}
                 createdAt={createdAt}
                 likeCount={likeCount}
-                commentCount={commentCount}
+                title={title}
+                username={username}
                 {...props}
               />
             )

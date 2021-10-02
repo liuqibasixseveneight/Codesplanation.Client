@@ -6,5 +6,7 @@ export { default as FormInput } from "./FormInput/FormInput.component";
 export { default as Logo } from "./Logo/Logo.component";
 export { default as NavigationItem } from "./NavigationItem/NavigationItem.component";
 export { default as NavigationMenu } from "./NavigationMenu/NavigationMenu.component";
+export { default as PostBody } from "./PostBody/PostBody.component";
+export { default as PostTitle } from "./PostTitle/PostTitle.component";
 export { default as Text } from "./Text/Text.component";
 export { default as ThemeToggle } from "./ThemeToggle/ThemeToggle.component";

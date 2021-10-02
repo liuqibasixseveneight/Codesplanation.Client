@@ -7,6 +7,8 @@ import {
   Logo,
   NavigationItem,
   NavigationMenu,
+  PostBody,
+  PostTitle,
   Text,
   ThemeToggle,
 } from "./atoms";
@@ -37,7 +39,9 @@ export {
   NavigationItem,
   NavigationMenu,
   Post,
+  PostBody,
   PostList,
+  PostTitle,
   SideMenu,
   SideMenuBody,
   SideMenuHeader,

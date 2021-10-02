@@ -3,8 +3,8 @@ import { useDispatch } from "react-redux";
 import PropTypes from "prop-types";
 
 import { setIsDropdownOpen } from "../../../../redux/slices/dropdownSlice";
-import { HorizontalBreak, Wrapper } from "./Dropdown.styles";
 import { DropdownItem } from "../../index";
+import { HorizontalBreak, Wrapper } from "./Dropdown.styles";
 
 const DropdownGroupContext = createContext();
 
