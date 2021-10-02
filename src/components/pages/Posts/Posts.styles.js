@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  height: calc(100vh - 100px);
-  max-height: calc(100vh - 100px);
+  background: ${(props) => props.theme.colors.global.backgroundPrimary};
+  height: 100%;
   min-height: calc(100vh - 100px);
   position: relative;
   transition: all 100ms linear;
+  width: 100%;
 `;

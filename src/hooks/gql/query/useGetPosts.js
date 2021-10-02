@@ -5,6 +5,7 @@ const GET_POSTS_QUERY = gql`
   query {
     getPosts {
       id
+      title
       body
       createdAt
       username

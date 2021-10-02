@@ -7,6 +7,8 @@ import {
   Logo,
   NavigationItem,
   NavigationMenu,
+  PostBody,
+  PostTitle,
   Text,
   ThemeToggle,
 } from "./atoms";
@@ -15,11 +17,12 @@ import {
   ErrorList,
   Form,
   Navigation,
+  Post,
   SideMenuBody,
   SideMenuHeader,
   UserIndicator,
 } from "./molecules";
-import { Header, SideMenu } from "./organisms";
+import { Header, PostList, SideMenu } from "./organisms";
 
 export {
   Anchor,
@@ -35,6 +38,10 @@ export {
   Navigation,
   NavigationItem,
   NavigationMenu,
+  Post,
+  PostBody,
+  PostList,
+  PostTitle,
   SideMenu,
   SideMenuBody,
   SideMenuHeader,
