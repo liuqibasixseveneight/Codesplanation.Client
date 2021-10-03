@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 export const Wrapper = styled.div`
   align-items: center;
@@ -7,8 +7,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
-  padding: 1.6rem 0.8rem;
+  padding: 0.8rem 2.2rem;
   transition: all 100ms linear;
   width: 100%;
-  max-width: 1600px;
 `;

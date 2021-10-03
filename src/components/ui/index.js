@@ -9,6 +9,10 @@ import {
   NavigationMenu,
   PostBody,
   PostTitle,
+  SideNavigationHeading,
+  SideNavigationList,
+  SideNavigationListItem,
+  SideNavigationSection,
   Text,
   ThemeToggle,
 } from "./atoms";
@@ -18,11 +22,12 @@ import {
   Form,
   Navigation,
   Post,
-  SideMenuBody,
-  SideMenuHeader,
+  SideNavigation,
+  SlideOutMenuBody,
+  SlideOutMenuHeader,
   UserIndicator,
 } from "./molecules";
-import { Header, PostList, SideMenu } from "./organisms";
+import { Header, PostList, PostNavigation, SlideOutMenu } from "./organisms";
 
 export {
   Anchor,
@@ -41,10 +46,16 @@ export {
   Post,
   PostBody,
   PostList,
+  PostNavigation,
   PostTitle,
-  SideMenu,
-  SideMenuBody,
-  SideMenuHeader,
+  SideNavigation,
+  SideNavigationHeading,
+  SideNavigationList,
+  SideNavigationListItem,
+  SideNavigationSection,
+  SlideOutMenu,
+  SlideOutMenuBody,
+  SlideOutMenuHeader,
   Text,
   ThemeToggle,
   UserIndicator,

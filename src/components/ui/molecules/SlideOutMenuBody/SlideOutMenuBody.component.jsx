@@ -9,9 +9,9 @@ import {
   NavigationWrapper,
   StyledLink,
   Wrapper,
-} from "./SideMenuBody.styles";
+} from "./SlideOutMenuBody.styles";
 
-export default function SideMenuBody() {
+export default function SlideOutMenuBody() {
   const { user } = useContext(AuthContext); // TODO: Rework into redux toolkit
   const dispatch = useDispatch();
 

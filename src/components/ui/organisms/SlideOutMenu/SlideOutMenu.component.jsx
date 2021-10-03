@@ -1,10 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import { SideMenuBody, SideMenuHeader } from "../../index";
-import { WidthWrapper, Wrapper } from "./SideMenu.styles";
+import { SlideOutMenuBody, SlideOutMenuHeader } from "../../index";
+import { WidthWrapper, Wrapper } from "./SlideOutMenu.styles";
 
-export default function SideMenu() {
+export default function SlideOutMenu() {
   const isNavigationOpen = useSelector((state) => {
     if (state.navigation) {
       return state.navigation.isNavigationOpen;
@@ -15,8 +15,8 @@ export default function SideMenu() {
     <>
       <Wrapper isNavigationOpen={isNavigationOpen}>
         <WidthWrapper>
-          <SideMenuHeader />
-          <SideMenuBody />
+          <SlideOutMenuHeader />
+          <SlideOutMenuBody />
         </WidthWrapper>
       </Wrapper>
     </>
