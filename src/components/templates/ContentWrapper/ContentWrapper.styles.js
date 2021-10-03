@@ -8,4 +8,5 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   padding: 0.8rem 2.2rem;
   width: 100%;
+  min-width: 100%;
 `;

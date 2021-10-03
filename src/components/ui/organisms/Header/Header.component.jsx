@@ -49,9 +49,13 @@ export default function Header() {
               <Logo margin="0 0 0 0.8rem" />
             </NavLink>
 
-            {!user && (
-              <ThemeToggle id="header-theme-toggle" isOn={isGlobalThemeDark} />
-            )}
+            {!user &&
+              (size.width <= 460 ? null : (
+                <ThemeToggle
+                  id="header-theme-toggle"
+                  isOn={isGlobalThemeDark}
+                />
+              ))}
           </LogoWrapper>
 
           {size.width <= 1024 ? (

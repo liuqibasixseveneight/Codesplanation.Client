@@ -21,8 +21,10 @@ function List({ children }) {
   return <SideNavigationList>{children}</SideNavigationList>;
 }
 
-function ListItem({ text }) {
-  return <SideNavigationListItem text={text} />;
+function ListItem({ leftIcon, onClick, text }) {
+  return (
+    <SideNavigationListItem leftIcon={leftIcon} onClick={onClick} text={text} />
+  );
 }
 
 function Break() {

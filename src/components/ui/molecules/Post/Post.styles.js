@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  height: 180px;
+  height: 100px;
   margin: 0 0 0.4rem 0;
   padding: 0.8rem;
   transition: all 100ms linear;

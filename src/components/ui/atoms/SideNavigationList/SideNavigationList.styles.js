@@ -6,5 +6,5 @@ export const Wrapper = styled.ul`
   flex-direction: column;
   justify-content: center;
   list-style: none;
-  margin-left: 1.2rem;
+  margin-left: 0.8rem;
 `;
