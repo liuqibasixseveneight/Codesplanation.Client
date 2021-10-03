@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 export const UserAvatar = styled.div`
   background: #c1c1c1;

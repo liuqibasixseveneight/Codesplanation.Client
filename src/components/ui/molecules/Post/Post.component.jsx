@@ -26,8 +26,6 @@ export default function Post({
 Post.propTypes = {
   // What is the main body of text?
   body: PropTypes.string,
-  // What are the children?
-  children: PropTypes.node.isRequired,
   // How many comments does the Post have?
   commentCount: PropTypes.number,
   // When was the Post created?

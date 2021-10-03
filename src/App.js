@@ -5,7 +5,7 @@ import { Switch, Route } from "react-router-dom";
 
 import { AuthRoute } from "./utils";
 import { darkTheme, lightTheme } from "./themes";
-import { Header, SideMenu } from "./components/ui";
+import { Header, SlideOutMenu } from "./components/ui";
 import { Home, Posts, SignIn, SignUp, UserProfile } from "./components/pages";
 
 export default function App() {
@@ -24,7 +24,7 @@ export default function App() {
       <ThemeProvider theme={isGlobalThemeDark ? darkTheme : lightTheme}>
         <Background>
           <Header />
-          <SideMenu />
+          <SlideOutMenu />
 
           <Switch>
             <Route exact path="/" component={Home} />

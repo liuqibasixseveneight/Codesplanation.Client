@@ -1,5 +1,7 @@
 import styled from "styled-components/macro";
 
 export const Wrapper = styled.div`
-  color: ${(props) => props.theme.colors.global.textPrimary};
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0.8rem;
 `;

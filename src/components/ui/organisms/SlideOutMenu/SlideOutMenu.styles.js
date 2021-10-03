@@ -1,6 +1,4 @@
-import styled from "styled-components";
-// import { NavLink } from "react-router-dom";
-// const activeClassName = "nav-item-active"; // NavLink: activeClassName
+import styled from "styled-components/macro";
 
 export const Wrapper = styled.div`
   background: ${(props) => props.theme.colors.global.backgroundPrimary};

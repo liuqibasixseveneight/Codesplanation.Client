@@ -4,10 +4,10 @@ import { MdClose as CloseIcon } from "react-icons/md";
 
 import { AuthContext } from "../../../../context/auth"; // TODO: Rework into redux toolkit
 import { setIsNavigationOpen } from "../../../../redux/slices/navigationSlice";
-import { IconWrapper, Wrapper } from "./SideMenuHeader.styles";
+import { IconWrapper, Wrapper } from "./SlideOutMenuHeader.styles";
 import { Navigation } from "../../index";
 
-export default function SideMenuHeader() {
+export default function SlideOutMenuHeader() {
   const { logout, user } = useContext(AuthContext); // TODO: Rework into redux toolkit
   const dispatch = useDispatch();
 
