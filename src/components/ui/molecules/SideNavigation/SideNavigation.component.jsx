@@ -7,7 +7,7 @@ import {
   SideNavigationListItem,
   SideNavigationSection,
 } from "../../index";
-import { Wrapper } from "./SideNavigation.styles";
+import { HorizontalBreak, Wrapper } from "./SideNavigation.styles";
 
 const SideNavigationGroupContext = createContext();
 
@@ -23,6 +23,10 @@ function List({ children }) {
 
 function ListItem({ text }) {
   return <SideNavigationListItem text={text} />;
+}
+
+function Break() {
+  return <HorizontalBreak />;
 }
 
 function Section({ children }) {
@@ -48,6 +52,7 @@ SideNavigation.defaultProps = {
   props: null,
 };
 
+SideNavigation.Break = Break;
 SideNavigation.Heading = Heading;
 SideNavigation.List = List;
 SideNavigation.ListItem = ListItem;

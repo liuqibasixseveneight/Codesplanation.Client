@@ -34,7 +34,7 @@ export default function SlideOutMenuHeader() {
           ) : (
             <>
               <Navigation.Item
-                to={`/user&id=${user.id}`}
+                to={`/user/${user.id}`}
                 onClick={() => dispatch(setIsNavigationOpen())}
               >
                 View Profile

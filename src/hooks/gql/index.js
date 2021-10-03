@@ -1,3 +1,3 @@
-import { useGetPosts, useGetUser, useGetUsers } from "./query";
+import { useGetPost, useGetPosts, useGetUser, useGetUsers } from "./query";
 
-export { useGetPosts, useGetUser, useGetUsers };
+export { useGetPost, useGetPosts, useGetUser, useGetUsers };

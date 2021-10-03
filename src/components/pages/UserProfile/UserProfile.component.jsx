@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { ContentWrapper } from "../../templates";
 import { useGetUser } from "../../../hooks";
@@ -52,3 +53,12 @@ export default function UserProfile({ match }) {
     </>
   );
 }
+
+UserProfile.propTypes = {
+  // What should be taken from the params?
+  match: PropTypes.object.isRequired,
+};
+
+UserProfile.defaultProps = {
+  match: null,
+};

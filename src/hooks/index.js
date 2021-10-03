@@ -1,5 +1,12 @@
 import { useForm } from "./useForm";
-import { useGetPosts, useGetUser, useGetUsers } from "./gql";
+import { useGetPost, useGetPosts, useGetUser, useGetUsers } from "./gql";
 import { useWindowSize } from "./useWindowSize";
 
-export { useForm, useGetPosts, useGetUser, useGetUsers, useWindowSize };
+export {
+  useForm,
+  useGetPost,
+  useGetPosts,
+  useGetUser,
+  useGetUsers,
+  useWindowSize,
+};

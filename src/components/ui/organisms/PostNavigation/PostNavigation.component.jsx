@@ -13,18 +13,21 @@ export default function PostNavigation() {
         <NavigationWrapper>
           <SideNavigation>
             {user && (
-              <SideNavigation.Section>
-                <SideNavigation.Heading
-                  link
-                  text={user.username}
-                  to={`/user&id=${user.id}`}
-                />
-                <SideNavigation.List>
-                  <SideNavigation.ListItem text="Your Posts" />
-                  <SideNavigation.ListItem text="Your Favourites" />
-                  <SideNavigation.ListItem text="Your Likes" />
-                </SideNavigation.List>
-              </SideNavigation.Section>
+              <>
+                <SideNavigation.Section>
+                  <SideNavigation.Heading
+                    link
+                    text={user.username}
+                    to={`/user/${user.id}`}
+                  />
+                  <SideNavigation.List>
+                    <SideNavigation.ListItem text="Your Posts" />
+                    <SideNavigation.ListItem text="Your Favourites" />
+                    <SideNavigation.ListItem text="Your Likes" />
+                  </SideNavigation.List>
+                </SideNavigation.Section>
+                <SideNavigation.Break />
+              </>
             )}
 
             <SideNavigation.Section>

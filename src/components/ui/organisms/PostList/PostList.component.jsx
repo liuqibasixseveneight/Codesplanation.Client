@@ -34,6 +34,7 @@ export default function PostList() {
                 body={body}
                 commentCount={commentCount}
                 createdAt={createdAt}
+                id={id}
                 likeCount={likeCount}
                 title={title}
                 username={username}

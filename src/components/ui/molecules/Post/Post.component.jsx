@@ -1,10 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import { PostBody, PostTitle } from "../../index";
 import { Wrapper } from "./Post.styles";
 
 export default function Post({
+  id,
   body,
   commentCount,
   createdAt,
@@ -14,12 +16,12 @@ export default function Post({
   ...props
 }) {
   return (
-    <>
+    <Link to={`/posts/${id}`}>
       <Wrapper>
         <PostTitle title={title} />
         <PostBody body={body} />
       </Wrapper>
-    </>
+    </Link>
   );
 }
 

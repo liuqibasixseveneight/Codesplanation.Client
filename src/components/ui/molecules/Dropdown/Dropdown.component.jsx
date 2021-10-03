@@ -1,8 +1,8 @@
 import React, { createContext, useEffect, useRef, useState } from "react";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 import PropTypes from "prop-types";
 
-import { setIsDropdownOpen } from "../../../../redux/slices/dropdownSlice";
+// import { setIsDropdownOpen } from "../../../../redux/slices/dropdownSlice";
 import { DropdownItem } from "../../index";
 import { HorizontalBreak, Wrapper } from "./Dropdown.styles";
 
@@ -10,60 +10,55 @@ const DropdownGroupContext = createContext();
 
 function Item({ children, leftIcon, navlink, onClick, rightIcon, to }) {
   return (
-    <>
-      <DropdownItem
-        onClick={onClick}
-        leftIcon={leftIcon}
-        navlink={navlink}
-        rightIcon={rightIcon}
-        to={to}
-      >
-        {children}
-      </DropdownItem>
-    </>
+    <DropdownItem
+      onClick={onClick}
+      leftIcon={leftIcon}
+      navlink={navlink}
+      rightIcon={rightIcon}
+      to={to}
+    >
+      {children}
+    </DropdownItem>
   );
 }
 
 function Break() {
-  return (
-    <>
-      <HorizontalBreak />
-    </>
-  );
+  return <HorizontalBreak />;
 }
 
 export default function Dropdown({ children, left, user, ...props }) {
   const [menuHeight, setMenuHeight] = useState(null);
   const dropdownRef = useRef(null);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   useEffect(() => {
     setMenuHeight(dropdownRef.current?.firstChild.offsetHeight);
   }, []);
 
-  const useOnClickOutside = (dropdownRef, handler) => {
-    useEffect(() => {
-      const listener = (event) => {
-        if (
-          !dropdownRef.current ||
-          dropdownRef.current.contains(event.target)
-        ) {
-          return;
-        }
-        handler(event);
-      };
+  // TODO: Add robust onClickOutside handler
+  // const useOnClickOutside = (dropdownRef, handler) => {
+  //   useEffect(() => {
+  //     const listener = (event) => {
+  //       if (
+  //         !dropdownRef.current ||
+  //         dropdownRef.current.contains(event.target)
+  //       ) {
+  //         return;
+  //       }
+  //       handler(event);
+  //     };
 
-      document.addEventListener("mousedown", listener);
-      document.addEventListener("touchstart", listener);
+  //     document.addEventListener("mousedown", listener);
+  //     document.addEventListener("touchstart", listener);
 
-      return () => {
-        document.removeEventListener("mousedown", listener);
-        document.removeEventListener("touchstart", listener);
-      };
-    }, [dropdownRef, handler]);
-  };
+  //     return () => {
+  //       document.removeEventListener("mousedown", listener);
+  //       document.removeEventListener("touchstart", listener);
+  //     };
+  //   }, [dropdownRef, handler]);
+  // };
 
-  useOnClickOutside(dropdownRef, () => dispatch(setIsDropdownOpen()));
+  // useOnClickOutside(dropdownRef, () => dispatch(setIsDropdownOpen()));
 
   return (
     <DropdownGroupContext.Provider value={props}>
