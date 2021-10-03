@@ -1,6 +1,7 @@
 import {
   Anchor,
   Button,
+  CountIndicator,
   DropdownItem,
   ErrorMessage,
   FormInput,
@@ -31,6 +32,7 @@ import { Header, PostList, PostNavigation, SlideOutMenu } from "./organisms";
 export {
   Anchor,
   Button,
+  CountIndicator,
   Dropdown,
   DropdownItem,
   ErrorList,

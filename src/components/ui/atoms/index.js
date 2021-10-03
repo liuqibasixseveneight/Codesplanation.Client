@@ -1,5 +1,6 @@
 export { default as Anchor } from "./Anchor/Anchor.component";
 export { default as Button } from "./Button/Button.component";
+export { default as CountIndicator } from "./CountIndicator/CountIndicator.component";
 export { default as DropdownItem } from "./DropdownItem/DropdownItem.component";
 export { default as ErrorMessage } from "./ErrorMessage/ErrorMessage.component";
 export { default as FormInput } from "./FormInput/FormInput.component";

@@ -21,7 +21,6 @@ export default function PostList() {
           posts.map(
             ({
               id,
-              body,
               commentCount,
               createdAt,
               likeCount,
@@ -31,7 +30,6 @@ export default function PostList() {
             }) => (
               <Post
                 key={id}
-                body={body}
                 commentCount={commentCount}
                 createdAt={createdAt}
                 id={id}

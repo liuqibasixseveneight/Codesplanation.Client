@@ -7,10 +7,9 @@ export const Wrapper = styled.div`
   border-radius: 8px;
   cursor: pointer;
   display: flex;
-  flex-direction: column;
   height: 100px;
   margin: 0 0 0.4rem 0;
-  padding: 0.8rem;
+  padding: 0.4rem;
   transition: all 100ms linear;
   width: 100%;
 
