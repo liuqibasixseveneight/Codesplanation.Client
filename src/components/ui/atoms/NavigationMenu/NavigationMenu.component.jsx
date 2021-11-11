@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { BiMenuAltRight as MenuIcon } from "react-icons/bi";
 
-import { setIsNavigationOpen } from "../../../../redux/slices/navigationSlice";
+import { setIsSlideOutMenuOpen } from "../../../../redux/slices/navigationSlice";
 import { Wrapper } from "./NavigationMenu.styles";
 
 export default function NavigationMenu() {
@@ -10,7 +10,7 @@ export default function NavigationMenu() {
 
   return (
     <>
-      <Wrapper onClick={() => dispatch(setIsNavigationOpen())}>
+      <Wrapper onClick={() => dispatch(setIsSlideOutMenuOpen())}>
         <MenuIcon />
       </Wrapper>
     </>

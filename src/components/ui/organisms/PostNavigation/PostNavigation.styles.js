@@ -13,6 +13,13 @@ export const Wrapper = styled.div`
   justify-content: flex-start;
   transition: all 100ms linear;
   width: 240px;
+
+  @media screen and (max-width: 1026px) {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+  }
 `;
 
 export const NavigationWrapper = styled.div`

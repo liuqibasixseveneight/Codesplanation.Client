@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { MdClose as CloseIcon } from "react-icons/md";
 
 import { AuthContext } from "../../../../context/auth"; // TODO: Rework into redux toolkit
-import { setIsNavigationOpen } from "../../../../redux/slices/navigationSlice";
+import { setIsSlideOutMenuOpen } from "../../../../redux/slices/navigationSlice";
 import { IconWrapper, Wrapper } from "./SlideOutMenuHeader.styles";
 import { Navigation } from "../../index";
 
@@ -19,13 +19,13 @@ export default function SlideOutMenuHeader() {
             <>
               <Navigation.Item
                 to="/sign-in"
-                onClick={() => dispatch(setIsNavigationOpen())}
+                onClick={() => dispatch(setIsSlideOutMenuOpen())}
               >
                 Sign In
               </Navigation.Item>
               <Navigation.Item
                 to="/sign-up"
-                onClick={() => dispatch(setIsNavigationOpen())}
+                onClick={() => dispatch(setIsSlideOutMenuOpen())}
                 border
               >
                 Sign Up
@@ -34,8 +34,8 @@ export default function SlideOutMenuHeader() {
           ) : (
             <>
               <Navigation.Item
-                to={`/user&id=${user.id}`}
-                onClick={() => dispatch(setIsNavigationOpen())}
+                to={`/user/${user.id}`}
+                onClick={() => dispatch(setIsSlideOutMenuOpen())}
               >
                 View Profile
               </Navigation.Item>
@@ -46,7 +46,7 @@ export default function SlideOutMenuHeader() {
           )}
         </Navigation>
 
-        <IconWrapper onClick={() => dispatch(setIsNavigationOpen())}>
+        <IconWrapper onClick={() => dispatch(setIsSlideOutMenuOpen())}>
           <CloseIcon />
         </IconWrapper>
       </Wrapper>

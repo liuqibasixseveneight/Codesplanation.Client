@@ -8,10 +8,10 @@ export const Wrapper = styled.div`
   position: fixed;
   right: 0;
   top: 0;
-  transform: ${({ isNavigationOpen }) =>
-    isNavigationOpen ? `translateX(0)` : `translateX(100%)`};
-  visibility: ${({ isNavigationOpen }) =>
-    isNavigationOpen ? `visible` : `hidden`};
+  transform: ${({ isSlideOutMenuOpen }) =>
+    isSlideOutMenuOpen ? `translateX(0)` : `translateX(100%)`};
+  visibility: ${({ isSlideOutMenuOpen }) =>
+    isSlideOutMenuOpen ? `visible` : `hidden`};
   transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
   width: 100%;
   z-index: 3;

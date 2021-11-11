@@ -1,10 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-import { PostBody, PostTitle } from "../../index";
+import { CountIndicator, PostTitle } from "../../index";
 import { Wrapper } from "./Post.styles";
 
 export default function Post({
+  id,
   body,
   commentCount,
   createdAt,
@@ -14,12 +16,14 @@ export default function Post({
   ...props
 }) {
   return (
-    <>
+    <Link to={`/posts/${id}`}>
       <Wrapper>
+        <CountIndicator count={likeCount} text="Likes" />
+        <CountIndicator count={commentCount} text="Comments" />
+
         <PostTitle title={title} />
-        <PostBody body={body} />
       </Wrapper>
-    </>
+    </Link>
   );
 }
 
@@ -34,6 +38,8 @@ Post.propTypes = {
   likeCount: PropTypes.number,
   // What other props are accepted?
   props: PropTypes.any,
+  // What is the Post subtitle?
+  subtitle: PropTypes.string,
   // What is the Post title?
   title: PropTypes.string,
   // Which user created the Post?

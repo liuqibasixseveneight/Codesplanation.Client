@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <Hero>
         <HeroText>
-          <h2>Hello, world!</h2>
+          <h2>Codesplanation</h2>
         </HeroText>
       </Hero>
     </>
