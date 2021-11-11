@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
+import React from "react";
 
 import { ContentWrapper, PageHeading } from "../../templates";
 import { Form } from "../../ui";
@@ -6,18 +7,17 @@ import { useCreatePost, useForm } from "../../../hooks";
 import { Wrapper } from "./CreatePost.styles";
 
 export default function CreatePost() {
-  const [errors, setErrors] = useState();
+  // const [errors, setErrors] = useState();
   const { onChange, onSubmit, values } = useForm(createPostCallBack, {
     title: "",
     subtitle: "",
     body: "",
   });
 
-  const [createPost, { loading, data, error }] = useCreatePost(
-    values.title,
-    values.subtitle,
-    values.body
-  );
+  const [
+    createPost,
+    // { loading, data, error }
+  ] = useCreatePost(values.title, values.subtitle, values.body);
 
   function createPostCallBack() {
     createPost();
