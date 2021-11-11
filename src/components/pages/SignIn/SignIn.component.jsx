@@ -47,7 +47,6 @@ export default function SignIn({ history }) {
           ) : (
             <Form onSubmit={onSubmit} noValidate>
               <Form.Input
-                type="text"
                 placeholder="Username"
                 label="Username"
                 name="username"

@@ -7,6 +7,7 @@ import { AuthRoute } from "./utils";
 import { darkTheme, lightTheme } from "./themes";
 import { Header, SlideOutMenu } from "./components/ui";
 import {
+  CreatePost,
   Home,
   Posts,
   SignIn,
@@ -36,6 +37,7 @@ export default function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/posts" component={Posts} />
+            <Route exact path="/posts/create-post" component={CreatePost} />
             <Route path="/posts/:postId" component={SinglePost} />
             <Route path="/user/:userId" component={UserProfile} />
             <AuthRoute exact path="/sign-in" component={SignIn} />

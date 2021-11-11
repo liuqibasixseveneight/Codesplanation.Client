@@ -4,6 +4,9 @@ import gql from "graphql-tag";
 const GET_POST_QUERY = gql`
   query($postId: ID!) {
     getPost(postId: $postId) {
+      title
+      subtitle
+      difficulty
       body
       commentCount
       comments {
@@ -20,8 +23,6 @@ const GET_POST_QUERY = gql`
         id
         username
       }
-      subtitle
-      title
       username
     }
   }

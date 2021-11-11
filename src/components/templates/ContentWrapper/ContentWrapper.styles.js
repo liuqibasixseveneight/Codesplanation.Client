@@ -9,4 +9,8 @@ export const Wrapper = styled.div`
   padding: 0.8rem 2.2rem;
   width: 100%;
   min-width: 100%;
+
+  @media screen and (max-width: 1026px) {
+    padding: 0.8rem;
+  }
 `;

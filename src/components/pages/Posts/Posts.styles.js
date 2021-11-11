@@ -9,6 +9,10 @@ export const Wrapper = styled.div`
   min-height: calc(100vh - 100px);
   transition: all 100ms linear;
   width: 100%;
+
+  @media screen and (max-width: 1026px) {
+    grid-template-columns: 0 auto;
+  }
 `;
 
 export const Content = styled.div`

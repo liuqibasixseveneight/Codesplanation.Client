@@ -42,6 +42,7 @@ export default function SinglePost({ match }) {
           ) : (
             <>
               <PageHeading heading={post.title} subheading={post.subtitle} />
+              <span>Difficulty: {post.difficulty}</span>
               <span>Body: {post.body}</span>
               <span>Comment Count: {post.commentCount.toString()}</span>
 
@@ -49,10 +50,10 @@ export default function SinglePost({ match }) {
               {post.comments &&
                 post.comments.map((comment) => (
                   <div key={comment.id}>
-                    <p>{comment.body}</p>
-                    <p>{comment.createdAt}</p>
-                    <p>{comment.id}</p>
-                    <p>{comment.username}</p>
+                    <p>Body: {comment.body}</p>
+                    <p>CreatedAt: {comment.createdAt}</p>
+                    <p>ID: {comment.id}</p>
+                    <p>Username: {comment.username}</p>
                   </div>
                 ))}
 

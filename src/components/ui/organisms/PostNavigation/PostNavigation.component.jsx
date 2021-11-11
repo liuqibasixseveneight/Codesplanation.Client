@@ -6,15 +6,9 @@ import { AiOutlineHeart as LikesIcon } from "react-icons/ai";
 import { AuthContext } from "../../../../context/auth";
 import { SideNavigation } from "../../index";
 import { NavigationWrapper, Wrapper } from "./PostNavigation.styles";
-import { useWindowSize } from "../../../../hooks";
 
 export default function PostNavigation() {
   const { user } = useContext(AuthContext); // TODO: Rework into redux toolkit
-  const size = useWindowSize();
-
-  if (size.width <= 1026) {
-    return null;
-  }
 
   return (
     <Wrapper>

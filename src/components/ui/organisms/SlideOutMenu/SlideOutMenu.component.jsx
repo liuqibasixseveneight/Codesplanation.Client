@@ -5,15 +5,15 @@ import { SlideOutMenuBody, SlideOutMenuHeader } from "../../index";
 import { WidthWrapper, Wrapper } from "./SlideOutMenu.styles";
 
 export default function SlideOutMenu() {
-  const isNavigationOpen = useSelector((state) => {
+  const isSlideOutMenuOpen = useSelector((state) => {
     if (state.navigation) {
-      return state.navigation.isNavigationOpen;
+      return state.navigation.isSlideOutMenuOpen;
     }
   });
 
   return (
     <>
-      <Wrapper isNavigationOpen={isNavigationOpen}>
+      <Wrapper isSlideOutMenuOpen={isSlideOutMenuOpen}>
         <WidthWrapper>
           <SlideOutMenuHeader />
           <SlideOutMenuBody />
