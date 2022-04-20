@@ -24,7 +24,7 @@ Anchor.propTypes = {
   download: PropTypes.string,
   // Where should the link direct to?
   href: PropTypes.string.isRequired,
-  // How big shoul the link be?
+  // How big should the link be?
   size: PropTypes.oneOf(["small", "medium", "large"]),
   // How should the link be opened?
   target: PropTypes.oneOf(["_blank", "_parent", "_self", "_top"]),

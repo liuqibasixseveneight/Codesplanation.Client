@@ -1,3 +1,4 @@
+export { default as About } from "./About/About.component";
 export { default as CreatePost } from "./CreatePost/CreatePost.component";
 export { default as Home } from "./Home/Home.component";
 export { default as Posts } from "./Posts/Posts.component";
