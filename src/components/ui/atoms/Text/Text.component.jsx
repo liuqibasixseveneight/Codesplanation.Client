@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { StyledText } from "./Text.styles";
+import { StyledText } from './Text.styles';
 
 export default function Text({
   as,
@@ -16,22 +16,20 @@ export default function Text({
   text,
 }) {
   return (
-    <>
-      <StyledText
-        as={as}
-        bold={bold}
-        children={children}
-        color={color}
-        fontSize={fontSize}
-        heading={heading}
-        margin={margin}
-        padding={padding}
-        subheading={subheading}
-        text={text}
-      >
-        <span>{children}</span>
-      </StyledText>
-    </>
+    <StyledText
+      as={as}
+      bold={bold}
+      children={children}
+      color={color}
+      fontSize={fontSize}
+      heading={heading}
+      margin={margin}
+      padding={padding}
+      subheading={subheading}
+      text={text}
+    >
+      <span>{children}</span>
+    </StyledText>
   );
 }
 

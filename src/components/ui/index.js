@@ -17,6 +17,7 @@ import {
   ThemeToggle,
 } from './atoms';
 import {
+  CodeInputArea,
   Dropdown,
   ErrorList,
   Form,
@@ -27,13 +28,7 @@ import {
   SlideOutMenuHeader,
   UserIndicator,
 } from './molecules';
-import {
-  CodeInputArea,
-  Header,
-  PostList,
-  PostNavigation,
-  SlideOutMenu,
-} from './organisms';
+import { Header, PostList, PostNavigation, SlideOutMenu } from './organisms';
 
 export {
   Anchor,

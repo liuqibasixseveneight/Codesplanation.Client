@@ -19,8 +19,8 @@ import {
 
 export default function App() {
   const isGlobalThemeDark = useSelector((state) => {
-    if (state.globalTheme) {
-      return state.globalTheme.isGlobalThemeDark;
+    if (state?.globalTheme) {
+      return state?.globalTheme?.isGlobalThemeDark;
     }
   });
 

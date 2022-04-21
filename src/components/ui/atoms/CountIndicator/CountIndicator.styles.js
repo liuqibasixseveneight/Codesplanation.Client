@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const CountText = styled.span`
-  color: ${(props) => props.theme.colors.global.textPrimary};
+  color: ${(props) => props?.theme?.colors?.global?.textPrimary};
   font-size: 1.4rem;
   transition: all 100ms linear;
 `;
@@ -20,15 +20,16 @@ export const Wrapper = styled.div`
 
   &:hover {
     & ${CountText} {
-      color: ${(props) => props.theme.colors.global.highlightPrimary};
+      color: ${(props) => props?.theme?.colors?.global?.highlightPrimary};
     }
   }
 `;
 
 export const CountWrapper = styled.div`
   align-items: center;
-  background: ${(props) => props.theme.colors.global.backgroundPrimary};
-  border: 1px solid ${(props) => props.theme.colors.global.backgroundPrimary};
+  background: ${(props) => props?.theme?.colors?.global?.backgroundPrimary};
+  border: 1px solid
+    ${(props) => props?.theme?.colors?.global?.backgroundPrimary};
   border-radius: 8px;
   display: flex;
   height: 55px;
@@ -43,7 +44,7 @@ export const CountWrapper = styled.div`
 `;
 
 export const CountLabel = styled.span`
-  color: ${(props) => props.theme.colors.global.textPrimary};
+  color: ${(props) => props?.theme?.colors?.global?.textPrimary};
   font-size: 0.8rem;
   transition: all 100ms linear;
 `;

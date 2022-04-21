@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import { ContentWrapper, PageHeading } from "../../templates";
-import { PostList, PostNavigation } from "../../ui";
-import { Content, Wrapper } from "./Posts.styles";
+import { ContentWrapper, PageHeading } from '../../templates';
+import { PostList, PostNavigation } from '../../ui';
+import { Content, Wrapper } from './Posts.styles';
 
 export default function Posts() {
   return (
@@ -12,8 +12,8 @@ export default function Posts() {
       <Content>
         <ContentWrapper>
           <PageHeading
-            heading="Posts"
-            subheading="Explore code explanations by language and difficulty"
+            heading='Posts'
+            subheading='Explore code explanations by language and difficulty'
           />
 
           <PostList />

@@ -1,8 +1,8 @@
-import { useQuery } from "@apollo/client";
-import gql from "graphql-tag";
+import { useQuery } from '@apollo/client';
+import gql from 'graphql-tag';
 
 const GET_USER_QUERY = gql`
-  query($userId: ID!) {
+  query ($userId: ID!) {
     getUser(userId: $userId) {
       id
       username

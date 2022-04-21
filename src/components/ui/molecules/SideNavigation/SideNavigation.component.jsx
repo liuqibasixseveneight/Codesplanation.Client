@@ -1,13 +1,13 @@
-import React, { createContext } from "react";
-import PropTypes from "prop-types";
+import React, { createContext } from 'react';
+import PropTypes from 'prop-types';
 
 import {
   SideNavigationHeading,
   SideNavigationList,
   SideNavigationListItem,
   SideNavigationSection,
-} from "../../index";
-import { HorizontalBreak, Wrapper } from "./SideNavigation.styles";
+} from '../../index';
+import { HorizontalBreak, Wrapper } from './SideNavigation.styles';
 
 const SideNavigationGroupContext = createContext();
 

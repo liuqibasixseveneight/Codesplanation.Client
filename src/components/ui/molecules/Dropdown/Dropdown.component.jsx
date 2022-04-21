@@ -1,8 +1,8 @@
-import React, { createContext, useEffect, useRef, useState } from "react";
-import PropTypes from "prop-types";
+import React, { createContext, useEffect, useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 
-import { DropdownItem } from "../../index";
-import { HorizontalBreak, Wrapper } from "./Dropdown.styles";
+import { DropdownItem } from '../../index';
+import { HorizontalBreak, Wrapper } from './Dropdown.styles';
 
 const DropdownGroupContext = createContext();
 
@@ -77,7 +77,7 @@ DropdownItem.defaultProps = {
   navlink: false,
   onClick: null,
   rightIcon: null,
-  to: "/",
+  to: '/',
 };
 
 Dropdown.Item = Item;

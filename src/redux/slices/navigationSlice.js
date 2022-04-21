@@ -1,7 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 export const navigationSlice = createSlice({
-  name: "navigation",
+  name: 'navigation',
   initialState: {
     isSlideOutMenuOpen: false,
     isLeftSideNavigationOpen: true,
@@ -16,9 +16,7 @@ export const navigationSlice = createSlice({
   },
 });
 
-export const {
-  setIsLeftSideNavigationOpen,
-  setIsSlideOutMenuOpen,
-} = navigationSlice.actions;
+export const { setIsLeftSideNavigationOpen, setIsSlideOutMenuOpen } =
+  navigationSlice.actions;
 
 export default navigationSlice.reducer;

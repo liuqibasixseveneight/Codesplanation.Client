@@ -1,9 +1,9 @@
-import styled from "styled-components/macro";
+import styled from 'styled-components/macro';
 
 export const Wrapper = styled.div`
-  background: ${(props) => props.theme.colors.global.backgroundPrimary};
+  background: ${(props) => props?.theme?.colors?.global?.backgroundPrimary};
   border-bottom: 1px solid
-    ${(props) => props.theme.colors.global.highlightPrimary};
+    ${(props) => props?.theme?.colors?.global?.highlightPrimary};
   height: 100px;
   max-height: 100px;
   min-height: 100px;

@@ -1,8 +1,8 @@
-import styled from "styled-components/macro";
+import styled from 'styled-components/macro';
 
 export const StyledLi = styled.li`
   color: tomato;
-  font-family: "RalewayMedium";
+  font-family: 'RalewayMedium';
   font-weight: 500;
   list-style: none;
   margin: 0 0 0.4rem 0;

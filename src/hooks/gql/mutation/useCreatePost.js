@@ -1,7 +1,7 @@
-import { useMutation } from "@apollo/client";
-import gql from "graphql-tag";
+import { useMutation } from '@apollo/client';
+import gql from 'graphql-tag';
 
-import { GET_POSTS_QUERY } from "../query/useGetPosts";
+import { GET_POSTS_QUERY } from '../query/useGetPosts';
 
 const CREATE_POST_MUTATION = gql`
   mutation createPost(
@@ -46,16 +46,16 @@ export const useCreatePost = (values) => {
     {
       variables: values,
       update: (proxy, result) => {
-        console.log("CREATE POST RESULT:__", result);
+        console.log('CREATE POST RESULT:__', result);
         const data = proxy.readQuery({
           query: GET_POSTS_QUERY,
         });
         data.getPosts = [result.data.createPost, ...data.getPosts];
         proxy.writeQuery({ query: GET_POSTS_QUERY, data });
-        values.title = "";
-        values.subtitle = "";
-        values.difficulty = "";
-        values.body = "";
+        values.title = '';
+        values.subtitle = '';
+        values.difficulty = '';
+        values.body = '';
       },
     }
   );

@@ -1,4 +1,4 @@
-import styled from "styled-components/macro";
+import styled from 'styled-components/macro';
 
 export const ScaleSwitch = styled.div`
   transform: scale(0.65);
@@ -8,7 +8,7 @@ export const Button = styled.span``;
 
 export const Label = styled.label`
   align-items: center;
-  background-color: ${(props) => props.theme.colors.global.highlightPrimary};
+  background-color: ${(props) => props?.theme?.colors?.global.highlightPrimary};
   border-radius: 100px;
   cursor: pointer;
   display: flex;
@@ -21,11 +21,11 @@ export const Label = styled.label`
   & ${Button} {
     background-color: ${({ isGlobalThemeDark, props }) =>
       isGlobalThemeDark
-        ? (props) => props.theme.colors.global.highlightSecondary
-        : "#ffffff"};
+        ? (props) => props?.theme?.colors?.global?.highlightSecondary
+        : '#ffffff'};
     border-radius: 45px;
     box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
-    content: "";
+    content: '';
     height: 45px;
     left: 2px;
     position: absolute;

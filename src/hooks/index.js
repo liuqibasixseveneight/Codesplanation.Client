@@ -1,4 +1,4 @@
-import { useForm } from "./useForm";
+import { useForm } from './useForm';
 import {
   useCreatePost,
   useGetPost,
@@ -6,8 +6,8 @@ import {
   useGetUser,
   useGetUsers,
   useLikePost,
-} from "./gql";
-import { useWindowSize } from "./useWindowSize";
+} from './gql';
+import { useWindowSize } from './useWindowSize';
 
 export {
   useCreatePost,

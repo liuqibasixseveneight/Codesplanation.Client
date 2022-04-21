@@ -1,14 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { Wrapper } from "./ContentWrapper.styles";
+import { Wrapper } from './ContentWrapper.styles';
 
 export default function ContentWrapper({ children }) {
-  return (
-    <>
-      <Wrapper>{children}</Wrapper>
-    </>
-  );
+  return <Wrapper>{children}</Wrapper>;
 }
 
 Text.propTypes = {

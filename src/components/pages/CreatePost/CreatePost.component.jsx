@@ -32,14 +32,14 @@ export default function CreatePost() {
           subheading='Explain or demonstrate your code with a new post below'
         />
 
-        <CodeInputArea language='jsx' placeholder='Please enter JSX code' />
+        <CodeInputArea language='sql' placeholder='Please enter JSX code' />
 
         <Form onSubmit={onSubmit} noValidate>
           <Form.Input
             placeholder='Title'
             label='Title'
             name='title'
-            value={values.title}
+            value={values?.title}
             onChange={onChange}
             // error={errors.title}
           />
@@ -48,7 +48,7 @@ export default function CreatePost() {
             placeholder='Subtitle'
             label='Subtitle'
             name='subtitle'
-            value={values.subtitle}
+            value={values?.subtitle}
             onChange={onChange}
             // error={errors.subtitle}
           />
@@ -57,7 +57,7 @@ export default function CreatePost() {
             placeholder='Difficulty'
             label='Difficulty'
             name='difficulty'
-            value={values.difficulty}
+            value={values?.difficulty}
             onChange={onChange}
             // error={errors.difficulty}
           />
@@ -66,7 +66,7 @@ export default function CreatePost() {
             placeholder='Post'
             label='Post'
             name='body'
-            value={values.body}
+            value={values?.body}
             onChange={onChange}
             // error={errors.post}
           />

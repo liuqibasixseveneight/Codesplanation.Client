@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import { ContentWrapper } from "../../templates";
+import { ContentWrapper } from '../../templates';
 
 export default function About() {
   return (

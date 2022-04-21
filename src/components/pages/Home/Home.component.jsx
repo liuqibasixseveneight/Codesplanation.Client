@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import { Hero, HeroText } from "./Home.styles";
+import { Hero, HeroText } from './Home.styles';
 
 export default function Home() {
   return (

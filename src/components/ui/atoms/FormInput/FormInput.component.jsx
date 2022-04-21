@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { StyledInput, StyledLabel, Wrapper } from "./FormInput.styles";
+import { StyledInput, StyledLabel, Wrapper } from './FormInput.styles';
 
 export default function FormInput({
   error,
@@ -60,7 +60,7 @@ FormInput.defaultProps = {
   onChange: null,
   onSubmit: null,
   placeholder: null,
-  type: "text",
+  type: 'text',
   value: null,
   width: null,
 };

@@ -1,8 +1,8 @@
-import styled from "styled-components/macro";
+import styled from 'styled-components/macro';
 
 export const Wrapper = styled.div`
   align-items: center;
-  background: ${(props) => props.theme.colors.global.backgroundPrimary};
+  background: ${(props) => props?.theme?.colors?.global?.backgroundPrimary};
   border-radius: 8px;
   cursor: pointer;
   display: flex;
@@ -13,15 +13,15 @@ export const Wrapper = styled.div`
   width: 60px;
 
   &:hover {
-    background: ${(props) => props.theme.colors.global.highlightPrimary};
+    background: ${(props) => props?.theme?.colors?.global?.highlightPrimary};
   }
 
   & svg {
-    fill: ${(props) => props.theme.colors.global.textPrimary};
+    fill: ${(props) => props?.theme?.colors?.global?.textPrimary};
     height: 100%;
     max-height: 100%;
     min-height: 100%;
-    stroke: ${(props) => props.theme.colors.global.textPrimary};
+    stroke: ${(props) => props?.theme?.colors?.global?.textPrimary};
     transition: all 100ms linear;
     width: 100%;
     max-width: 100%;

@@ -1,4 +1,4 @@
-import styled from "styled-components/macro";
+import styled from 'styled-components/macro';
 
 export const Wrapper = styled.div`
   position: sticky;
@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 `;
 
 export const HorizontalBreak = styled.hr`
-  background: ${(props) => props.theme.colors.global.textPrimary};
+  background: ${(props) => props?.theme?.colors?.global?.textPrimary};
   border: 0;
   border-radius: 8px;
   height: 1px;

@@ -1,8 +1,8 @@
-import React, { createContext } from "react";
-import PropTypes from "prop-types";
+import React, { createContext } from 'react';
+import PropTypes from 'prop-types';
 
-import { StyledForm } from "./Form.styles";
-import { FormInput } from "../../index";
+import { StyledForm } from './Form.styles';
+import { FormInput } from '../../index';
 
 const FormGroupContext = createContext();
 
@@ -18,19 +18,17 @@ function Input({
   width,
 }) {
   return (
-    <>
-      <FormInput
-        error={error}
-        name={name}
-        label={label}
-        onChange={onChange}
-        onSubmit={onSubmit}
-        placeholder={placeholder}
-        type={type}
-        value={value}
-        width={width}
-      />
-    </>
+    <FormInput
+      error={error}
+      name={name}
+      label={label}
+      onChange={onChange}
+      onSubmit={onSubmit}
+      placeholder={placeholder}
+      type={type}
+      value={value}
+      width={width}
+    />
   );
 }
 
@@ -44,7 +42,7 @@ export default function Form({
   return (
     <FormGroupContext.Provider value={props}>
       <StyledForm
-        autocomplete={autocomplete ? "on" : "off"}
+        autocomplete={autocomplete ? 'on' : 'off'}
         noValidate={noValidate}
         onSubmit={onSubmit}
       >
@@ -69,7 +67,7 @@ Form.defaultProps = {
   autocomplete: false,
   children: null,
   noValidate: false,
-  onSubmit: () => console.log("This Form component has been submitted!"),
+  onSubmit: () => console.log('This Form component has been submitted!'),
 };
 
 FormInput.propTypes = {
@@ -100,7 +98,7 @@ FormInput.defaultProps = {
   onChange: null,
   onSubmit: null,
   placeholder: null,
-  type: "text",
+  type: 'text',
   value: null,
   width: null,
 };

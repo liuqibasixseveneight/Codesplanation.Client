@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-import { CountIndicator, PostTitle } from "../../index";
-import { Wrapper } from "./Post.styles";
+import { CountIndicator, PostTitle } from '../../index';
+import { Wrapper } from './Post.styles';
 
 export default function Post({
   id,
@@ -18,8 +18,8 @@ export default function Post({
   return (
     <Link to={`/posts/${id}`}>
       <Wrapper>
-        <CountIndicator count={likeCount} text="Likes" />
-        <CountIndicator count={commentCount} text="Comments" />
+        <CountIndicator count={likeCount} text='Likes' />
+        <CountIndicator count={commentCount} text='Comments' />
 
         <PostTitle title={title} />
       </Wrapper>

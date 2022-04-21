@@ -1,8 +1,8 @@
-import React, { createContext } from "react";
-import PropTypes from "prop-types";
+import React, { createContext } from 'react';
+import PropTypes from 'prop-types';
 
-import { Wrapper } from "./Navigation.styles";
-import { NavigationItem } from "../../index";
+import { Wrapper } from './Navigation.styles';
+import { NavigationItem } from '../../index';
 
 const NavigationGroupContext = createContext();
 
@@ -75,7 +75,7 @@ Item.defaultProps = {
   exact: false,
   isVertical: false,
   onClick: null,
-  to: "/",
+  to: '/',
 };
 
 Navigation.Item = Item;

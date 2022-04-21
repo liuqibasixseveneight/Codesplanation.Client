@@ -1,8 +1,8 @@
-import { useQuery } from "@apollo/client";
-import gql from "graphql-tag";
+import { useQuery } from '@apollo/client';
+import gql from 'graphql-tag';
 
 const GET_POST_QUERY = gql`
-  query($postId: ID!) {
+  query ($postId: ID!) {
     getPost(postId: $postId) {
       title
       subtitle

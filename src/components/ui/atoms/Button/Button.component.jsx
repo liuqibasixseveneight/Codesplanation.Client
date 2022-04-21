@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { StyledButton } from "./Button.styles";
+import { StyledButton } from './Button.styles';
 
 export default function Button({
   backgroundColor,
@@ -15,20 +15,18 @@ export default function Button({
   value,
 }) {
   return (
-    <>
-      <StyledButton
-        backgroundColor={backgroundColor}
-        disabled={disabled}
-        name={name}
-        onClick={onClick}
-        size={size}
-        type={type}
-        value={value}
-      >
-        {icon}
-        {text}
-      </StyledButton>
-    </>
+    <StyledButton
+      backgroundColor={backgroundColor}
+      disabled={disabled}
+      name={name}
+      onClick={onClick}
+      size={size}
+      type={type}
+      value={value}
+    >
+      {icon}
+      {text}
+    </StyledButton>
   );
 }
 
@@ -44,23 +42,23 @@ Button.propTypes = {
   // Specify an associated name
   name: PropTypes.string,
   // How large should the button be?
-  size: PropTypes.oneOf(["small", "medium", "large"]),
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
   // What text content should the button show?
   text: PropTypes.string.isRequired,
   // What type should be used?
-  type: PropTypes.oneOf(["button, submit, reset"]),
+  type: PropTypes.oneOf(['button, submit, reset']),
   // Specify an associated value
   value: PropTypes.string,
 };
 
 Button.defaultProps = {
-  backgroundColor: "#4d7ea8",
+  backgroundColor: '#4d7ea8',
   disabled: false,
   icon: null,
   onClick: undefined,
   name: null,
-  size: "medium",
-  text: "Button",
-  type: "button",
+  size: 'medium',
+  text: 'Button',
+  type: 'button',
   value: null,
 };

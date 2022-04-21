@@ -12,8 +12,8 @@ export default function CodeInputArea({
   style,
 }) {
   const isGlobalThemeDark = useSelector((state) => {
-    if (state.globalTheme) {
-      return state.globalTheme.isGlobalThemeDark;
+    if (state?.globalTheme) {
+      return state?.globalTheme?.isGlobalThemeDark;
     }
   });
 
