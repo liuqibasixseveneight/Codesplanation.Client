@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ContentWrapper, PageHeading } from '../../templates';
-import { PostList, PostNavigation } from '../../ui';
+import { NavigationItem, PostList, PostNavigation } from '../../ui';
 import { Content, Wrapper } from './Posts.styles';
 
 export default function Posts() {
@@ -14,7 +14,11 @@ export default function Posts() {
           <PageHeading
             heading='Posts'
             subheading='Explore code explanations by language and difficulty'
-          />
+          >
+            <NavigationItem to='/posts/create-post'>
+              Create Post +
+            </NavigationItem>
+          </PageHeading>
 
           <PostList />
         </ContentWrapper>

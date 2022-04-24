@@ -3,7 +3,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { useSelector } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 
-import { AuthRoute } from './utils';
+import { RouteForUsers, RouteForNonUsers } from './utils';
 import { darkTheme, lightTheme } from './themes';
 import { Header, SlideOutMenu } from './components/ui';
 import {
@@ -29,25 +29,28 @@ export default function App() {
   }, [isGlobalThemeDark]);
 
   return (
-    <>
-      <ThemeProvider theme={isGlobalThemeDark ? darkTheme : lightTheme}>
-        <Background>
-          <Header />
-          <SlideOutMenu />
+    <ThemeProvider theme={isGlobalThemeDark ? darkTheme : lightTheme}>
+      <Background>
+        <Header />
+        <SlideOutMenu />
 
-          <Switch>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/about' component={About} />
-            <Route exact path='/posts' component={Posts} />
-            <Route exact path='/posts/create-post' component={CreatePost} />
-            <Route path='/posts/:postId' component={SinglePost} />
-            <Route path='/user/:userId' component={UserProfile} />
-            <AuthRoute exact path='/sign-in' component={SignIn} />
-            <AuthRoute exact path='/sign-up' component={SignUp} />
-          </Switch>
-        </Background>
-      </ThemeProvider>
-    </>
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/about' component={About} />
+          <Route exact path='/posts' component={Posts} />
+          <RouteForUsers
+            exact
+            path='/posts/create-post'
+            redirectTo='/sign-up'
+            component={CreatePost}
+          />
+          <Route path='/posts/:postId' component={SinglePost} />
+          <Route path='/user/:userId' component={UserProfile} />
+          <RouteForNonUsers exact path='/sign-in' component={SignIn} />
+          <RouteForNonUsers exact path='/sign-up' component={SignUp} />
+        </Switch>
+      </Background>
+    </ThemeProvider>
   );
 }
 

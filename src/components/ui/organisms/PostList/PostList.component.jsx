@@ -11,12 +11,18 @@ export default function PostList() {
     return <span>Error!:&nbsp;{error}</span>;
   }
 
+  if (!posts && !loading) {
+    return <span>There are no Posts to show</span>;
+  }
+
+  if (loading) {
+    return <span>Loading...</span>;
+  }
+
   return (
     <Wrapper>
-      {loading ? (
-        <span>Loading...</span>
-      ) : (
-        posts &&
+      {posts &&
+        posts.length > 0 &&
         (posts || []).map(
           ({
             id,
@@ -38,8 +44,7 @@ export default function PostList() {
               {...props}
             />
           )
-        )
-      )}
+        )}
     </Wrapper>
   );
 }

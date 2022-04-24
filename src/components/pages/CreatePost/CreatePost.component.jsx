@@ -32,7 +32,7 @@ export default function CreatePost() {
           subheading='Explain or demonstrate your code with a new post below'
         />
 
-        <CodeInputArea language='sql' placeholder='Please enter JSX code' />
+        <CodeInputArea language='jsx' placeholder='Please enter JSX code' />
 
         <Form onSubmit={onSubmit} noValidate>
           <Form.Input

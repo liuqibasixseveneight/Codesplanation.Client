@@ -10,6 +10,7 @@ export default function CodeInputArea({
   padding,
   placeholder,
   style,
+  value,
 }) {
   const isGlobalThemeDark = useSelector((state) => {
     if (state?.globalTheme) {
@@ -36,7 +37,7 @@ export default function CodeInputArea({
       style={{ transition: 'all 100ms linear' }}
     >
       <CodeEditor
-        value={code}
+        value={value || code}
         ref={textRef}
         language={language}
         placeholder={placeholder}
@@ -59,6 +60,7 @@ CodeInputArea.propTypes = {
   padding: PropTypes.number,
   placeholder: PropTypes.string,
   style: PropTypes.object,
+  value: PropTypes.string,
 };
 
 CodeInputArea.defaultProps = {
@@ -66,4 +68,5 @@ CodeInputArea.defaultProps = {
   padding: 15,
   placeholder: '',
   style: {},
+  value: '',
 };

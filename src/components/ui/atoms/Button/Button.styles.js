@@ -4,7 +4,10 @@ export const StyledButton = styled.button`
   align-items: center;
   appearance: none;
   -webkit-appearance: none;
-  background: ${(props) => props.theme.colors.global.backgroundPrimary};
+  background: ${(props) =>
+    props.backgroundColor
+      ? props.backgroundColor
+      : props.theme.colors.global.backgroundPrimary};
   border: 0;
   border-radius: 4px;
   color: white;
