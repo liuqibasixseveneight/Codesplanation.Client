@@ -1,5 +1,12 @@
-import { deviceMaxWidth, deviceMinWidth } from "./breakpoints";
-import AuthRoute from "./AuthRoute";
-import getInitialTheme from "./getInitialTheme";
+import { deviceMaxWidth, deviceMinWidth } from './breakpoints';
+import getInitialTheme from './getInitialTheme';
+import RouteForNonUsers from './RouteForNonUsers';
+import RouteForUsers from './RouteForUsers';
 
-export { AuthRoute, deviceMaxWidth, deviceMinWidth, getInitialTheme };
+export {
+  deviceMaxWidth,
+  deviceMinWidth,
+  getInitialTheme,
+  RouteForNonUsers,
+  RouteForUsers,
+};

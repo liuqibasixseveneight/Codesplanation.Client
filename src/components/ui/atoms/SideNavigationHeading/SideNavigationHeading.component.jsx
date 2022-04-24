@@ -1,18 +1,18 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { Text } from "../../index";
+import { Text } from '../../index';
 import {
   StyledLink,
   StyledText,
   Wrapper,
-} from "./SideNavigationHeading.styles";
+} from './SideNavigationHeading.styles';
 
 export default function SideNavigationHeading({ link, onClick, text, to }) {
   if (!link) {
     return (
       <Wrapper>
-        <Text as="h4" bold fontSize="1.2rem">
+        <Text as='h4' bold fontSize='1.2rem'>
           {text}
         </Text>
       </Wrapper>
@@ -41,5 +41,5 @@ SideNavigationHeading.defaultProps = {
   link: false,
   onClick: null,
   text: null,
-  to: "/",
+  to: '/',
 };

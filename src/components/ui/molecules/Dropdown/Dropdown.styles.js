@@ -1,7 +1,7 @@
-import styled from "styled-components/macro";
+import styled from 'styled-components/macro';
 
 export const HorizontalBreak = styled.hr`
-  background: ${(props) => props.theme.colors.global.textPrimary};
+  background: ${(props) => props?.theme?.colors?.global?.textPrimary};
   border: 0;
   border-radius: 8px;
   height: 1px;
@@ -14,8 +14,8 @@ export const HorizontalBreak = styled.hr`
 
 export const Wrapper = styled.ul`
   align-items: center;
-  background: ${(props) => props.theme.colors.global.backgroundPrimary};
-  border: 1px solid ${(props) => props.theme.colors.global.highlightPrimary};
+  background: ${(props) => props?.theme?.colors?.global?.backgroundPrimary};
+  border: 1px solid ${(props) => props?.theme?.colors?.global?.highlightPrimary};
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -29,5 +29,5 @@ export const Wrapper = styled.ul`
   transition: all 100ms linear, height 500ms ease;
   width: 250px;
   z-index: 1;
-  left: ${({ left }) => (left ? "0.8rem" : null)};
+  left: ${({ left }) => (left ? '0.8rem' : null)};
 `;

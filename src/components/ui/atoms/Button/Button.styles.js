@@ -1,10 +1,13 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 export const StyledButton = styled.button`
   align-items: center;
   appearance: none;
   -webkit-appearance: none;
-  background: ${(props) => props.theme.colors.global.backgroundPrimary};
+  background: ${(props) =>
+    props.backgroundColor
+      ? props.backgroundColor
+      : props.theme.colors.global.backgroundPrimary};
   border: 0;
   border-radius: 4px;
   color: white;
@@ -18,16 +21,16 @@ export const StyledButton = styled.button`
 
   ${({ size }) => {
     switch (true) {
-      case size === "small":
+      case size === 'small':
         return css`
           font-size: 0.8rem;
           padding: 0.4rem 0.8rem;
         `;
-      case size === "medium":
+      case size === 'medium':
         return css`
           font-size: 1rem;
         `;
-      case size === "large":
+      case size === 'large':
         return css`
           font-size: 1.4rem;
           padding: 0.4rem 0.8rem;
@@ -63,17 +66,17 @@ export const StyledButton = styled.button`
 
     ${({ size }) => {
       switch (true) {
-        case size === "small":
+        case size === 'small':
           return css`
             height: 12px;
             max-height: 12px;
           `;
-        case size === "medium":
+        case size === 'medium':
           return css`
             height: 16px;
             max-height: 16px;
           `;
-        case size === "large":
+        case size === 'large':
           return css`
             height: 20px;
             max-height: 20px;

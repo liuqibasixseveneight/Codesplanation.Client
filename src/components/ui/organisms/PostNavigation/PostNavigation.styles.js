@@ -1,10 +1,10 @@
-import styled from "styled-components/macro";
+import styled from 'styled-components/macro';
 
 export const Wrapper = styled.div`
   align-items: center;
-  background: ${(props) => props.theme.colors.global.backgroundPrimary};
+  background: ${(props) => props?.theme?.colors?.global?.backgroundPrimary};
   border-right: 1px solid
-    ${(props) => props.theme.colors.global.highlightPrimary};
+    ${(props) => props?.theme?.colors?.global?.highlightPrimary};
   display: flex;
   grid-area: navigation;
   flex-direction: column;

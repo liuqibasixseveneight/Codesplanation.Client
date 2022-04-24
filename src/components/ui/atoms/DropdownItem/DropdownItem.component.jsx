@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
   LeftIcon,
@@ -8,7 +8,7 @@ import {
   StyledSpan,
   Text,
   Wrapper,
-} from "./DropdownItem.styles";
+} from './DropdownItem.styles';
 
 export default function DropdownItem({
   children,
@@ -64,5 +64,5 @@ DropdownItem.defaultProps = {
   navlink: false,
   onClick: null,
   rightIcon: null,
-  to: "/",
+  to: '/',
 };

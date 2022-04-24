@@ -1,9 +1,10 @@
-import styled from "styled-components/macro";
+import styled from 'styled-components/macro';
 
 export const Wrapper = styled.div`
   align-items: center;
-  background: ${(props) => props.theme.colors.global.backgroundSecondary};
-  border: 2px solid ${(props) => props.theme.colors.global.backgroundSecondary};
+  background: ${(props) => props?.theme?.colors?.global?.backgroundSecondary};
+  border: 2px solid
+    ${(props) => props?.theme?.colors?.global?.backgroundSecondary};
   border-radius: 8px;
   cursor: pointer;
   display: flex;
@@ -14,6 +15,7 @@ export const Wrapper = styled.div`
   width: 100%;
 
   &:hover {
-    border: 2px solid ${(props) => props.theme.colors.global.highlightPrimary};
+    border: 2px solid
+      ${(props) => props?.theme?.colors?.global?.highlightPrimary};
   }
 `;

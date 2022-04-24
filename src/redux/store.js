@@ -1,8 +1,8 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore } from '@reduxjs/toolkit';
 
-import dropdownReducer from "./slices/dropdownSlice";
-import globalThemeReducer from "./slices/globalThemeSlice";
-import navigationReducer from "./slices/navigationSlice";
+import dropdownReducer from './slices/dropdownSlice';
+import globalThemeReducer from './slices/globalThemeSlice';
+import navigationReducer from './slices/navigationSlice';
 
 export default configureStore({
   reducer: {

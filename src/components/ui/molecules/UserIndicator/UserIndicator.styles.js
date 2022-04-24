@@ -1,9 +1,9 @@
-import styled from "styled-components/macro";
+import styled from 'styled-components/macro';
 
 export const UserAvatar = styled.div`
   background: #c1c1c1;
   border-radius: 50%;
-  content: "";
+  content: '';
   height: 45px;
   max-height: 45px;
   min-height: 45px;
@@ -15,9 +15,9 @@ export const UserAvatar = styled.div`
 `;
 
 export const UserText = styled.span`
-  color: ${(props) => props.theme.colors.global.textPrimary};
+  color: ${(props) => props?.theme?.colors?.global?.textPrimary};
   font-size: 1.6rem;
-  font-family: "RalewayBold";
+  font-family: 'RalewayBold';
   font-weight: 700;
   transition: all 100ms linear;
 `;
@@ -26,10 +26,10 @@ export const Wrapper = styled.div`
   align-items: center;
   background: ${({ isDropdownOpen }) =>
     isDropdownOpen
-      ? (props) => props.theme.colors.global.highlightPrimary
-      : (props) => props.theme.colors.global.backgroundPrimary};
+      ? (props) => props?.theme?.colors?.global?.highlightPrimary
+      : (props) => props?.theme?.colors?.global?.backgroundPrimary};
   border-radius: 4px;
-  color: ${(props) => props.theme.colors.global.textPrimary};
+  color: ${(props) => props?.theme?.colors?.global?.textPrimary};
   cursor: pointer;
   display: flex;
   height: 100%;
@@ -41,10 +41,10 @@ export const Wrapper = styled.div`
   width: auto;
 
   &:hover {
-    background: ${(props) => props.theme.colors.global.highlightPrimary};
+    background: ${(props) => props?.theme?.colors?.global?.highlightPrimary};
 
     & ${UserText} {
-      color: ${(props) => props.theme.colors.global.highlightSecondary};
+      color: ${(props) => props?.theme?.colors?.global?.highlightSecondary};
     }
   }
 `;

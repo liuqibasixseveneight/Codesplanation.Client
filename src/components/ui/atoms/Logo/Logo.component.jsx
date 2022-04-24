@@ -1,15 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { LogoText, Wrapper } from "./Logo.styles";
+import { LogoText, Wrapper } from './Logo.styles';
 
 export default function Logo({ margin }) {
   return (
-    <>
-      <Wrapper margin={margin}>
-        <LogoText>Codesplanation</LogoText>
-      </Wrapper>
-    </>
+    <Wrapper margin={margin}>
+      <LogoText>Codesplanation</LogoText>
+    </Wrapper>
   );
 }
 

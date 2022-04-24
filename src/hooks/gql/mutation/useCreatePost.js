@@ -1,13 +1,26 @@
-import { useMutation } from "@apollo/client";
-import gql from "graphql-tag";
+import { useMutation } from '@apollo/client';
+import gql from 'graphql-tag';
+
+import { GET_POSTS_QUERY } from '../query/useGetPosts';
 
 const CREATE_POST_MUTATION = gql`
-  mutation createPost($title: String!, $subtitle: String!, $body: String!) {
-    createPost(title: $title, subtitle: $subtitle, body: $body) {
+  mutation createPost(
+    $title: String!
+    $subtitle: String!
+    $difficulty: String!
+    $body: String!
+  ) {
+    createPost(
+      title: $title
+      subtitle: $subtitle
+      difficulty: $difficulty
+      body: $body
+    ) {
       id
-      body
       title
       subtitle
+      difficulty
+      body
       createdAt
       username
       likes {
@@ -27,20 +40,27 @@ const CREATE_POST_MUTATION = gql`
   }
 `;
 
-export const useCreatePost = (title, subtitle, body) => {
+export const useCreatePost = (values) => {
   const [createPost, { loading, data, error }] = useMutation(
     CREATE_POST_MUTATION,
     {
-      variables: {
-        title,
-        subtitle,
-        body,
-      },
-      update: (_, result) => {
-        console.log("CREATE POST RESULT:__", result);
-        title = "";
-        subtitle = "";
-        body = "";
+      variables: values,
+      update: (proxy, result) => {
+        const data = proxy.readQuery({
+          query: GET_POSTS_QUERY,
+        });
+
+        proxy.writeQuery({
+          query: GET_POSTS_QUERY,
+          data: {
+            getPosts: [result.data.createPost, ...data.getPosts],
+          },
+        });
+
+        values.title = '';
+        values.subtitle = '';
+        values.difficulty = '';
+        values.body = '';
       },
     }
   );

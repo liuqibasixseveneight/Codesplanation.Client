@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { Wrapper } from "./SideNavigationSection.styles";
+import { Wrapper } from './SideNavigationSection.styles';
 
 export default function SideNavigationSection({ children }) {
   return <Wrapper>{children}</Wrapper>;

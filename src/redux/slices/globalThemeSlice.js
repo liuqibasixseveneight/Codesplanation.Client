@@ -1,16 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
-import { getInitialTheme } from "../../utils";
+import { getInitialTheme } from '../../utils';
 
 export const globalThemeSlice = createSlice({
-  name: "globalTheme",
+  name: 'globalTheme',
   initialState: {
     isGlobalThemeDark: getInitialTheme(),
   },
   reducers: {
     setIsGlobalThemeDark: (state) => {
       state.isGlobalThemeDark = !state.isGlobalThemeDark;
-      localStorage.setItem("isDarkTheme", state.isGlobalThemeDark);
+      localStorage.setItem('isDarkTheme', state.isGlobalThemeDark);
     },
   },
 });

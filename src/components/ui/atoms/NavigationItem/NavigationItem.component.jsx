@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { Border, Wrapper } from "./NavigationItem.styles";
+import { Border, Wrapper } from './NavigationItem.styles';
 
 export default function NavigationItem({
   border,
@@ -12,13 +12,11 @@ export default function NavigationItem({
   to,
 }) {
   return (
-    <>
-      <Wrapper onClick={onClick} exact={exact} to={to}>
-        <Border border={border} isVertical={isVertical}>
-          {children}
-        </Border>
-      </Wrapper>
-    </>
+    <Wrapper onClick={onClick} exact={exact} to={to}>
+      <Border border={border} isVertical={isVertical}>
+        {children}
+      </Border>
+    </Wrapper>
   );
 }
 
@@ -43,5 +41,5 @@ NavigationItem.defaultProps = {
   exact: false,
   isVertical: false,
   onClick: null,
-  to: "/",
+  to: '/',
 };

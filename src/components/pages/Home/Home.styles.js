@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components/macro';
 
 const homeGradient = keyframes`
   0% { background-position: 0 50% }
@@ -10,12 +10,12 @@ export const Hero = styled.div`
   animation-duration: 10s;
   animation-name: ${homeGradient};
   animation-iteration-count: infinite;
-  background: ${(props) => props.theme.colors.global.backgroundPrimary};
+  background: ${(props) => props?.theme?.colors?.global?.backgroundPrimary};
   background: linear-gradient(
     -45deg,
-    ${(props) => props.theme.colors.global.backgroundPrimary} 15%,
-    ${(props) => props.theme.colors.global.highlightPrimary},
-    ${(props) => props.theme.colors.global.highlightSecondary}
+    ${(props) => props?.theme?.colors?.global?.backgroundPrimary} 15%,
+    ${(props) => props?.theme?.colors?.global?.highlightPrimary},
+    ${(props) => props?.theme?.colors?.global?.highlightSecondary}
   );
   background-size: 400% 400%;
   height: calc(100vh - 100px);
@@ -34,8 +34,8 @@ export const HeroText = styled.div`
   width: 100%;
 
   & h2 {
-    color: ${(props) => props.theme.colors.global.textPrimary};
-    font-family: "RalewayBlack", sans-serif;
+    color: ${(props) => props?.theme?.colors?.global?.textPrimary};
+    font-family: 'RalewayBlack', sans-serif;
     font-size: 10vw;
     transition: all 100ms linear;
   }

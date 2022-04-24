@@ -1,20 +1,18 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
   LeftIcon,
   StyledListItem,
   Text,
-} from "./SideNavigationListItem.styles";
+} from './SideNavigationListItem.styles';
 
 export default function SideNavigationListItem({ leftIcon, onClick, text }) {
   return (
-    <>
-      <StyledListItem onClick={onClick} leftIcon={leftIcon}>
-        <LeftIcon>{leftIcon}</LeftIcon>
-        <Text>{text}</Text>
-      </StyledListItem>
-    </>
+    <StyledListItem onClick={onClick} leftIcon={leftIcon}>
+      <LeftIcon>{leftIcon}</LeftIcon>
+      <Text>{text}</Text>
+    </StyledListItem>
   );
 }
 

@@ -1,4 +1,4 @@
-import styled from "styled-components/macro";
+import styled from 'styled-components/macro';
 
 export const Wrapper = styled.div`
   align-items: center;
@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 `;
 
 export const StyledLabel = styled.label`
-  color: ${(props) => props.theme.colors.global.textPrimary};
+  color: ${(props) => props?.theme?.colors?.global?.textPrimary};
   margin: 0 0 0.4rem 0;
   text-align: start;
   transition: all 100ms linear;
@@ -19,12 +19,12 @@ export const StyledLabel = styled.label`
 export const StyledInput = styled.input`
   -webkit-appearance: none;
   appearance: none;
-  background: ${(props) => props.theme.colors.global.backgroundPrimary};
-  border: 2px solid ${(props) => props.theme.colors.global.highlightPrimary};
+  background: ${(props) => props?.theme?.colors?.global?.backgroundPrimary};
+  border: 2px solid ${(props) => props?.theme?.colors?.global?.highlightPrimary};
   border-color: ${({ error, ...props }) =>
-    error ? "tomato" : props.theme.colors.global.highlightPrimary};
+    error ? 'tomato' : props?.theme?.colors?.global?.highlightPrimary};
   border-radius: 8px;
-  color: ${(props) => props.theme.colors.global.textPrimary};
+  color: ${(props) => props?.theme?.colors?.global?.textPrimary};
   height: 2.2rem;
   padding: 0.4rem 0.8rem;
   transition: all 100ms linear;
@@ -33,44 +33,45 @@ export const StyledInput = styled.input`
   -moz-user-select: auto;
   -ms-user-select: auto;
   user-select: auto;
-  width: ${({ width }) => (width ? width : "300px")};
+  width: ${({ width }) => (width ? width : '300px')};
 
   ::-webkit-input-placeholder {
-    font-family: "RalewayRegular", sans-serif;
+    font-family: 'RalewayRegular', sans-serif;
     font-weight: 400;
   }
 
   ::-moz-placeholder {
-    font-family: "RalewayRegular", sans-serif;
+    font-family: 'RalewayRegular', sans-serif;
     font-weight: 400;
   }
 
   :-ms-input-placeholder {
-    font-family: "RalewayRegular", sans-serif;
+    font-family: 'RalewayRegular', sans-serif;
     font-weight: 400;
   }
 
   :-moz-placeholder {
-    font-family: "RalewayRegular", sans-serif;
+    font-family: 'RalewayRegular', sans-serif;
     font-weight: 400;
   }
 
   /* Input type="password" */
-  &[type="password"] {
-    color: ${(props) => props.theme.colors.global.textPrimary};
+  &[type='password'] {
+    color: ${(props) => props?.theme?.colors?.global?.textPrimary};
     transition: all 100ms linear;
   }
 
   /* Input type="submit" */
-  &[type="submit"] {
+  &[type='submit'] {
     -webkit-appearance: none;
     appearance: none;
-    background: ${(props) => props.theme.colors.global.backgroundPrimary};
-    border: 2px solid ${(props) => props.theme.colors.global.highlightSecondary};
+    background: ${(props) => props?.theme?.colors?.global?.backgroundPrimary};
+    border: 2px solid
+      ${(props) => props?.theme?.colors?.global?.highlightSecondary};
     border-radius: 8px;
-    color: ${(props) => props.theme.colors.global.highlightSecondary};
+    color: ${(props) => props?.theme?.colors?.global?.highlightSecondary};
     cursor: pointer;
-    font-family: "RalewaySemiBold", sans-serif;
+    font-family: 'RalewaySemiBold', sans-serif;
     font-size: 1rem;
     font-weight: 600;
     margin: 0.8rem 0 0 0;
@@ -78,14 +79,15 @@ export const StyledInput = styled.input`
     transition: all 100ms linear;
 
     &:hover {
-      background: ${(props) => props.theme.colors.global.highlightPrimary};
+      background: ${(props) => props?.theme?.colors?.global?.highlightPrimary};
       box-shadow: none !important;
-      color: ${(props) => props.theme.colors.global.highlightSecondary};
+      color: ${(props) => props?.theme?.colors?.global?.highlightSecondary};
       transition: all 100ms linear;
     }
 
     &:focus {
-      border: 2px solid ${(props) => props.theme.colors.global.highlightPrimary};
+      border: 2px solid
+        ${(props) => props?.theme?.colors?.global?.highlightPrimary};
       box-shadow: none !important;
       outline: none !important;
       transition: all 100ms linear;
@@ -100,29 +102,29 @@ export const StyledInput = styled.input`
     margin: 0;
   }
 
-  &[type="number"] {
+  &[type='number'] {
     -moz-appearance: textfield;
     -webkit-appearance: textfield;
     appearance: textfield;
-    background: ${(props) => props.theme.colors.global.backgroundPrimary};
-    color: ${(props) => props.theme.colors.global.textPrimary};
+    background: ${(props) => props?.theme?.colors?.global?.backgroundPrimary};
+    color: ${(props) => props?.theme?.colors?.global?.textPrimary};
     cursor: pointer;
-    font-family: "RalewayRegular", sans-serif;
+    font-family: 'RalewayRegular', sans-serif;
     font-weight: 400;
     transition: all 100ms linear;
-    width: ${({ width }) => (width ? width : "150px")};
+    width: ${({ width }) => (width ? width : '150px')};
   }
   /* Input type="date" */
-  &[type="date"]::-webkit-clear-button {
+  &[type='date']::-webkit-clear-button {
     display: none;
   }
 
-  &[type="date"]::-webkit-inner-spin-button {
+  &[type='date']::-webkit-inner-spin-button {
     display: none;
   }
 
-  &[type="date"]::-webkit-calendar-picker-indicator {
-    color: ${(props) => props.theme.colors.global.textPrimary};
+  &[type='date']::-webkit-calendar-picker-indicator {
+    color: ${(props) => props?.theme?.colors?.global?.textPrimary};
     cursor: pointer;
     filter: invert(0.5);
     opacity: 0.6;
@@ -134,33 +136,33 @@ export const StyledInput = styled.input`
     }
   }
 
-  &[type="date"] {
+  &[type='date'] {
     -webkit-appearance: none;
     appearance: none;
-    background: ${(props) => props.theme.colors.global.backgroundPrimary};
-    color: ${(props) => props.theme.colors.global.textPrimary};
+    background: ${(props) => props?.theme?.colors?.global?.backgroundPrimary};
+    color: ${(props) => props?.theme?.colors?.global?.textPrimary};
     cursor: pointer;
-    font-family: "RalewayRegular", sans-serif;
+    font-family: 'RalewayRegular', sans-serif;
     font-weight: 400;
     transition: all 100ms linear;
-    width: ${({ width }) => (width ? width : "auto")};
+    width: ${({ width }) => (width ? width : 'auto')};
   }
 
   /* Input type="time" */
-  &[type="time"] {
+  &[type='time'] {
     -webkit-appearance: none;
     appearance: none;
-    background: ${(props) => props.theme.colors.global.backgroundPrimary};
-    color: ${(props) => props.theme.colors.global.textPrimary};
+    background: ${(props) => props?.theme?.colors?.global?.backgroundPrimary};
+    color: ${(props) => props?.theme?.colors?.global?.textPrimary};
     cursor: pointer;
-    font-family: "RalewayRegular", sans-serif;
+    font-family: 'RalewayRegular', sans-serif;
     font-weight: 400;
     transition: all 100ms linear;
-    width: ${({ width }) => (width ? width : "auto")};
+    width: ${({ width }) => (width ? width : 'auto')};
   }
 
-  &[type="time"]::-webkit-calendar-picker-indicator {
-    color: ${(props) => props.theme.colors.global.textPrimary};
+  &[type='time']::-webkit-calendar-picker-indicator {
+    color: ${(props) => props?.theme?.colors?.global?.textPrimary};
     cursor: pointer;
     filter: invert(0.5);
     opacity: 0.6;
@@ -173,15 +175,18 @@ export const StyledInput = styled.input`
   }
 
   &:hover {
-    box-shadow: 0 0 5px ${(props) => props.theme.colors.global.highlightPrimary};
+    box-shadow: 0 0 5px
+      ${(props) => props?.theme?.colors?.global?.highlightPrimary};
     transition: all 100ms linear;
   }
 
   &:focus {
-    border: 2px solid ${(props) => props.theme.colors.global.highlightPrimary};
+    border: 2px solid
+      ${(props) => props?.theme?.colors?.global?.highlightPrimary};
     border-color: ${({ error, ...props }) =>
-      error ? "tomato" : props.theme.colors.global.highlightPrimary};
-    box-shadow: 0 0 5px ${(props) => props.theme.colors.global.highlightPrimary};
+      error ? 'tomato' : props?.theme?.colors?.global?.highlightPrimary};
+    box-shadow: 0 0 5px
+      ${(props) => props?.theme?.colors?.global?.highlightPrimary};
     outline: none !important;
     transition: all 100ms linear;
   }

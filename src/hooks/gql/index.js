@@ -1,5 +1,5 @@
-import { useCreatePost, useLikePost } from "./mutation";
-import { useGetPost, useGetPosts, useGetUser, useGetUsers } from "./query";
+import { useCreatePost, useLikePost } from './mutation';
+import { useGetPost, useGetPosts, useGetUser, useGetUsers } from './query';
 
 export {
   useCreatePost,

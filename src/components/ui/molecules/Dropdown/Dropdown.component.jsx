@@ -1,10 +1,8 @@
-import React, { createContext, useEffect, useRef, useState } from "react";
-// import { useDispatch } from "react-redux";
-import PropTypes from "prop-types";
+import React, { createContext, useEffect, useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 
-// import { setIsDropdownOpen } from "../../../../redux/slices/dropdownSlice";
-import { DropdownItem } from "../../index";
-import { HorizontalBreak, Wrapper } from "./Dropdown.styles";
+import { DropdownItem } from '../../index';
+import { HorizontalBreak, Wrapper } from './Dropdown.styles';
 
 const DropdownGroupContext = createContext();
 
@@ -29,36 +27,10 @@ function Break() {
 export default function Dropdown({ children, left, user, ...props }) {
   const [menuHeight, setMenuHeight] = useState(null);
   const dropdownRef = useRef(null);
-  // const dispatch = useDispatch();
 
   useEffect(() => {
     setMenuHeight(dropdownRef.current?.firstChild.offsetHeight);
   }, []);
-
-  // TODO: Add robust onClickOutside handler
-  // const useOnClickOutside = (dropdownRef, handler) => {
-  //   useEffect(() => {
-  //     const listener = (event) => {
-  //       if (
-  //         !dropdownRef.current ||
-  //         dropdownRef.current.contains(event.target)
-  //       ) {
-  //         return;
-  //       }
-  //       handler(event);
-  //     };
-
-  //     document.addEventListener("mousedown", listener);
-  //     document.addEventListener("touchstart", listener);
-
-  //     return () => {
-  //       document.removeEventListener("mousedown", listener);
-  //       document.removeEventListener("touchstart", listener);
-  //     };
-  //   }, [dropdownRef, handler]);
-  // };
-
-  // useOnClickOutside(dropdownRef, () => dispatch(setIsDropdownOpen()));
 
   return (
     <DropdownGroupContext.Provider value={props}>
@@ -105,7 +77,7 @@ DropdownItem.defaultProps = {
   navlink: false,
   onClick: null,
   rightIcon: null,
-  to: "/",
+  to: '/',
 };
 
 Dropdown.Item = Item;

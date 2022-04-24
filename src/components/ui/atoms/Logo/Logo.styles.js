@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
 const animatedLogoText = keyframes`
   0% { 
@@ -25,14 +25,14 @@ export const LogoText = styled.span`
   background-clip: text;
   background: linear-gradient(
     90deg,
-    ${(props) => props.theme.colors.global.highlightPrimary},
-    ${(props) => props.theme.colors.global.highlightSecondary},
-    ${(props) => props.theme.colors.global.highlightPrimary}
+    ${(props) => props?.theme?.colors?.global?.highlightPrimary},
+    ${(props) => props?.theme?.colors?.global?.highlightSecondary},
+    ${(props) => props?.theme?.colors?.global?.highlightPrimary}
   );
   background-size: 400% 200%;
-  color: ${(props) => props.theme.colors.global.textPrimary};
+  color: ${(props) => props?.theme?.colors?.global?.textPrimary};
   cursor: pointer;
-  font-family: "RalewayBlack";
+  font-family: 'RalewayBlack';
   font-size: 2rem;
   font-weight: 900;
   -webkit-background-clip: text;

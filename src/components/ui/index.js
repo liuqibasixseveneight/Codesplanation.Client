@@ -15,8 +15,9 @@ import {
   SideNavigationSection,
   Text,
   ThemeToggle,
-} from "./atoms";
+} from './atoms';
 import {
+  CodeInputArea,
   Dropdown,
   ErrorList,
   Form,
@@ -26,12 +27,13 @@ import {
   SlideOutMenuBody,
   SlideOutMenuHeader,
   UserIndicator,
-} from "./molecules";
-import { Header, PostList, PostNavigation, SlideOutMenu } from "./organisms";
+} from './molecules';
+import { Header, PostList, PostNavigation, SlideOutMenu } from './organisms';
 
 export {
   Anchor,
   Button,
+  CodeInputArea,
   CountIndicator,
   Dropdown,
   DropdownItem,
