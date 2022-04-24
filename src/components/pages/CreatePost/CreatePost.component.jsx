@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { get } from 'lodash';
 
 import { ContentWrapper, PageHeading } from '../../templates';
 import { Form } from '../../ui';
@@ -6,7 +7,7 @@ import { useCreatePost, useForm } from '../../../hooks';
 import { CodeInputArea } from '../../ui';
 import { Wrapper } from './CreatePost.styles';
 
-export default function CreatePost() {
+export default function CreatePost({ history }) {
   // const [errors, setErrors] = useState();
   const { onChange, onSubmit, values } = useForm(createPostCallBack, {
     title: '',
@@ -15,13 +16,24 @@ export default function CreatePost() {
     body: '',
   });
 
-  const [
-    createPost,
-    // { loading, data, error },
-  ] = useCreatePost(values);
+  const [createPost, { loading, data, error }] = useCreatePost(values);
+  const createdPost = get(data, 'createPost');
 
   function createPostCallBack() {
     createPost();
+  }
+
+  useEffect(() => {
+    if (data) {
+      history.push(`${createdPost?.id}`);
+    }
+  }, [data, history, createdPost]);
+
+  if (loading) {
+    return <span>Loading...</span>;
+  }
+  if (error) {
+    console.error('Error!: ', error);
   }
 
   return (

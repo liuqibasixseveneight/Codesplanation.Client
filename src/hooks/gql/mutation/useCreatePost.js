@@ -46,12 +46,17 @@ export const useCreatePost = (values) => {
     {
       variables: values,
       update: (proxy, result) => {
-        console.log('CREATE POST RESULT:__', result);
         const data = proxy.readQuery({
           query: GET_POSTS_QUERY,
         });
-        data.getPosts = [result.data.createPost, ...data.getPosts];
-        proxy.writeQuery({ query: GET_POSTS_QUERY, data });
+
+        proxy.writeQuery({
+          query: GET_POSTS_QUERY,
+          data: {
+            getPosts: [result.data.createPost, ...data.getPosts],
+          },
+        });
+
         values.title = '';
         values.subtitle = '';
         values.difficulty = '';
