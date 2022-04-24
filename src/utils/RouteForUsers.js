@@ -26,7 +26,7 @@ export default function RouteForUsers({
 }
 
 RouteForUsers.propTypes = {
-  component: PropTypes.node.isRequired,
+  component: PropTypes.func.isRequired,
   redirectTo: PropTypes.string,
 };
 
