@@ -1,64 +1,76 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { StyledButton } from './Button.styles';
+import { StyledButton, StyledLinkButton } from './Button.styles';
 
 export default function Button({
   backgroundColor,
   disabled,
   icon,
+  linkButton,
   name,
   onClick,
   size,
   text,
+  to,
   type,
   value,
 }) {
-  return (
+  const buttonToShow = linkButton ? (
+    <StyledLinkButton
+      backgroundColor={backgroundColor}
+      disabled={disabled}
+      name={name}
+      onClick={onClick}
+      size={size}
+      to={to}
+      type={type ? type : 'button'}
+      value={value}
+    >
+      {icon}
+      {text}
+    </StyledLinkButton>
+  ) : (
     <StyledButton
       backgroundColor={backgroundColor}
       disabled={disabled}
       name={name}
       onClick={onClick}
       size={size}
-      type={type}
+      type={type ? type : 'button'}
       value={value}
     >
       {icon}
       {text}
     </StyledButton>
   );
+  return buttonToShow;
 }
 
 Button.propTypes = {
-  // What background color should be used?
   backgroundColor: PropTypes.string,
-  // Is disabled true?
   disabled: PropTypes.bool,
-  // What icon should be shown?
   icon: PropTypes.element,
-  // Set an optional click handler?
+  linkButton: PropTypes.bool,
   onClick: PropTypes.func,
-  // Specify an associated name
   name: PropTypes.string,
-  // How large should the button be?
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  // What text content should the button show?
   text: PropTypes.string.isRequired,
-  // What type should be used?
+  to: PropTypes.string,
   type: PropTypes.oneOf(['button, submit, reset']),
-  // Specify an associated value
   value: PropTypes.string,
 };
 
 Button.defaultProps = {
-  backgroundColor: '#4d7ea8',
+  backgroundColor: null,
   disabled: false,
   icon: null,
+  linkButton: false,
   onClick: undefined,
   name: null,
   size: 'medium',
   text: 'Button',
-  type: 'button',
+  to: '/',
+  type: null,
   value: null,
 };

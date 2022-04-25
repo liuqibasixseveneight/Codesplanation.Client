@@ -1,13 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Text } from '../../ui';
-import { HeadingWrapper, Wrapper } from './PageHeading.styles';
+import { Badge, Text } from '../../ui';
+import {
+  HeadingExtrasWrapper,
+  HeadingWrapper,
+  Wrapper,
+} from './PageHeading.styles';
 
-export default function PageHeading({ children, subheading, heading }) {
+export default function PageHeading({ badge, heading, navButton, subheading }) {
   return (
     <Wrapper>
       <HeadingWrapper>
+        <HeadingExtrasWrapper>
+          {navButton && <div style={{ margin: '0.8rem 0' }}>{navButton}</div>}
+          {badge && <Badge icon={badge?.icon} text={badge?.text} />}
+        </HeadingExtrasWrapper>
+
         <Text as='h1' heading fontSize='2.4rem' margin='0'>
           {heading}
         </Text>
@@ -15,22 +24,20 @@ export default function PageHeading({ children, subheading, heading }) {
           {subheading}
         </Text>
       </HeadingWrapper>
-      {children}
     </Wrapper>
   );
 }
 
 PageHeading.propTypes = {
-  // Are there additional items?
-  children: PropTypes.node,
-  // What is the heading?
+  badge: PropTypes.object,
   heading: PropTypes.string.isRequired,
-  // What is the subheading?
+  navButton: PropTypes.node,
   subheading: PropTypes.string.isRequired,
 };
 
 PageHeading.defaultProps = {
-  children: null,
+  badge: null,
   heading: null,
+  navButton: null,
   subheading: null,
 };

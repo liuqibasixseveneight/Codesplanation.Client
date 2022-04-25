@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { get } from 'lodash';
+import { BsChevronLeft } from 'react-icons/bs';
 
 import { ContentWrapper, PageHeading } from '../../templates';
-import { Form } from '../../ui';
+import { Button, Form } from '../../ui';
 import { useCreatePost, useForm } from '../../../hooks';
 import { CodeInputArea } from '../../ui';
 import { Wrapper } from './CreatePost.styles';
@@ -42,6 +43,14 @@ export default function CreatePost({ history }) {
         <PageHeading
           heading='Create Post'
           subheading='Explain or demonstrate your code with a new post below'
+          navButton={
+            <Button
+              linkButton
+              to={'/posts'}
+              icon={<BsChevronLeft />}
+              text='Back to Posts'
+            />
+          }
         />
 
         <CodeInputArea language='jsx' placeholder='Please enter JSX code' />

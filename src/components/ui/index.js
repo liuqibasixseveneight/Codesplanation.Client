@@ -1,5 +1,6 @@
 import {
   Anchor,
+  Badge,
   Button,
   CountIndicator,
   DropdownItem,
@@ -23,7 +24,9 @@ import {
   Form,
   Navigation,
   Post,
+  PostAuthorBar,
   SideNavigation,
+  SinglePostDetails,
   SlideOutMenuBody,
   SlideOutMenuHeader,
   UserIndicator,
@@ -32,6 +35,7 @@ import { Header, PostList, PostNavigation, SlideOutMenu } from './organisms';
 
 export {
   Anchor,
+  Badge,
   Button,
   CodeInputArea,
   CountIndicator,
@@ -47,6 +51,7 @@ export {
   NavigationItem,
   NavigationMenu,
   Post,
+  PostAuthorBar,
   PostList,
   PostNavigation,
   PostTitle,
@@ -55,6 +60,7 @@ export {
   SideNavigationList,
   SideNavigationListItem,
   SideNavigationSection,
+  SinglePostDetails,
   SlideOutMenu,
   SlideOutMenuBody,
   SlideOutMenuHeader,

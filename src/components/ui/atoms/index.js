@@ -1,4 +1,5 @@
 export { default as Anchor } from './Anchor/Anchor.component';
+export { default as Badge } from './Badge/Badge.component';
 export { default as Button } from './Button/Button.component';
 export { default as CountIndicator } from './CountIndicator/CountIndicator.component';
 export { default as DropdownItem } from './DropdownItem/DropdownItem.component';
