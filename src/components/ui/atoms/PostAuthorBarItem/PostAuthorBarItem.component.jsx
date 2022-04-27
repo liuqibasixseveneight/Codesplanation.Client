@@ -7,6 +7,7 @@ export default function PostAuthorBarItem({ data, label, linksTo }) {
   return (
     <Wrapper>
       <Label>{label}&nbsp;</Label>
+
       {linksTo ? (
         <DataLink to={linksTo}>{data?.toString()}</DataLink>
       ) : (
