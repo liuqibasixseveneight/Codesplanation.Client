@@ -1,4 +1,3 @@
-export { default as CodeInputArea } from './CodeInputArea/CodeInputArea.component';
 export { default as Dropdown } from './Dropdown/Dropdown.component';
 export { default as ErrorList } from './ErrorList/ErrorList.component';
 export { default as Form } from './Form/Form.component';

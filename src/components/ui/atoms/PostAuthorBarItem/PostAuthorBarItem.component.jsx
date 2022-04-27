@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { Data, DataLink, Label, Wrapper } from './PostAuthorBarItem.styles';
 
 export default function PostAuthorBarItem({ data, label, linksTo }) {
+  const dataStringForStyling = data?.toString().toLowerCase();
+
   return (
     <Wrapper>
       <Label>{label}&nbsp;</Label>
@@ -11,7 +13,7 @@ export default function PostAuthorBarItem({ data, label, linksTo }) {
       {linksTo ? (
         <DataLink to={linksTo}>{data?.toString()}</DataLink>
       ) : (
-        <Data>{data?.toString()}</Data>
+        <Data data={dataStringForStyling}>{data?.toString()}</Data>
       )}
     </Wrapper>
   );

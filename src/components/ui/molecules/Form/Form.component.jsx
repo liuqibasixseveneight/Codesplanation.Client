@@ -2,7 +2,7 @@ import React, { createContext } from 'react';
 import PropTypes from 'prop-types';
 
 import { StyledForm } from './Form.styles';
-import { FormInput } from '../../index';
+import { FormInput, MarkdownInputArea } from '../../index';
 
 const FormGroupContext = createContext();
 
@@ -28,6 +28,17 @@ function Input({
       type={type}
       value={value}
       width={width}
+    />
+  );
+}
+
+function MarkdownInput({ height, name, onChange, value }) {
+  return (
+    <MarkdownInputArea
+      height={height}
+      name={name}
+      onChange={onChange}
+      value={value}
     />
   );
 }
@@ -67,3 +78,4 @@ Form.defaultProps = {
 };
 
 Form.Input = Input;
+Form.MarkdownInput = MarkdownInput;

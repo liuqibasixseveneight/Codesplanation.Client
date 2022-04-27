@@ -11,6 +11,7 @@ export const StyledButton = styled.button`
   color: ${(props) => props?.theme?.colors?.global?.textPrimary};
   cursor: pointer;
   display: flex;
+  height: 100%;
   justify-content: center;
   padding: 0.6rem 0.8rem;
   text-transform: capitalize;
@@ -99,6 +100,7 @@ export const StyledLinkButton = styled(NavLink)`
   color: ${(props) => props?.theme?.colors?.global?.textPrimary};
   cursor: pointer;
   display: flex;
+  height: 100%;
   justify-content: center;
   padding: 0.6rem 0.8rem;
   text-transform: capitalize;

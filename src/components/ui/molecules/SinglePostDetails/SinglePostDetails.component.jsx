@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { BsChevronLeft } from 'react-icons/bs';
 import { get } from 'lodash';
 import moment from 'moment';
+import MDEditor from '@uiw/react-md-editor';
 
 import { ContentWrapper, PageHeading } from '../../../templates';
 import { Button, PostAuthorBar } from '../../index';
@@ -12,8 +13,6 @@ export default function SinglePostDetails({ loading, post }) {
   const badgeProps = {
     text: post?.difficulty,
   };
-
-  console.log('post', post);
 
   const createdAt = get(post, 'createdAt');
   const username = get(post, 'username');
@@ -55,12 +54,15 @@ export default function SinglePostDetails({ loading, post }) {
                 data={username}
                 linksTo={`/user/${userId}`}
               />
+              <PostAuthorBar.Item label='Difficulty:' data={post?.difficulty} />
               <PostAuthorBar.Item label='Like count:' data={likeCount} />
               <PostAuthorBar.Item label='Comment count:' data={commentCount} />
             </PostAuthorBar>
 
-            <p>{post?.body}</p>
-            <pre>{JSON.stringify(post, null, 2)}</pre>
+            <MDEditor.Markdown
+              source={post?.body}
+              style={{ padding: '0.8rem' }}
+            />
           </>
         )}
       </Wrapper>

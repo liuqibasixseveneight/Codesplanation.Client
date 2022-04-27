@@ -7,6 +7,7 @@ import {
   ErrorMessage,
   FormInput,
   Logo,
+  MarkdownInputArea,
   NavigationItem,
   NavigationMenu,
   PostAuthorBarItem,
@@ -19,7 +20,6 @@ import {
   ThemeToggle,
 } from './atoms';
 import {
-  CodeInputArea,
   Dropdown,
   ErrorList,
   Form,
@@ -38,7 +38,6 @@ export {
   Anchor,
   Badge,
   Button,
-  CodeInputArea,
   CountIndicator,
   Dropdown,
   DropdownItem,
@@ -48,6 +47,7 @@ export {
   FormInput,
   Header,
   Logo,
+  MarkdownInputArea,
   Navigation,
   NavigationItem,
   NavigationMenu,

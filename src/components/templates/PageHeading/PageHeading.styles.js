@@ -15,6 +15,10 @@ export const HeadingExtrasWrapper = styled.div`
   width: 100%;
 `;
 
+export const ButtonWrapper = styled.div`
+  margin: 0.8rem 0;
+`;
+
 export const HeadingWrapper = styled.div`
   align-items: flex-start;
   background: ${(props) => props?.theme?.colors?.global?.backgroundPrimary};

@@ -5,7 +5,7 @@ import { Wrapper } from './Badge.styles';
 
 export default function Badge({ icon, text }) {
   return (
-    <Wrapper text={text}>
+    <Wrapper>
       {icon}
       {text}
     </Wrapper>
