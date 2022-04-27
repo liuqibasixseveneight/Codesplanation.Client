@@ -24,6 +24,7 @@ const GET_POST_QUERY = gql`
         username
       }
       username
+      user
     }
   }
 `;

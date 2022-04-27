@@ -33,11 +33,8 @@ export default function ThemeToggle({ id, isOn, onColor }) {
 }
 
 ThemeToggle.propTypes = {
-  // What is the unique id?
   id: PropTypes.string,
-  // When is the toggle status true?
   isOn: PropTypes.bool,
-  // What colour should it be when the status is true?
   onColor: PropTypes.string,
 };
 

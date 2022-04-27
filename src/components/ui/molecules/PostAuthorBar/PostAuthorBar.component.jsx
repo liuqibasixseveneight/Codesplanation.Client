@@ -1,32 +1,31 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import PropTypes from 'prop-types';
-import { get } from 'lodash';
 
+import { PostAuthorBarItem } from '../../index';
 import { Wrapper } from './PostAuthorBar.styles';
 
-export default function PostAuthorBar({ post }) {
-  const createdAt = get(post, 'createdAt');
-  const username = get(post, 'username');
-  const likeCount = get(post, 'likeCount');
-  const commentCount = get(post, 'commentCount');
+const PostAuthorBarContext = createContext();
 
+function Item({ label, data, linksTo }) {
+  return <PostAuthorBarItem label={label} data={data} linksTo={linksTo} />;
+}
+
+export default function PostAuthorBar({ children, ...props }) {
   return (
-    <Wrapper>
-      <h1>PostAuthorBar</h1>
-      <div>
-        <em>{createdAt},&nbsp;</em>
-        <em>{username},&nbsp;</em>
-        <em>{likeCount},&nbsp;</em>
-        <em>{commentCount}</em>
-      </div>
-    </Wrapper>
+    <PostAuthorBarContext.Provider value={props}>
+      <Wrapper>{children}</Wrapper>
+    </PostAuthorBarContext.Provider>
   );
 }
 
 PostAuthorBar.propTypes = {
-  post: PropTypes.object,
+  children: PropTypes.node.isRequired,
+  props: PropTypes.any,
 };
 
 PostAuthorBar.defaultProps = {
-  post: {},
+  children: null,
+  props: null,
 };
+
+PostAuthorBar.Item = Item;

@@ -5,8 +5,7 @@ export const StyledButton = styled.button`
   align-items: center;
   appearance: none;
   -webkit-appearance: none;
-  background: ${({ backgroundColor, ...props }) =>
-    backgroundColor ?? props?.theme?.colors?.global?.highlightPrimary};
+  background: ${(props) => props?.theme?.colors?.global?.highlightPrimary};
   border: 0;
   border-radius: 4px;
   color: ${(props) => props?.theme?.colors?.global?.textPrimary};
@@ -94,8 +93,7 @@ export const StyledLinkButton = styled(NavLink)`
   align-items: center;
   appearance: none;
   -webkit-appearance: none;
-  background: ${({ backgroundColor, ...props }) =>
-    backgroundColor ?? props?.theme?.colors?.global?.highlightPrimary};
+  background: ${(props) => props?.theme?.colors?.global?.highlightPrimary};
   border: 0;
   border-radius: 4px;
   color: ${(props) => props?.theme?.colors?.global?.textPrimary};

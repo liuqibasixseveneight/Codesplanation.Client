@@ -43,9 +43,7 @@ export default function SideNavigation({ children, ...props }) {
   );
 }
 SideNavigation.propTypes = {
-  // What represents the children?
   children: PropTypes.node.isRequired,
-  // What are the other props?
   props: PropTypes.any,
 };
 

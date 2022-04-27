@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { StyledButton, StyledLinkButton } from './Button.styles';
 
 export default function Button({
-  backgroundColor,
   disabled,
   icon,
   linkButton,
@@ -18,7 +17,6 @@ export default function Button({
 }) {
   const buttonToShow = linkButton ? (
     <StyledLinkButton
-      backgroundColor={backgroundColor}
       disabled={disabled}
       name={name}
       onClick={onClick}
@@ -32,7 +30,6 @@ export default function Button({
     </StyledLinkButton>
   ) : (
     <StyledButton
-      backgroundColor={backgroundColor}
       disabled={disabled}
       name={name}
       onClick={onClick}
@@ -48,7 +45,6 @@ export default function Button({
 }
 
 Button.propTypes = {
-  backgroundColor: PropTypes.string,
   disabled: PropTypes.bool,
   icon: PropTypes.element,
   linkButton: PropTypes.bool,
@@ -62,7 +58,6 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  backgroundColor: null,
   disabled: false,
   icon: null,
   linkButton: false,

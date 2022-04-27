@@ -33,23 +33,14 @@ export default function FormInput({
 }
 
 FormInput.propTypes = {
-  // What results in an error?
   error: PropTypes.string,
-  // What label text should be rendered?
   label: PropTypes.string,
-  // What is the unique id, name and label identifier?
   name: PropTypes.string,
-  // What function should be triggered when changed?
   onChange: PropTypes.func,
-  // What function should be triggered when submitted?
   onSubmit: PropTypes.func,
-  // Should there be placeholder text?
   placeholder: PropTypes.string,
-  // What kind of input should be rendered?
   type: PropTypes.string,
-  // What is the value?
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  // Is a custom styling width needed?
   width: PropTypes.string,
 };
 

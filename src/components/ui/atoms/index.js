@@ -8,6 +8,7 @@ export { default as FormInput } from './FormInput/FormInput.component';
 export { default as Logo } from './Logo/Logo.component';
 export { default as NavigationItem } from './NavigationItem/NavigationItem.component';
 export { default as NavigationMenu } from './NavigationMenu/NavigationMenu.component';
+export { default as PostAuthorBarItem } from './PostAuthorBarItem/PostAuthorBarItem.component';
 export { default as PostTitle } from './PostTitle/PostTitle.component';
 export { default as SideNavigationHeading } from './SideNavigationHeading/SideNavigationHeading.component';
 export { default as SideNavigationList } from './SideNavigationList/SideNavigationList.component';

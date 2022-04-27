@@ -8,7 +8,6 @@ export default function SideNavigationList({ children }) {
 }
 
 SideNavigationList.propTypes = {
-  // What represents the children?
   children: PropTypes.node.isRequired,
 };
 

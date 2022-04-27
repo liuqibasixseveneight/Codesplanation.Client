@@ -1,10 +1,9 @@
 import styled from 'styled-components/macro';
 
 export const Wrapper = styled.div`
-  align-items: flex-start;
-  background: pink;
+  align-items: center;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 0.4rem 0;
   width: 100%;
 `;

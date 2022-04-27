@@ -12,7 +12,6 @@ export default function Logo({ margin }) {
 }
 
 Logo.propTypes = {
-  // Is a margin required?
   margin: PropTypes.string,
 };
 

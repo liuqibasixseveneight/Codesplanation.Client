@@ -21,11 +21,8 @@ export default function CountIndicator({ count, onClick, text }) {
 }
 
 CountIndicator.propTypes = {
-  // What count is rendered?
   count: PropTypes.number.isRequired,
-  // Set an optional click handler?
   onClick: PropTypes.func,
-  // What describes the count?
   text: PropTypes.string,
 };
 

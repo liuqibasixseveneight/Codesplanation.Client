@@ -17,11 +17,8 @@ export default function SideNavigationListItem({ leftIcon, onClick, text }) {
 }
 
 SideNavigationListItem.propTypes = {
-  // Does the item need a left icon?
   leftIcon: PropTypes.node,
-  // Set an optional click handler?
   onClick: PropTypes.func,
-  // What text should be rendered?
   text: PropTypes.node.isRequired,
 };
 

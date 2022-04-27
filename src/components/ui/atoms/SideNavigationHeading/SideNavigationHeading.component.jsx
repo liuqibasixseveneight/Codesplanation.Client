@@ -27,13 +27,9 @@ export default function SideNavigationHeading({ link, onClick, text, to }) {
 }
 
 SideNavigationHeading.propTypes = {
-  // Does the Heading need to navigate?
   link: PropTypes.bool,
-  // Set an optional click handler?
   onClick: PropTypes.func,
-  // What represents the children?
   text: PropTypes.node.isRequired,
-  // Where does the Heading redirect to?
   to: PropTypes.string,
 };
 

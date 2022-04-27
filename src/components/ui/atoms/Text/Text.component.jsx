@@ -34,25 +34,15 @@ export default function Text({
 }
 
 Text.propTypes = {
-  // Is a semantic element needed?
   as: PropTypes.string,
-  // Is a bold styling required?
   bold: PropTypes.bool,
-  // What should be rendered?
   children: PropTypes.node.isRequired,
-  // Is a color styling required?
   color: PropTypes.string,
-  // Is a font size styling required?
   fontSize: PropTypes.string,
-  // Is a heading styling required?
   heading: PropTypes.bool,
-  // Is a margin styling required?
   margin: PropTypes.string,
-  // Is a padding styling required?
   padding: PropTypes.string,
-  // Is a subheading styling required?
   subheading: PropTypes.bool,
-  // Is a text styling required?
   text: PropTypes.bool,
 };
 

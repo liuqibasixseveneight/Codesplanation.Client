@@ -53,13 +53,9 @@ export default function Form({
 }
 
 Form.propTypes = {
-  // Should fields be filled from memory?
   autocomplete: PropTypes.bool,
-  // What represents the children?
   children: PropTypes.node.isRequired,
-  // Do child inputs require validation?
   noValidate: PropTypes.bool,
-  // What happens when a submit is triggered?
   onSubmit: PropTypes.func.isRequired,
 };
 
@@ -68,39 +64,6 @@ Form.defaultProps = {
   children: null,
   noValidate: false,
   onSubmit: () => console.log('This Form component has been submitted!'),
-};
-
-FormInput.propTypes = {
-  // What results in an error?
-  error: PropTypes.string,
-  // What label text should be rendered?
-  label: PropTypes.string,
-  // What is the unique id, name and label identifier?
-  name: PropTypes.string,
-  // What function should be triggered when changed?
-  onChange: PropTypes.func,
-  // What function should be triggered when submitted?
-  onSubmit: PropTypes.func,
-  // Should there be placeholder text?
-  placeholder: PropTypes.string,
-  // What kind of input should be rendered?
-  type: PropTypes.string,
-  // What is the value?
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  // Is a custom styling width needed?
-  width: PropTypes.string,
-};
-
-FormInput.defaultProps = {
-  error: null,
-  label: null,
-  name: null,
-  onChange: null,
-  onSubmit: null,
-  placeholder: null,
-  type: 'text',
-  value: null,
-  width: null,
 };
 
 Form.Input = Input;

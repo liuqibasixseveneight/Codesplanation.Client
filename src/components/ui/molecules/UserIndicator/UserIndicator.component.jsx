@@ -72,9 +72,7 @@ export default function UserIndicator({ left, user }) {
 }
 
 UserIndicator.propTypes = {
-  // Does it need to render on the left?
   left: PropTypes.bool,
-  // What represents the user?
   user: PropTypes.object.isRequired,
 };
 

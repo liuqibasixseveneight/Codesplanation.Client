@@ -8,7 +8,6 @@ export default function ErrorMessage({ error }) {
 }
 
 ErrorMessage.propTypes = {
-  // What represents the error?
   error: PropTypes.string.isRequired,
 };
 
