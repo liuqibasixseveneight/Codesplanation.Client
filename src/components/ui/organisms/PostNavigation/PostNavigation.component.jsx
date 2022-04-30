@@ -1,7 +1,4 @@
 import React, { useContext } from 'react';
-import { BiMessageDetail as PostsIcon } from 'react-icons/bi';
-import { BsBookmarks as FavouritesIcon } from 'react-icons/bs';
-import { AiOutlineHeart as LikesIcon } from 'react-icons/ai';
 
 import { AuthContext } from '../../../../context/auth';
 import { SideNavigation, UserSideNavigation } from '../../index';

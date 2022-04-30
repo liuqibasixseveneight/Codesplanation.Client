@@ -9,6 +9,7 @@ import { useGetPostsByUser } from '../../../../hooks';
 
 export default function UserSideNavigation({ username, userId }) {
   const { data = {} } = useGetPostsByUser(userId);
+  console.log('data: ', data);
 
   return (
     <>
