@@ -2,7 +2,7 @@ import { useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
 
 export const GET_POSTS_QUERY = gql`
-  query {
+  query getPosts {
     getPosts {
       id
       title

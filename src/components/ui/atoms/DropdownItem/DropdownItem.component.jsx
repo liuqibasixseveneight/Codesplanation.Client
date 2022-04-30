@@ -44,17 +44,11 @@ export default function DropdownItem({
 }
 
 DropdownItem.propTypes = {
-  // What represents the children?
   children: PropTypes.node.isRequired,
-  // Does the item need a left icon?
   leftIcon: PropTypes.node,
-  // Does the item need to redirect?
   navlink: PropTypes.bool,
-  // Set an optional click handler?
   onClick: PropTypes.func,
-  // Does the item need a right icon?
   rightIcon: PropTypes.node,
-  // Does the item need to redirect to a page?
   to: PropTypes.string,
 };
 

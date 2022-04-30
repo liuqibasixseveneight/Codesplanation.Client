@@ -1,7 +1,8 @@
 import React from 'react';
+import { HiPlus } from 'react-icons/hi';
 
 import { ContentWrapper, PageHeading } from '../../templates';
-import { NavigationItem, PostList, PostNavigation } from '../../ui';
+import { Button, PostList, PostNavigation } from '../../ui';
 import { Content, Wrapper } from './Posts.styles';
 
 export default function Posts() {
@@ -14,11 +15,15 @@ export default function Posts() {
           <PageHeading
             heading='Posts'
             subheading='Explore code explanations by language and difficulty'
-          >
-            <NavigationItem to='/posts/create-post'>
-              Create Post +
-            </NavigationItem>
-          </PageHeading>
+            navButton={
+              <Button
+                linkButton
+                to={'/posts/create-post'}
+                icon={<HiPlus />}
+                text='Create Post'
+              />
+            }
+          />
 
           <PostList />
         </ContentWrapper>

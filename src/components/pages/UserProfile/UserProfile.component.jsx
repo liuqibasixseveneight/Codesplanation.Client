@@ -51,7 +51,6 @@ export default function UserProfile({ match }) {
 }
 
 UserProfile.propTypes = {
-  // What should be taken from the params?
   match: PropTypes.object.isRequired,
 };
 

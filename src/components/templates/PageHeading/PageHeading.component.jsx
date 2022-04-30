@@ -2,12 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Text } from '../../ui';
-import { HeadingWrapper, Wrapper } from './PageHeading.styles';
+import {
+  ButtonWrapper,
+  HeadingExtrasWrapper,
+  HeadingWrapper,
+  Wrapper,
+} from './PageHeading.styles';
 
-export default function PageHeading({ children, subheading, heading }) {
+export default function PageHeading({ heading, navButton, subheading }) {
   return (
     <Wrapper>
       <HeadingWrapper>
+        <HeadingExtrasWrapper>
+          {navButton && <ButtonWrapper>{navButton}</ButtonWrapper>}
+        </HeadingExtrasWrapper>
+
         <Text as='h1' heading fontSize='2.4rem' margin='0'>
           {heading}
         </Text>
@@ -15,22 +24,18 @@ export default function PageHeading({ children, subheading, heading }) {
           {subheading}
         </Text>
       </HeadingWrapper>
-      {children}
     </Wrapper>
   );
 }
 
 PageHeading.propTypes = {
-  // Are there additional items?
-  children: PropTypes.node,
-  // What is the heading?
   heading: PropTypes.string.isRequired,
-  // What is the subheading?
+  navButton: PropTypes.node,
   subheading: PropTypes.string.isRequired,
 };
 
 PageHeading.defaultProps = {
-  children: null,
   heading: null,
+  navButton: null,
   subheading: null,
 };

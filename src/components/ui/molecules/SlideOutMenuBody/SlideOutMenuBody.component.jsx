@@ -21,7 +21,7 @@ export default function SlideOutMenuBody() {
         Hi{' '}
         {user ? (
           <StyledLink
-            to={`/user/${user?.id}`}
+            to={`/user/id=${user?.id}`}
             onClick={() => dispatch(setIsSlideOutMenuOpen())}
           >
             {user?.username}

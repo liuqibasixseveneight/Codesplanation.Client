@@ -16,7 +16,7 @@ export default function Post({
   ...props
 }) {
   return (
-    <Link to={`/posts/${id}`}>
+    <Link to={`/posts/id=${id}`}>
       <Wrapper>
         <CountIndicator count={likeCount} text='Likes' />
         <CountIndicator count={commentCount} text='Comments' />
@@ -28,21 +28,13 @@ export default function Post({
 }
 
 Post.propTypes = {
-  // What is the main body of text?
   body: PropTypes.string,
-  // How many comments does the Post have?
   commentCount: PropTypes.number,
-  // When was the Post created?
   createdAt: PropTypes.string,
-  // How many likes does the Post have?
   likeCount: PropTypes.number,
-  // What other props are accepted?
   props: PropTypes.any,
-  // What is the Post subtitle?
   subtitle: PropTypes.string,
-  // What is the Post title?
   title: PropTypes.string,
-  // Which user created the Post?
   username: PropTypes.string,
 };
 

@@ -8,7 +8,6 @@ export default function ContentWrapper({ children }) {
 }
 
 Text.propTypes = {
-  // What should be rendered?
   children: PropTypes.node.isRequired,
 };
 

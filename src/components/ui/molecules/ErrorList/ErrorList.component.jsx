@@ -19,7 +19,6 @@ export default function ErrorList({ errors }) {
 }
 
 ErrorList.propTypes = {
-  // What represents the errors?
   errors: PropTypes.object.isRequired,
 };
 

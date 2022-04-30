@@ -8,6 +8,17 @@ export const Wrapper = styled.div`
   width: 100%;
 `;
 
+export const HeadingExtrasWrapper = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`;
+
+export const ButtonWrapper = styled.div`
+  margin: 0.8rem 0;
+`;
+
 export const HeadingWrapper = styled.div`
   align-items: flex-start;
   background: ${(props) => props?.theme?.colors?.global?.backgroundPrimary};
@@ -16,4 +27,5 @@ export const HeadingWrapper = styled.div`
   justify-content: center;
   padding: 0 0 0.8rem 0;
   transition: all 100ms linear;
+  width: 100%;
 `;
