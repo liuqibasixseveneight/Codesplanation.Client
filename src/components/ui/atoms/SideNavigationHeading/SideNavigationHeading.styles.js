@@ -15,6 +15,6 @@ export const StyledText = styled.h4`
   transition: all 100ms linear;
 
   &:hover {
-    color: ${(props) => props?.theme?.colors?.global?.highlightPrimary};
+    color: ${(props) => props?.theme?.colors?.global?.highlightSecondary};
   }
 `;

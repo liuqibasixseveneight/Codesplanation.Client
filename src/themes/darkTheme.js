@@ -3,6 +3,7 @@ export const darkTheme = {
     global: {
       backgroundPrimary: '#232931',
       backgroundSecondary: '#191e24',
+      backgroundTertiary: '#0a1018',
       textPrimary: '#ffffff',
       textSecondary: '#cccccc',
       textTertiary: '#b3b3b3',

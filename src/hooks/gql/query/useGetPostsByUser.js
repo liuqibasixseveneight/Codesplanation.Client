@@ -1,9 +1,9 @@
 import { useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
 
-const GET_POST_QUERY = gql`
-  query getPost($postId: ID!) {
-    getPost(postId: $postId) {
+const GET_POSTS_BY_USER_QUERY = gql`
+  query getPostsByUser($userId: ID!) {
+    getPostsByUser(userId: $userId) {
       title
       subtitle
       difficulty
@@ -29,10 +29,10 @@ const GET_POST_QUERY = gql`
   }
 `;
 
-export const useGetPost = (postId) => {
-  const { loading, data, error } = useQuery(GET_POST_QUERY, {
+export const useGetPostsByUser = (userId) => {
+  const { loading, data, error } = useQuery(GET_POSTS_BY_USER_QUERY, {
     variables: {
-      postId,
+      userId,
     },
   });
 

@@ -2,7 +2,7 @@ import { useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
 
 const GET_USERS_QUERY = gql`
-  query {
+  query getUsers {
     getUsers {
       createdAt
       email

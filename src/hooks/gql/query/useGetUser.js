@@ -2,7 +2,7 @@ import { useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
 
 const GET_USER_QUERY = gql`
-  query ($userId: ID!) {
+  query getUser($userId: ID!) {
     getUser(userId: $userId) {
       id
       username

@@ -54,6 +54,6 @@ export const DataLink = styled(NavLink)`
   transition: all 100ms linear;
 
   &:hover {
-    color: ${(props) => props?.theme?.colors?.global?.highlightPrimary};
+    color: ${(props) => props?.theme?.colors?.global?.highlightSecondary};
   }
 `;

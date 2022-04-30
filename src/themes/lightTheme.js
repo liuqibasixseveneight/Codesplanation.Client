@@ -3,6 +3,7 @@ export const lightTheme = {
     global: {
       backgroundPrimary: '#ffffff',
       backgroundSecondary: '#f5f5f5',
+      backgroundTertiary: '#dcdcdc',
       textPrimary: '#0c0c0c',
       textSecondary: '#262626',
       textTertiary: '#3f3f3f',

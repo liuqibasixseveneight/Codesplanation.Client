@@ -9,7 +9,9 @@ import { Wrapper } from './CreatePost.styles';
 
 export default function CreatePost({ history }) {
   // const [errors, setErrors] = useState();
-  const [bodyValue, setBodyValue] = useState('');
+  const [bodyValue, setBodyValue] = useState(
+    '**Please write your post below. If you can write markdown, that helps!**'
+  );
   const { onChange, onSubmit, values } = useForm(createPostCallBack, {
     title: '',
     subtitle: '',
@@ -30,7 +32,7 @@ export default function CreatePost({ history }) {
 
   useEffect(() => {
     if (data) {
-      history.push(`${createdPost?.id}`);
+      history.push(`id=${createdPost?.id}`);
     }
   }, [data, history, createdPost]);
 
@@ -91,7 +93,6 @@ export default function CreatePost({ history }) {
             name='body'
             value={bodyValue}
             onChange={setBodyValue}
-            data-test='body'
             // error={errors?.body}
           />
 

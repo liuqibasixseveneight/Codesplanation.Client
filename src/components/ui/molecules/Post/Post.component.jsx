@@ -16,7 +16,7 @@ export default function Post({
   ...props
 }) {
   return (
-    <Link to={`/posts/${id}`}>
+    <Link to={`/posts/id=${id}`}>
       <Wrapper>
         <CountIndicator count={likeCount} text='Likes' />
         <CountIndicator count={commentCount} text='Comments' />

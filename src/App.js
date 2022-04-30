@@ -44,8 +44,8 @@ export default function App() {
             redirectTo='/sign-up'
             component={CreatePost}
           />
-          <Route path='/posts/:postId' component={SinglePost} />
-          <Route path='/user/:userId' component={UserProfile} />
+          <Route path='/posts/id=:postId' component={SinglePost} />
+          <Route path='/user/id=:userId' component={UserProfile} />
           <RouteForNonUsers exact path='/sign-in' component={SignIn} />
           <RouteForNonUsers exact path='/sign-up' component={SignUp} />
         </Switch>

@@ -9,3 +9,4 @@ export { default as SinglePostDetails } from './SinglePostDetails/SinglePostDeta
 export { default as SlideOutMenuBody } from './SlideOutMenuBody/SlideOutMenuBody.component';
 export { default as SlideOutMenuHeader } from './SlideOutMenuHeader/SlideOutMenuHeader.component';
 export { default as UserIndicator } from './UserIndicator/UserIndicator.component';
+export { default as UserSideNavigation } from './UserSideNavigation/UserSideNavigation.component';

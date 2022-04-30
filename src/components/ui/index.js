@@ -19,6 +19,7 @@ import {
   Text,
   ThemeToggle,
 } from './atoms';
+
 import {
   Dropdown,
   ErrorList,
@@ -31,7 +32,9 @@ import {
   SlideOutMenuBody,
   SlideOutMenuHeader,
   UserIndicator,
+  UserSideNavigation,
 } from './molecules';
+
 import { Header, PostList, PostNavigation, SlideOutMenu } from './organisms';
 
 export {
@@ -69,4 +72,5 @@ export {
   Text,
   ThemeToggle,
   UserIndicator,
+  UserSideNavigation,
 };

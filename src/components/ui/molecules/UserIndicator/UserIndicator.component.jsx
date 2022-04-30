@@ -38,7 +38,7 @@ export default function UserIndicator({ left, user }) {
         <Dropdown left={left} user={user}>
           <Dropdown.Item
             onClick={() => dispatch(setIsDropdownOpen())}
-            to={`/user/${user?.id}`}
+            to={`/user/id=${user?.id}`}
             navlink
             leftIcon={<ViewProfileIcon />}
           >

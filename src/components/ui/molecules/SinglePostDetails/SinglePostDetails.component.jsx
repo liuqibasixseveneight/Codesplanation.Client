@@ -3,13 +3,24 @@ import PropTypes from 'prop-types';
 import { BsChevronLeft } from 'react-icons/bs';
 import { get } from 'lodash';
 import moment from 'moment';
-import MDEditor from '@uiw/react-md-editor';
+import { useSelector } from 'react-redux';
 
 import { ContentWrapper, PageHeading } from '../../../templates';
 import { Button, PostAuthorBar } from '../../index';
-import { Wrapper } from './SinglePostDetails.styles';
+import {
+  MarkdownStyles,
+  MarkdownWrapper,
+  StyledMDEditor,
+  Wrapper,
+} from './SinglePostDetails.styles';
 
 export default function SinglePostDetails({ loading, post }) {
+  const isGlobalThemeDark = useSelector((state) => {
+    if (state?.globalTheme) {
+      return state?.globalTheme?.isGlobalThemeDark;
+    }
+  });
+
   const badgeProps = {
     text: post?.difficulty,
   };
@@ -52,17 +63,19 @@ export default function SinglePostDetails({ loading, post }) {
               <PostAuthorBar.Item
                 label='Author:'
                 data={username}
-                linksTo={`/user/${userId}`}
+                linksTo={`/user/id=${userId}`}
               />
               <PostAuthorBar.Item label='Difficulty:' data={post?.difficulty} />
               <PostAuthorBar.Item label='Like count:' data={likeCount} />
               <PostAuthorBar.Item label='Comment count:' data={commentCount} />
             </PostAuthorBar>
 
-            <MDEditor.Markdown
-              source={post?.body}
-              style={{ padding: '0.8rem' }}
-            />
+            <MarkdownWrapper
+              data-color-mode={isGlobalThemeDark ? 'dark' : 'light'}
+            >
+              <MarkdownStyles className='wmde-markdown-var' />
+              <StyledMDEditor source={post?.body} />
+            </MarkdownWrapper>
           </>
         )}
       </Wrapper>
