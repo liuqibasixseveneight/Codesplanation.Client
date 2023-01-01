@@ -32,15 +32,15 @@ export const CountWrapper = styled.div`
     ${(props) => props?.theme?.colors?.global?.backgroundPrimary};
   border-radius: 8px;
   display: flex;
-  height: 55px;
-  max-height: 55px;
-  min-height: 55px;
+  height: 40px;
+  max-height: 40px;
+  min-height: 40px;
   justify-content: center;
   margin: 0 0 0.4rem 0;
   transition: all 100ms linear;
-  width: 55px;
-  max-width: 55px;
-  min-width: 55px;
+  width: 40px;
+  max-width: 40px;
+  min-width: 40px;
 `;
 
 export const CountLabel = styled.span`
