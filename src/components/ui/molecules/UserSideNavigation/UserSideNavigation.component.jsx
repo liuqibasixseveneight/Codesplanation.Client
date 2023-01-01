@@ -5,11 +5,11 @@ import { BsBookmarks as FavouritesIcon } from 'react-icons/bs';
 import { AiOutlineHeart as LikesIcon } from 'react-icons/ai';
 
 import { SideNavigation } from '../../index';
-import { useGetPostsByUser } from '../../../../hooks';
+// import { useGetPostsByUser } from '../../../../hooks';
 
 export default function UserSideNavigation({ username, userId }) {
-  const { data = {} } = useGetPostsByUser(userId);
-  console.log('data: ', data);
+  // TODO: Fetch posts by userId
+  // const { data = {} } = useGetPostsByUser(userId);
 
   return (
     <>
@@ -20,7 +20,11 @@ export default function UserSideNavigation({ username, userId }) {
           to={`/user/id=${userId}`}
         />
         <SideNavigation.List>
-          <SideNavigation.ListItem text='Your Posts' leftIcon={<PostsIcon />} />
+          <SideNavigation.ListItem
+            text='Your Posts'
+            leftIcon={<PostsIcon />}
+            isLink
+          />
           <SideNavigation.ListItem
             text='Your Favourites'
             leftIcon={<FavouritesIcon />}

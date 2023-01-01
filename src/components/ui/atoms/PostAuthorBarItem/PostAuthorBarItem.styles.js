@@ -49,11 +49,11 @@ export const Data = styled.span`
 `;
 
 export const DataLink = styled(NavLink)`
-  color: ${(props) => props?.theme?.colors?.global?.textPrimary};
-  font-weight: 500;
+  color: ${(props) => props?.theme?.colors?.links?.linkPrimary};
+  font-weight: 600;
   transition: all 100ms linear;
 
   &:hover {
-    color: ${(props) => props?.theme?.colors?.global?.highlightSecondary};
+    color: ${(props) => props?.theme?.colors?.links?.linkPrimaryHover};
   }
 `;

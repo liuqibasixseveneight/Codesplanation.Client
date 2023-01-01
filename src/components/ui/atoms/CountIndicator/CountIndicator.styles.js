@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 export const CountText = styled.span`
   color: ${(props) => props?.theme?.colors?.global?.textPrimary};

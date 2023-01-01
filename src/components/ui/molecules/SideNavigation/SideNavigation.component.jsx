@@ -21,9 +21,14 @@ function List({ children }) {
   return <SideNavigationList>{children}</SideNavigationList>;
 }
 
-function ListItem({ leftIcon, onClick, text }) {
+function ListItem({ isLink, leftIcon, onClick, text }) {
   return (
-    <SideNavigationListItem leftIcon={leftIcon} onClick={onClick} text={text} />
+    <SideNavigationListItem
+      isLink
+      leftIcon={leftIcon}
+      onClick={onClick}
+      text={text}
+    />
   );
 }
 

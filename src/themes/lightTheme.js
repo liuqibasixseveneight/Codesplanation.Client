@@ -10,6 +10,10 @@ export const lightTheme = {
       highlightPrimary: '#d5e6f5',
       highlightSecondary: '#005da6',
     },
+    links: {
+      linkPrimary: '#005da6',
+      linkPrimaryHover: '#003a66',
+    },
     difficulty: {
       beginner: '#6bab90',
       beginnerHover: '#529277',

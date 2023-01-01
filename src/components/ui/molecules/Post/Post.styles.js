@@ -19,3 +19,18 @@ export const Wrapper = styled.div`
       ${(props) => props?.theme?.colors?.global?.highlightPrimary};
   }
 `;
+
+export const DetailsWrapper = styled.div`
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+`;
+
+export const Username = styled.div`
+  color: ${(props) => props?.theme?.colors?.global?.textTertiary};
+  display: flex;
+  font-size: 0.8rem;
+  transition: all 100ms linear;
+`;
