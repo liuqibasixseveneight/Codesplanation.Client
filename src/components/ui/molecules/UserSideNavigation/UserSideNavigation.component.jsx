@@ -9,7 +9,6 @@ import { useGetPostsByUser } from '../../../../hooks';
 
 export default function UserSideNavigation({ username, userId }) {
   const { data = {} } = useGetPostsByUser(userId);
-  console.log('data: ', data);
 
   return (
     <>
@@ -20,7 +19,11 @@ export default function UserSideNavigation({ username, userId }) {
           to={`/user/id=${userId}`}
         />
         <SideNavigation.List>
-          <SideNavigation.ListItem text='Your Posts' leftIcon={<PostsIcon />} />
+          <SideNavigation.ListItem
+            text='Your Posts'
+            leftIcon={<PostsIcon />}
+            isLink
+          />
           <SideNavigation.ListItem
             text='Your Favourites'
             leftIcon={<FavouritesIcon />}

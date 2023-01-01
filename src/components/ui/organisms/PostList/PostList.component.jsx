@@ -11,24 +11,25 @@ export default function PostList() {
     return <span>Error!:&nbsp;{error}</span>;
   }
 
-  if (!posts && !loading) {
-    return <span>There are no Posts to show</span>;
-  }
-
   if (loading) {
     return <span>Loading...</span>;
+  }
+
+  if (!posts) {
+    return <div>No posts available</div>;
   }
 
   return (
     <Wrapper>
       {posts &&
-        posts.length > 0 &&
         (posts || []).map(
           ({
             id,
             commentCount,
             createdAt,
+            difficulty,
             likeCount,
+            subtitle,
             title,
             username,
             ...props
@@ -37,8 +38,10 @@ export default function PostList() {
               key={id}
               commentCount={commentCount}
               createdAt={createdAt}
+              difficulty={difficulty}
               id={id}
               likeCount={likeCount}
+              subtitle={subtitle}
               title={title}
               username={username}
               {...props}

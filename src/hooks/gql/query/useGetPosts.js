@@ -9,6 +9,7 @@ export const GET_POSTS_QUERY = gql`
       subtitle
       body
       createdAt
+      difficulty
       username
       likeCount
       likes {

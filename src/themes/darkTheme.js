@@ -10,6 +10,10 @@ export const darkTheme = {
       highlightPrimary: '#4ecca3',
       highlightSecondary: '#eeeeee',
     },
+    links: {
+      linkPrimary: '#4ecca3',
+      linkPrimaryHover: '#2e9e79',
+    },
     difficulty: {
       beginner: '#6bab90',
       beginnerHover: '#529277',
