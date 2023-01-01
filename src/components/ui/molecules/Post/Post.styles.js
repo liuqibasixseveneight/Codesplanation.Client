@@ -26,6 +26,7 @@ export const DetailsWrapper = styled.div`
   flex-direction: column;
   height: 100%;
   justify-content: center;
+  margin-left: 0.8rem;
 `;
 
 export const Username = styled.div`
